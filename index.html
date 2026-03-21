@@ -168,49 +168,15 @@
         <span data-jp="無料相談" data-en="Free Consult">無料相談</span>
       </a>
 
-      <!-- Hamburger button -->
-      <button id="menu-btn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false"
-        class="relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl border transition-all duration-300 border-white/30 hover:bg-white/10">
-        <span id="bar1" class="block w-5 h-0.5 transition-all duration-300 origin-center bg-white"></span>
-        <span id="bar2" class="block w-5 h-0.5 transition-all duration-300 bg-white"></span>
-        <span id="bar3" class="block w-5 h-0.5 transition-all duration-300 origin-center bg-white"></span>
+      <!-- Language toggle button -->
+      <button id="lang-toggle-btn" onclick="toggleLang()" aria-label="Switch language"
+        class="flex items-center rounded-xl border transition-all duration-300 border-white/30 hover:bg-white/10 p-1 gap-0.5">
+        <span id="flag-jp" class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200">🇯🇵 JP</span>
+        <span id="flag-en" class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200">🇦🇺 EN</span>
       </button>
     </div>
   </div>
 
-  <!-- Dropdown menu -->
-  <div id="nav-menu" class="hidden border-t border-white/10 bg-navy/95 backdrop-blur-sm sm:border-gray-100">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col gap-1">
-
-      <!-- Nav links -->
-      <a href="#how-it-works" onclick="closeMenu()" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white/80 hover:text-white font-medium text-sm transition-colors">
-        <span class="text-base">📋</span>
-        <span data-jp="ご利用の流れ" data-en="How It Works">ご利用の流れ</span>
-      </a>
-      <a href="https://lin.ee/6YGhjwPv" onclick="closeMenu()" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/10 text-white/80 hover:text-white font-medium text-sm transition-colors">
-        <span class="text-base">💬</span>
-        <span data-jp="お問い合わせ" data-en="Contact Us">お問い合わせ</span>
-      </a>
-
-      <div class="border-t border-white/10 my-2"></div>
-
-      <!-- Language switcher -->
-      <div class="px-3 py-2">
-        <div class="text-xs font-semibold text-white/40 uppercase tracking-widest mb-3" data-jp="表示言語" data-en="Display Language">表示言語</div>
-        <div class="flex gap-2">
-          <button onclick="setLang('jp')" id="btn-jp"
-            class="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border-2 font-bold text-sm transition-all border-navy bg-navy text-white">
-            🇯🇵 日本語
-          </button>
-          <button onclick="setLang('en')" id="btn-en"
-            class="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border-2 font-bold text-sm transition-all border-gray-200 text-gray-500 hover:border-gray-300">
-            🇦🇺 English
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
 </nav>
 
 
@@ -325,32 +291,32 @@
       <div class="bg-white rounded-2xl p-6 border border-red-100 card-hover reveal">
         <div class="text-4xl mb-3">⚠️</div>
         <h3 class="font-bold text-lg text-navy mb-2" data-jp="詐欺物件のリスク" data-en="Risk of scam listings">詐欺物件のリスク</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。偽物の物件広告や前払い詐欺など、海外では日本では考えられないリスクが潜んでいます。実際に多くの方が被害に遭っています。" data-en="Fake listings and upfront-payment scams are common overseas. Many people have lost money before even arriving in Melbourne.">
-          日本語プレースホルダーテキスト。偽物の物件広告や前払い詐欺など、海外では日本では考えられないリスクが潜んでいます。実際に多くの方が被害に遭っています。
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="偽物の物件広告や前払い詐欺など、海外では日本では考えられないリスクが潜んでいます。実際に多くの方が被害に遭っています。" data-en="Fake listings and upfront-payment scams are common overseas. Many people have lost money before even arriving in Melbourne.">
+          偽物の物件広告や前払い詐欺など、海外では日本では考えられないリスクが潜んでいます。実際に多くの方が被害に遭っています。
         </p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 border border-red-100 card-hover reveal">
         <div class="text-4xl mb-3">🏚️</div>
         <h3 class="font-bold text-lg text-navy mb-2" data-jp="不衛生・危険な環境" data-en="Unsafe or unhygienic conditions">不衛生・危険な環境</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。写真と実物が全く異なる、害虫が多い、セキュリティが不安など劣悪な環境の物件も多数存在します。" data-en="Photos look nothing like reality. Pest infestations, poor security, and sub-standard conditions are more common than you'd think.">
-          日本語プレースホルダーテキスト。写真と実物が全く異なる、害虫が多い、セキュリティが不安など劣悪な環境の物件も多数存在します。
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="写真と実物が全く異なる、害虫が多い、セキュリティが不安など劣悪な環境の物件も多数存在します。" data-en="Photos look nothing like reality. Pest infestations, poor security, and sub-standard conditions are more common than you'd think.">
+          写真と実物が全く異なる、害虫が多い、セキュリティが不安など劣悪な環境の物件も多数存在します。
         </p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 border border-red-100 card-hover reveal">
         <div class="text-4xl mb-3">🗣️</div>
         <h3 class="font-bold text-lg text-navy mb-2" data-jp="英語でのやり取りが大変" data-en="Language barrier with landlords">英語でのやり取りが大変</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。契約書の内容が理解できない、トラブルが起きても交渉できないなど言語の壁が大きな問題になります。" data-en="Not understanding lease terms or being unable to negotiate when problems arise — the language barrier creates serious risks.">
-          日本語プレースホルダーテキスト。契約書の内容が理解できない、トラブルが起きても交渉できないなど言語の壁が大きな問題になります。
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="契約書の内容が理解できない、トラブルが起きても交渉できないなど言語の壁が大きな問題になります。" data-en="Not understanding lease terms or being unable to negotiate when problems arise — the language barrier creates serious risks.">
+          契約書の内容が理解できない、トラブルが起きても交渉できないなど言語の壁が大きな問題になります。
         </p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 border border-red-100 card-hover reveal">
         <div class="text-4xl mb-3">😰</div>
         <h3 class="font-bold text-lg text-navy mb-2" data-jp="入居後のトラブル" data-en="Problems after moving in">入居後のトラブル</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。設備の故障、オーナーとのトラブル、急な退去要請など、入居後も問題は続きます。一人で抱え込まないでください。" data-en="Broken appliances, disputes with landlords, sudden eviction notices — problems don't stop after moving in. Don't face them alone.">
-          日本語プレースホルダーテキスト。設備の故障、オーナーとのトラブル、急な退去要請など、入居後も問題は続きます。一人で抱え込まないでください。
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="設備の故障、オーナーとのトラブル、急な退去要請など、入居後も問題は続きます。一人で抱え込まないでください。" data-en="Broken appliances, disputes with landlords, sudden eviction notices — problems don't stop after moving in. Don't face them alone.">
+          設備の故障、オーナーとのトラブル、急な退去要請など、入居後も問題は続きます。一人で抱え込まないでください。
         </p>
       </div>
     </div>
@@ -369,8 +335,8 @@
       <h2 class="text-3xl md:text-4xl font-black mt-4 mb-4" data-jp="安心・安全な住まいを<br><span class='text-line'>日本語で</span>サポート" data-en="Safe verified housing —<br><span class='text-line'>fully supported</span> in Japanese">
         安心・安全な住まいを<br><span class="text-line">日本語で</span>サポート
       </h2>
-      <p class="text-blue-200 text-base max-w-2xl mx-auto leading-relaxed" data-jp="日本語プレースホルダーテキスト。私たちはメルボルンで実際に物件を確認し、安全性・清潔さ・利便性を審査した物件のみをご紹介します。全てのやり取りは日本語で対応します。" data-en="We personally inspect every property in Melbourne for safety, cleanliness and convenience. Every step — from search to move-in — is handled entirely in Japanese.">
-        日本語プレースホルダーテキスト。私たちはメルボルンで実際に物件を確認し、安全性・清潔さ・利便性を審査した物件のみをご紹介します。全てのやり取りは日本語で対応します。
+      <p class="text-blue-200 text-base max-w-2xl mx-auto leading-relaxed" data-jp="私たちはメルボルンで実際に物件を確認し、安全性・清潔さ・利便性を審査した物件のみをご紹介します。全てのやり取りは日本語で対応します。" data-en="We personally inspect every property in Melbourne for safety, cleanliness and convenience. Every step — from search to move-in — is handled entirely in Japanese.">
+        私たちはメルボルンで実際に物件を確認し、安全性・清潔さ・利便性を審査した物件のみをご紹介します。全てのやり取りは日本語で対応します。
       </p>
     </div>
 
@@ -378,24 +344,24 @@
       <div class="bg-white/8 border border-white/10 rounded-2xl p-6 reveal">
         <div class="text-4xl mb-3">🔍</div>
         <h3 class="font-bold text-lg mb-2" data-jp="全物件を現地確認" data-en="Every property inspected">全物件を現地確認</h3>
-        <p class="text-blue-200 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。紹介する物件は全て現地スタッフが直接訪問し、安全性・清潔さを確認しています。" data-en="Our local Melbourne staff personally visits and checks every property for safety and cleanliness before listing it.">
-          日本語プレースホルダーテキスト。紹介する物件は全て現地スタッフが直接訪問し、安全性・清潔さを確認しています。
+        <p class="text-blue-200 text-sm leading-relaxed" data-jp="紹介する物件は全て現地スタッフが直接訪問し、安全性・清潔さを確認しています。" data-en="Our local Melbourne staff personally visits and checks every property for safety and cleanliness before listing it.">
+          紹介する物件は全て現地スタッフが直接訪問し、安全性・清潔さを確認しています。
         </p>
       </div>
 
       <div class="bg-white/8 border border-white/10 rounded-2xl p-6 reveal">
         <div class="text-4xl mb-3">🇯🇵</div>
         <h3 class="font-bold text-lg mb-2" data-jp="完全日本語対応" data-en="Full Japanese support">完全日本語対応</h3>
-        <p class="text-blue-200 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。契約書類の説明から入居後のサポートまで、全て日本語でやり取りできます。" data-en="From lease explanations to post-move-in help, everything is handled in Japanese. No English stress.">
-          日本語プレースホルダーテキスト。契約書類の説明から入居後のサポートまで、全て日本語でやり取りできます。
+        <p class="text-blue-200 text-sm leading-relaxed" data-jp="契約書類の説明から入居後のサポートまで、全て日本語でやり取りできます。" data-en="From lease explanations to post-move-in help, everything is handled in Japanese. No English stress.">
+          契約書類の説明から入居後のサポートまで、全て日本語でやり取りできます。
         </p>
       </div>
 
       <div class="bg-white/8 border border-white/10 rounded-2xl p-6 reveal">
         <div class="text-4xl mb-3">🛡️</div>
         <h3 class="font-bold text-lg mb-2" data-jp="入居後もサポート" data-en="Support after move-in">入居後もサポート</h3>
-        <p class="text-blue-200 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。何かトラブルがあった際も日本語でご相談いただけます。一人で悩まないでください。" data-en="Any issue after moving in? Message us in Japanese anytime. You'll never be left to deal with problems alone.">
-          日本語プレースホルダーテキスト。何かトラブルがあった際も日本語でご相談いただけます。一人で悩まないでください。
+        <p class="text-blue-200 text-sm leading-relaxed" data-jp="何かトラブルがあった際も日本語でご相談いただけます。一人で悩まないでください。" data-en="Any issue after moving in? Message us in Japanese anytime. You'll never be left to deal with problems alone.">
+          何かトラブルがあった際も日本語でご相談いただけます。一人で悩まないでください。
         </p>
       </div>
     </div>
@@ -418,7 +384,7 @@
         <div class="text-2xl flex-shrink-0">✅</div>
         <div>
           <h4 class="font-bold text-navy mb-1" data-jp="審査済み物件のみ紹介" data-en="Verified properties only">審査済み物件のみ紹介</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。独自の審査基準をクリアした安全な物件のみをご紹介します。" data-en="Only properties that pass our rigorous safety and quality checks make it onto our list.">日本語プレースホルダーテキスト。独自の審査基準をクリアした安全な物件のみをご紹介します。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="独自の審査基準をクリアした安全な物件のみをご紹介します。" data-en="Only properties that pass our rigorous safety and quality checks make it onto our list.">独自の審査基準をクリアした安全な物件のみをご紹介します。</p>
         </div>
       </div>
 
@@ -426,7 +392,7 @@
         <div class="text-2xl flex-shrink-0">💬</div>
         <div>
           <h4 class="font-bold text-navy mb-1" data-jp="日本語LINEサポート" data-en="Japanese LINE support">日本語LINEサポート</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。LINEで気軽に日本語でご質問いただけます。素早く丁寧に対応します。" data-en="Ask us anything on LINE in Japanese. We respond quickly and personally.">日本語プレースホルダーテキスト。LINEで気軽に日本語でご質問いただけます。素早く丁寧に対応します。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="LINEで気軽に日本語でご質問いただけます。素早く丁寧に対応します。" data-en="Ask us anything on LINE in Japanese. We respond quickly and personally.">LINEで気軽に日本語でご質問いただけます。素早く丁寧に対応します。</p>
         </div>
       </div>
 
@@ -434,7 +400,7 @@
         <div class="text-2xl flex-shrink-0">📋</div>
         <div>
           <h4 class="font-bold text-navy mb-1" data-jp="契約書類の日本語説明" data-en="Lease explained in Japanese">契約書類の日本語説明</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。英語の契約書も日本語でわかりやすく説明するので安心して署名できます。" data-en="We walk you through every English lease document in Japanese so you can sign with total confidence.">日本語プレースホルダーテキスト。英語の契約書も日本語でわかりやすく説明するので安心して署名できます。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="英語の契約書も日本語でわかりやすく説明するので安心して署名できます。" data-en="We walk you through every English lease document in Japanese so you can sign with total confidence.">英語の契約書も日本語でわかりやすく説明するので安心して署名できます。</p>
         </div>
       </div>
 
@@ -442,7 +408,7 @@
         <div class="text-2xl flex-shrink-0">⚡</div>
         <div>
           <h4 class="font-bold text-navy mb-1" data-jp="光熱費・ネット代込み" data-en="Bills &amp; internet included">光熱費・ネット代込み</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。電気・ガス・水道・インターネット代は全て家賃に含まれています。追加請求なし。" data-en="Electricity, gas, water and internet are all included in the weekly rate. No surprise bills.">日本語プレースホルダーテキスト。電気・ガス・水道・インターネット代は全て家賃に含まれています。追加請求なし。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="電気・ガス・水道・インターネット代は全て家賃に含まれています。追加請求なし。" data-en="Electricity, gas, water and internet are all included in the weekly rate. No surprise bills.">電気・ガス・水道・インターネット代は全て家賃に含まれています。追加請求なし。</p>
         </div>
       </div>
 
@@ -458,7 +424,7 @@
         <div class="text-2xl flex-shrink-0">🔒</div>
         <div>
           <h4 class="font-bold text-navy mb-1" data-jp="セキュリティ確認済み" data-en="Security verified">セキュリティ確認済み</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。オートロックや防犯設備など、セキュリティの安全性も現地確認しています。" data-en="Auto-locks, secure entry and safety features are all checked in person by our team.">日本語プレースホルダーテキスト。オートロックや防犯設備など、セキュリティの安全性も現地確認しています。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="オートロックや防犯設備など、セキュリティの安全性も現地確認しています。" data-en="Auto-locks, secure entry and safety features are all checked in person by our team.">オートロックや防犯設備など、セキュリティの安全性も現地確認しています。</p>
         </div>
       </div>
 
@@ -466,7 +432,7 @@
         <div class="text-2xl flex-shrink-0">🤝</div>
         <div>
           <h4 class="font-bold text-navy mb-1" data-jp="入居後のアフターサポート" data-en="After move-in support">入居後のアフターサポート</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。設備の故障やルームメイトとのトラブルなど、入居後の困りごとにも対応します。" data-en="Broken appliances, roommate issues, landlord disputes — we're here to help even after you've moved in.">日本語プレースホルダーテキスト。設備の故障やルームメイトとのトラブルなど、入居後の困りごとにも対応します。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="設備の故障やルームメイトとのトラブルなど、入居後の困りごとにも対応します。" data-en="Broken appliances, roommate issues, landlord disputes — we're here to help even after you've moved in.">設備の故障やルームメイトとのトラブルなど、入居後の困りごとにも対応します。</p>
         </div>
       </div>
 
@@ -474,7 +440,7 @@
         <div class="text-2xl flex-shrink-0">🏡</div>
         <div>
           <h4 class="font-bold text-navy mb-1" data-jp="清潔な環境保証" data-en="Clean environment guaranteed">清潔な環境保証</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。定期的な清掃が行き届いた清潔な物件のみをご紹介しています。" data-en="Only well-maintained, regularly cleaned properties make our list. Your comfort is guaranteed.">日本語プレースホルダーテキスト。定期的な清掃が行き届いた清潔な物件のみをご紹介しています。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="定期的な清掃が行き届いた清潔な物件のみをご紹介しています。" data-en="Only well-maintained, regularly cleaned properties make our list. Your comfort is guaranteed.">定期的な清掃が行き届いた清潔な物件のみをご紹介しています。</p>
         </div>
       </div>
 
@@ -575,7 +541,7 @@
             <span class="text-5xl font-black">$350</span>
             <span class="text-blue-300 text-lg mb-1" data-jp="/ 週" data-en="/ week">/ 週</span>
           </div>
-          <p class="text-blue-200 text-sm" data-jp="日本語プレースホルダーテキスト。全て込みの安心価格です。" data-en="One flat rate. Everything included. No surprises.">日本語プレースホルダーテキスト。全て込みの安心価格です。</p>
+          <p class="text-blue-200 text-sm" data-jp="全て込みの安心価格です。" data-en="One flat rate. Everything included. No surprises.">全て込みの安心価格です。</p>
         </div>
         <div class="flex-shrink-0">
           <a href="https://lin.ee/6YGhjwPv" class="line-btn justify-center">
@@ -653,8 +619,8 @@
           <div class="bg-amber-50 text-amber-600 font-bold text-sm px-3 py-1 rounded-full" data-jp="要相談" data-en="POA">要相談</div>
         </div>
         <h3 class="font-bold text-xl text-navy mb-2" data-jp="初期セットアップサポート" data-en="Life setup support">初期セットアップサポート</h3>
-        <p class="text-gray-500 text-sm leading-relaxed mb-4" data-jp="日本語プレースホルダーテキスト。SIMカードの購入から銀行口座開設、スーパーへの案内まで、生活のスタートをまるっとサポートします。" data-en="From getting an Aussie SIM to opening a bank account and finding the nearest supermarket — we help you get set up from day one.">
-          日本語プレースホルダーテキスト。SIMカードの購入から銀行口座開設、スーパーへの案内まで、生活のスタートをまるっとサポートします。
+        <p class="text-gray-500 text-sm leading-relaxed mb-4" data-jp="SIMカードの購入から銀行口座開設、スーパーへの案内まで、生活のスタートをまるっとサポートします。" data-en="From getting an Aussie SIM to opening a bank account and finding the nearest supermarket — we help you get set up from day one.">
+          SIMカードの購入から銀行口座開設、スーパーへの案内まで、生活のスタートをまるっとサポートします。
         </p>
         <ul class="space-y-1 text-sm text-gray-500">
           <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="オーストラリアSIM手配サポート" data-en="Australian SIM card setup">オーストラリアSIM手配サポート</span></li>
@@ -684,7 +650,7 @@
         <div class="step-number flex-shrink-0">1</div>
         <div>
           <h3 class="font-bold text-navy text-lg mb-1" data-jp="LINEでお問い合わせ" data-en="Message us on LINE">LINEでお問い合わせ</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。まずはLINEでお気軽にご連絡ください。渡航予定日・希望エリア・予算などを教えていただくだけでOKです。" data-en="Send us a message on LINE anytime. Just let us know your arrival date, preferred area and budget — that's all we need to get started.">日本語プレースホルダーテキスト。まずはLINEでお気軽にご連絡ください。渡航予定日・希望エリア・予算などを教えていただくだけでOKです。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="まずはLINEでお気軽にご連絡ください。渡航予定日・希望エリア・予算などを教えていただくだけでOKです。" data-en="Send us a message on LINE anytime. Just let us know your arrival date, preferred area and budget — that's all we need to get started.">まずはLINEでお気軽にご連絡ください。渡航予定日・希望エリア・予算などを教えていただくだけでOKです。</p>
         </div>
       </div>
 
@@ -692,7 +658,7 @@
         <div class="step-number flex-shrink-0">2</div>
         <div>
           <h3 class="font-bold text-navy text-lg mb-1" data-jp="ご希望をヒアリング" data-en="We understand your needs">ご希望をヒアリング</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。スタッフが日本語でご希望の条件を丁寧にお聞きします。わからないことは何でも聞いてください。" data-en="Our staff will carefully listen to your requirements in Japanese. No question is too small — ask us anything.">日本語プレースホルダーテキスト。スタッフが日本語でご希望の条件を丁寧にお聞きします。わからないことは何でも聞いてください。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="スタッフが日本語でご希望の条件を丁寧にお聞きします。わからないことは何でも聞いてください。" data-en="Our staff will carefully listen to your requirements in Japanese. No question is too small — ask us anything.">スタッフが日本語でご希望の条件を丁寧にお聞きします。わからないことは何でも聞いてください。</p>
         </div>
       </div>
 
@@ -700,7 +666,7 @@
         <div class="step-number flex-shrink-0">3</div>
         <div>
           <h3 class="font-bold text-navy text-lg mb-1" data-jp="物件をご提案" data-en="We suggest verified properties">物件をご提案</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。ご希望に合った審査済みの物件をご提案します。写真や詳細情報も日本語でお送りします。" data-en="We match you with verified properties that suit your needs, sending photos and full details all in Japanese.">日本語プレースホルダーテキスト。ご希望に合った審査済みの物件をご提案します。写真や詳細情報も日本語でお送りします。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="ご希望に合った審査済みの物件をご提案します。写真や詳細情報も日本語でお送りします。" data-en="We match you with verified properties that suit your needs, sending photos and full details all in Japanese.">ご希望に合った審査済みの物件をご提案します。写真や詳細情報も日本語でお送りします。</p>
         </div>
       </div>
 
@@ -708,7 +674,7 @@
         <div class="step-number flex-shrink-0">4</div>
         <div>
           <h3 class="font-bold text-navy text-lg mb-1" data-jp="内覧・契約" data-en="Inspection &amp; signing">内覧・契約</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。気に入った物件はご内覧いただけます。契約書類も日本語でご説明しますので安心して手続きできます。" data-en="Inspect the property in person if you wish. We'll walk you through all lease documents in Japanese so you can sign with confidence.">日本語プレースホルダーテキスト。気に入った物件はご内覧いただけます。契約書類も日本語でご説明しますので安心して手続きできます。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="気に入った物件はご内覧いただけます。契約書類も日本語でご説明しますので安心して手続きできます。" data-en="Inspect the property in person if you wish. We'll walk you through all lease documents in Japanese so you can sign with confidence.">気に入った物件はご内覧いただけます。契約書類も日本語でご説明しますので安心して手続きできます。</p>
         </div>
       </div>
 
@@ -716,7 +682,7 @@
         <div class="step-number flex-shrink-0">5</div>
         <div>
           <h3 class="font-bold text-navy text-lg mb-1" data-jp="入居スタート🎉" data-en="Move in &amp; enjoy Melbourne 🎉">入居スタート🎉</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="日本語プレースホルダーテキスト。いよいよメルボルン生活のスタートです。入居後もスタッフが日本語でサポートしますのでご安心ください。" data-en="Your Melbourne life begins! Our staff continue to support you in Japanese after move-in — you're never on your own.">日本語プレースホルダーテキスト。いよいよメルボルン生活のスタートです。入居後もスタッフが日本語でサポートしますのでご安心ください。</p>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="いよいよメルボルン生活のスタートです。入居後もスタッフが日本語でサポートしますのでご安心ください。" data-en="Your Melbourne life begins! Our staff continue to support you in Japanese after move-in — you're never on your own.">いよいよメルボルン生活のスタートです。入居後もスタッフが日本語でサポートしますのでご安心ください。</p>
         </div>
       </div>
 
@@ -757,8 +723,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
       <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 reveal">
         <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="「日本語プレースホルダーテキスト。海外での部屋探しが不安でしたが、全て日本語で対応してもらえたので本当に助かりました。安心して渡航できました。」" data-en="&quot;I was so nervous about finding a room overseas, but having everything explained in Japanese made such a huge difference. I arrived feeling genuinely prepared.&quot;">
-          「日本語プレースホルダーテキスト。海外での部屋探しが不安でしたが、全て日本語で対応してもらえたので本当に助かりました。安心して渡航できました。」
+        <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="「海外での部屋探しが不安でしたが、全て日本語で対応してもらえたので本当に助かりました。安心して渡航できました。」" data-en="&quot;I was so nervous about finding a room overseas, but having everything explained in Japanese made such a huge difference. I arrived feeling genuinely prepared.&quot;">
+          「海外での部屋探しが不安でしたが、全て日本語で対応してもらえたので本当に助かりました。安心して渡航できました。」
         </p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold text-sm">A</div>
@@ -771,8 +737,8 @@
 
       <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 reveal">
         <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="「日本語プレースホルダーテキスト。空港送迎から部屋の案内まで全部お願いして、着いた日からすぐに生活をスタートできました。本当におすすめです。」" data-en="&quot;I used the airport pickup and room setup service — by the evening of my arrival day I was already settled in. Honestly can't recommend it enough.&quot;">
-          「日本語プレースホルダーテキスト。空港送迎から部屋の案内まで全部お願いして、着いた日からすぐに生活をスタートできました。本当におすすめです。」
+        <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="「空港送迎から部屋の案内まで全部お願いして、着いた日からすぐに生活をスタートできました。本当におすすめです。」" data-en="&quot;I used the airport pickup and room setup service — by the evening of my arrival day I was already settled in. Honestly can't recommend it enough.&quot;">
+          「空港送迎から部屋の案内まで全部お願いして、着いた日からすぐに生活をスタートできました。本当におすすめです。」
         </p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold text-sm">T</div>
@@ -808,8 +774,8 @@
     <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight" data-jp="まずは気軽に<br><span class='text-line'>LINEで相談</span>してください" data-en="Ready to get started?<br><span class='text-line'>Message us on LINE</span>">
       まずは気軽に<br><span class="text-line">LINEで相談</span>してください
     </h2>
-    <p class="text-blue-200 text-base leading-relaxed mb-10" data-jp="日本語プレースホルダーテキスト。渡航前でも渡航後でもいつでもご相談ください。住まいのことなら何でもお答えします。もちろん相談は無料です。" data-en="Whether you're still in Japan or already in Melbourne, reach out anytime. We'll answer all your housing questions — and the consultation is completely free.">
-      日本語プレースホルダーテキスト。渡航前でも渡航後でもいつでもご相談ください。住まいのことなら何でもお答えします。もちろん相談は無料です。
+    <p class="text-blue-200 text-base leading-relaxed mb-10" data-jp="渡航前でも渡航後でもいつでもご相談ください。住まいのことなら何でもお答えします。もちろん相談は無料です。" data-en="Whether you're still in Japan or already in Melbourne, reach out anytime. We'll answer all your housing questions — and the consultation is completely free.">
+      渡航前でも渡航後でもいつでもご相談ください。住まいのことなら何でもお答えします。もちろん相談は無料です。
     </p>
 
     <!-- LINE button + QR -->
@@ -856,66 +822,51 @@
   const nav = document.getElementById('main-nav');
   const navTitle = document.getElementById('nav-title');
   const navSub = document.getElementById('nav-sub');
-  const menuBtn = document.getElementById('menu-btn');
-  const bars = [document.getElementById('bar1'), document.getElementById('bar2'), document.getElementById('bar3')];
+  const langBtn = document.getElementById('lang-toggle-btn');
+  let navScrolled = false;
+  let currentLang = 'jp';
 
   function updateNav() {
-    const scrolled = window.scrollY > 60;
-    if (scrolled) {
+    navScrolled = window.scrollY > 60;
+    if (navScrolled) {
       nav.classList.add('bg-white/95', 'backdrop-blur', 'border-b', 'border-gray-100', 'shadow-sm');
       nav.classList.remove('bg-transparent');
       navTitle.classList.replace('text-white', 'text-navy');
       navSub.classList.replace('text-white/60', 'text-gray-400');
-      bars.forEach(b => b.classList.replace('bg-white', 'bg-gray-700'));
-      menuBtn.classList.replace('border-white/30', 'border-gray-200');
-      menuBtn.classList.replace('hover:bg-white/10', 'hover:bg-gray-50');
+      langBtn.classList.replace('border-white/30', 'border-gray-200');
+      langBtn.classList.replace('hover:bg-white/10', 'hover:bg-gray-50');
     } else {
       nav.classList.remove('bg-white/95', 'backdrop-blur', 'border-b', 'border-gray-100', 'shadow-sm');
       nav.classList.add('bg-transparent');
       navTitle.classList.replace('text-navy', 'text-white');
       navSub.classList.replace('text-gray-400', 'text-white/60');
-      bars.forEach(b => b.classList.replace('bg-gray-700', 'bg-white'));
-      menuBtn.classList.replace('border-gray-200', 'border-white/30');
-      menuBtn.classList.replace('hover:bg-gray-50', 'hover:bg-white/10');
+      langBtn.classList.replace('border-gray-200', 'border-white/30');
+      langBtn.classList.replace('hover:bg-gray-50', 'hover:bg-white/10');
     }
+    updateLangBtnColors();
   }
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
-  // Hamburger menu
-  let menuOpen = false;
-  function toggleMenu() {
-    menuOpen = !menuOpen;
-    const menu = document.getElementById('nav-menu');
-    const btn = document.getElementById('menu-btn');
-    const bar1 = document.getElementById('bar1');
-    const bar2 = document.getElementById('bar2');
-    const bar3 = document.getElementById('bar3');
+  // Language toggle
+  function toggleLang() {
+    setLang(currentLang === 'jp' ? 'en' : 'jp');
+  }
 
-    menu.classList.toggle('hidden', !menuOpen);
-    btn.setAttribute('aria-expanded', menuOpen);
-
-    // Animate to X
-    if (menuOpen) {
-      bar1.style.transform = 'translateY(8px) rotate(45deg)';
-      bar2.style.opacity = '0';
-      bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+  function updateLangBtnColors() {
+    const flagJP = document.getElementById('flag-jp');
+    const flagEN = document.getElementById('flag-en');
+    const activeClass = 'flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200';
+    const inactiveClass = 'flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ' + (navScrolled ? 'text-gray-500' : 'text-white/60');
+    if (currentLang === 'jp') {
+      flagJP.className = activeClass;
+      flagEN.className = inactiveClass;
     } else {
-      bar1.style.transform = '';
-      bar2.style.opacity = '1';
-      bar3.style.transform = '';
+      flagEN.className = activeClass;
+      flagJP.className = inactiveClass;
     }
   }
-  function closeMenu() {
-    if (menuOpen) toggleMenu();
-  }
-  // Close on outside click
-  document.addEventListener('click', e => {
-    if (menuOpen && !document.querySelector('nav').contains(e.target)) closeMenu();
-  });
 
-  // Language toggle
-  let currentLang = 'jp';
   function setLang(lang) {
     currentLang = lang;
     const isEN = lang === 'en';
@@ -927,17 +878,7 @@
       if (jp && en) el.innerHTML = isEN ? en : jp;
     });
 
-    // Update button states in menu
-    const btnJP = document.getElementById('btn-jp');
-    const btnEN = document.getElementById('btn-en');
-    if (isEN) {
-      btnEN.className = btnEN.className.replace('border-gray-200 text-gray-500 hover:border-gray-300', 'border-navy bg-navy text-white');
-      btnJP.className = btnJP.className.replace('border-navy bg-navy text-white', 'border-gray-200 text-gray-500 hover:border-gray-300');
-    } else {
-      btnJP.className = btnJP.className.replace('border-gray-200 text-gray-500 hover:border-gray-300', 'border-navy bg-navy text-white');
-      btnEN.className = btnEN.className.replace('border-navy bg-navy text-white', 'border-gray-200 text-gray-500 hover:border-gray-300');
-    }
-
+    updateLangBtnColors();
     document.documentElement.lang = isEN ? 'en' : 'ja';
   }
 
