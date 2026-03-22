@@ -166,12 +166,12 @@
 
 <!-- ===== STICKY NAV ===== -->
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
-  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+  <div class="max-w-5xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <span class="text-2xl leading-none">🏠</span>
       <div>
         <div id="nav-title" class="font-black text-sm leading-tight tracking-tight text-white transition-colors duration-300">Wahori Melbourne</div>
-        <div id="nav-sub" class="text-xs leading-tight text-white/60 transition-colors duration-300" data-jp="日本人ワーホリ向け安心住宅" data-en="Safe Housing for WHV Makers">日本人ワーホリ向け安心住宅</div>
+        <div id="nav-sub" class="text-xs leading-tight text-white/60 transition-colors duration-300 hidden sm:block" data-jp="日本人ワーホリ向け安心住宅" data-en="Safe Housing for WHV Makers">日本人ワーホリ向け安心住宅</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
@@ -214,29 +214,29 @@
 
   <div class="max-w-3xl mx-auto text-center text-white relative z-10">
     <!-- Location badge -->
-    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 text-sm mb-8 backdrop-blur-sm">
+    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm mb-4 sm:mb-6 backdrop-blur-sm">
       <span class="w-2 h-2 bg-line rounded-full flex-shrink-0" style="animation: pulse 1.5s infinite;"></span>
-      📍 Melbourne, Victoria — 専門サービス
+      <span data-jp="📍 Melbourne, Victoria — 専門サービス" data-en="📍 Melbourne, Victoria — Specialist Service">📍 Melbourne, Victoria — 専門サービス</span>
     </div>
 
     <!-- Headline -->
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-5">
+    <h1 class="text-3xl sm:text-5xl md:text-6xl font-black leading-tight mb-3 sm:mb-5">
       <span data-jp="メルボルンで" data-en="Find Your Safe">メルボルンで</span><br>
       <span class="text-line" data-jp="安心・安全な" data-en="Verified Home">安心・安全な</span><br>
       <span data-jp="住まいを見つけよう" data-en="in Melbourne">住まいを見つけよう</span>
     </h1>
 
     <!-- Sub headline JP / EN -->
-    <p class="text-lg sm:text-xl text-blue-100 leading-relaxed mb-2" data-jp="ワーキングホリデービザで渡航する日本人のための<br class='hidden sm:block'>日本語サポート付き・審査済み住宅サービス" data-en="Verified, safe &amp; affordable rooms for Japanese working holiday makers — with full Japanese support.">
+    <p class="text-base sm:text-xl text-blue-100 leading-relaxed mb-2" data-jp="ワーキングホリデービザで渡航する日本人のための<br class='hidden sm:block'>日本語サポート付き・審査済み住宅サービス" data-en="Verified, safe &amp; affordable rooms for Japanese working holiday makers — with full Japanese support.">
       ワーキングホリデービザで渡航する日本人のための<br class="hidden sm:block">
       日本語サポート付き・審査済み住宅サービス
     </p>
-    <p class="text-sm text-blue-300 mb-10" data-jp="Safe &amp; Verified Housing in Melbourne for Japanese Working Holiday Makers" data-en="CBD · Carlton · Fitzroy · Richmond · St Kilda · Chelsea · Brunswick · Boronia">
+    <p class="text-sm text-blue-300 mb-5 sm:mb-8" data-jp="Safe &amp; Verified Housing in Melbourne for Japanese Working Holiday Makers" data-en="CBD · Carlton · Fitzroy · Richmond · St Kilda · Chelsea · Brunswick · Boronia">
       Safe &amp; Verified Housing in Melbourne for Japanese Working Holiday Makers
     </p>
 
     <!-- Stats row -->
-    <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-10">
+    <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-5 sm:mb-8">
       <div>
         <div class="text-2xl sm:text-3xl font-black text-white">$350<span class="text-line text-lg" data-jp="/週" data-en="/wk">/週</span></div>
         <div class="text-blue-300 text-xs mt-0.5" data-jp="光熱費・ネット込み" data-en="Bills &amp; internet included">光熱費・ネット込み</div>
@@ -267,7 +267,7 @@
     </div>
 
     <!-- Trust pills -->
-    <div class="mt-12 flex flex-wrap justify-center gap-4 sm:gap-8 text-blue-200 text-sm">
+    <div class="mt-6 sm:mt-10 flex flex-wrap justify-center gap-3 sm:gap-8 text-blue-200 text-sm">
       <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="全物件審査済み" data-en="All properties verified">全物件審査済み</span></span>
       <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="日本語サポート" data-en="Japanese support">日本語サポート</span></span>
       <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="光熱費込み" data-en="Bills included">光熱費込み</span></span>
@@ -275,7 +275,7 @@
     </div>
 
     <!-- Melbourne suburb tags -->
-    <div class="mt-6 flex flex-wrap justify-center gap-2">
+    <div class="mt-4 hidden sm:flex flex-wrap justify-center gap-2">
       <span class="bg-white/10 border border-white/15 text-blue-200 text-xs px-3 py-1 rounded-full">CBD</span>
       <span class="bg-white/10 border border-white/15 text-blue-200 text-xs px-3 py-1 rounded-full">Carlton</span>
       <span class="bg-white/10 border border-white/15 text-blue-200 text-xs px-3 py-1 rounded-full">Fitzroy</span>
