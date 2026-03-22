@@ -4,10 +4,12 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY tailwind.config.js input.css index.html ./
+COPY admin/ ./admin/
 RUN npm run build
 
 # Serve stage — nginx serves the compiled output
 FROM nginx:alpine
 COPY --from=builder /app/index.html /usr/share/nginx/html/
 COPY --from=builder /app/style.css /usr/share/nginx/html/
+COPY --from=builder /app/admin/ /usr/share/nginx/html/admin/
 EXPOSE 80

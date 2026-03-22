@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Staff Portal — Wahori Melbourne</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            line: '#06C755',
+            'line-dk': '#05a648',
+            navy: '#0D1B2A',
+            'navy-md': '#1B3A5C',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    .modal-enter { animation: fadeIn 0.15s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+    select { appearance: auto; }
+    @media print {
+      body > *:not(#print-frame) { display: none; }
+      #print-frame { display: block !important; }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen antialiased">
+
+<!-- ═══ LOGIN SCREEN ═══ -->
+<div id="login-screen" class="min-h-screen flex items-center justify-center bg-navy p-4">
+  <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-sm modal-enter">
+    <div class="text-center mb-8">
+      <div class="text-5xl mb-3">🏠</div>
+      <h1 class="text-xl font-black text-navy">Wahori Melbourne</h1>
+      <p class="text-gray-400 text-sm mt-1">Staff Portal</p>
+    </div>
+    <div id="login-error" class="hidden bg-red-50 border border-red-200 text-red-600 text-sm rounded-xl px-4 py-3 mb-4"></div>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-semibold text-gray-600 mb-1.5">Password</label>
+        <input id="login-password" type="password" placeholder="Enter staff password"
+          class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-navy focus:border-transparent"
+          onkeydown="if(event.key==='Enter') doLogin()">
+      </div>
+      <button onclick="doLogin()"
+        class="w-full bg-navy text-white font-bold py-3 rounded-xl hover:bg-navy-md transition-colors text-sm">
+        Sign In
+      </button>
+    </div>
+    <p class="text-center text-gray-300 text-xs mt-6">
+      Default password: <code class="bg-gray-100 text-gray-500 px-1 rounded">Wahori@2025</code>
+    </p>
+  </div>
+</div>
+
+<!-- ═══ MAIN APP ═══ -->
+<div id="app" class="hidden min-h-screen flex flex-col">
+
+  <!-- Top Nav -->
+  <nav class="bg-navy text-white px-6 py-3 flex items-center justify-between shadow-lg sticky top-0 z-40">
+    <div class="flex items-center gap-3">
+      <span class="text-lg">🏠</span>
+      <div>
+        <div class="font-black text-sm leading-tight">Wahori Melbourne</div>
+        <div class="text-white/40 text-xs leading-tight">Staff Portal</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex gap-1 bg-white/10 rounded-xl p-1">
+      <button onclick="showTab('dashboard')" id="tab-dashboard"
+        class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all bg-white text-navy">
+        Dashboard
+      </button>
+      <button onclick="showTab('leads')" id="tab-leads"
+        class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-white/60 hover:text-white">
+        Leads
+      </button>
+      <button onclick="showTab('contracts')" id="tab-contracts"
+        class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-white/60 hover:text-white">
+        Contracts
+      </button>
+      <button onclick="showTab('settings')" id="tab-settings"
+        class="tab-btn px-4 py-1.5 rounded-lg text-sm font-semibold transition-all text-white/60 hover:text-white">
+        ⚙️
+      </button>
+    </div>
+
+    <button onclick="doLogout()" class="text-white/40 hover:text-white text-xs transition-colors">
+      Sign out
+    </button>
+  </nav>
+
+  <!-- Content -->
+  <main class="flex-1 p-6 max-w-5xl mx-auto w-full">
+
+    <!-- ── DASHBOARD ── -->
+    <div id="tab-content-dashboard">
+      <h2 class="text-xl font-black text-navy mb-6">Dashboard</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6" id="dashboard-stats"></div>
+      <div class="bg-white rounded-2xl border border-gray-100 p-6">
+        <h3 class="font-bold text-navy text-sm mb-4">Recent Contracts</h3>
+        <div id="recent-activity"></div>
+      </div>
+    </div>
+
+    <!-- ── LEADS ── -->
+    <div id="tab-content-leads" class="hidden">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-xl font-black text-navy">Leads</h2>
+          <p class="text-gray-400 text-xs mt-0.5">Potential customers from LINE and enquiries</p>
+        </div>
+        <button onclick="openLeadModal()"
+          class="bg-navy text-white text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-navy-md transition-colors">
+          + Add Lead
+        </button>
+      </div>
+      <div id="leads-list"></div>
+    </div>
+
+    <!-- ── CONTRACTS ── -->
+    <div id="tab-content-contracts" class="hidden">
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <h2 class="text-xl font-black text-navy">Contracts</h2>
+          <p class="text-gray-400 text-xs mt-0.5">Create, send and track rental agreements</p>
+        </div>
+        <button onclick="openContractModal()"
+          class="bg-line text-white text-sm font-bold px-4 py-2.5 rounded-xl hover:bg-line-dk transition-colors">
+          + New Contract
+        </button>
+      </div>
+      <!-- Status filters -->
+      <div class="flex gap-2 mb-5 flex-wrap">
+        <button onclick="filterContracts('all')"     id="filter-all"       class="filter-btn">All</button>
+        <button onclick="filterContracts('draft')"   id="filter-draft"     class="filter-btn">Draft</button>
+        <button onclick="filterContracts('sent')"    id="filter-sent"      class="filter-btn">Sent</button>
+        <button onclick="filterContracts('signed')"  id="filter-signed"    class="filter-btn">Signed</button>
+        <button onclick="filterContracts('active')"  id="filter-active"    class="filter-btn">Active</button>
+        <button onclick="filterContracts('cancelled')" id="filter-cancelled" class="filter-btn">Cancelled</button>
+      </div>
+      <div id="contracts-list"></div>
+    </div>
+
+    <!-- ── SETTINGS ── -->
+    <div id="tab-content-settings" class="hidden">
+      <h2 class="text-xl font-black text-navy mb-6">Settings</h2>
+      <div class="max-w-md space-y-4">
+        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+          <h3 class="font-bold text-navy mb-4 text-sm">Change Password</h3>
+          <div class="space-y-3">
+            <div>
+              <label class="text-xs font-semibold text-gray-500 block mb-1">Current Password</label>
+              <input id="curr-pass" type="password"
+                class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy">
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-500 block mb-1">New Password</label>
+              <input id="new-pass" type="password"
+                class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy">
+            </div>
+            <div>
+              <label class="text-xs font-semibold text-gray-500 block mb-1">Confirm New Password</label>
+              <input id="confirm-pass" type="password"
+                class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-navy">
+            </div>
+            <div id="pass-msg" class="hidden text-xs rounded-xl px-3 py-2"></div>
+            <button onclick="changePassword()"
+              class="w-full bg-navy text-white font-bold py-2.5 rounded-xl hover:bg-navy-md transition-colors text-sm">
+              Update Password
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-gray-100 p-6">
+          <h3 class="font-bold text-navy mb-1 text-sm">Data</h3>
+          <p class="text-gray-400 text-xs mb-4">All leads and contracts are stored in your browser's local storage.</p>
+          <button onclick="exportData()"
+            class="w-full border border-gray-200 text-gray-600 font-bold py-2.5 rounded-xl hover:bg-gray-50 transition-colors text-sm mb-2">
+            Export Data (JSON)
+          </button>
+          <button onclick="clearData()"
+            class="w-full border border-red-100 text-red-400 font-bold py-2.5 rounded-xl hover:bg-red-50 transition-colors text-sm">
+            Clear All Data
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+<!-- ═══ LEAD MODAL ═══ -->
+<div id="lead-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto modal-enter">
+    <div class="p-5 border-b border-gray-100 flex items-center justify-between sticky top-0 bg-white rounded-t-2xl">
+      <h3 class="font-black text-navy" id="lead-modal-title">Add Lead</h3>
+      <button onclick="closeLeadModal()" class="text-gray-300 hover:text-gray-600 text-2xl leading-none">&times;</button>
+    </div>
+    <form id="lead-form" class="p-5 space-y-4" onsubmit="saveLead(event)">
+      <input type="hidden" id="lead-id">
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="field-label">Full Name</label>
+          <input id="lead-name" type="text" required placeholder="Taro Yamada" class="field-input">
+        </div>
+        <div>
+          <label class="field-label">Name (Japanese)</label>
+          <input id="lead-name-jp" type="text" placeholder="山田 太郎" class="field-input">
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="field-label">Email</label>
+          <input id="lead-email" type="email" placeholder="email@example.com" class="field-input">
+        </div>
+        <div>
+          <label class="field-label">Phone</label>
+          <input id="lead-phone" type="tel" placeholder="+61 4xx xxx xxx" class="field-input">
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="field-label">LINE ID</label>
+          <input id="lead-line" type="text" placeholder="LINE ID" class="field-input">
+        </div>
+        <div>
+          <label class="field-label">Arrival Date</label>
+          <input id="lead-arrival" type="date" class="field-input">
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="field-label">Preferred Area</label>
+          <select id="lead-area" class="field-input">
+            <option value="">— Any —</option>
+            <option>CBD</option><option>Carlton</option><option>Fitzroy</option>
+            <option>Richmond</option><option>St Kilda</option><option>Chelsea</option>
+            <option>Brunswick</option><option>Boronia</option><option>Flexible</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-label">Budget (AUD/wk)</label>
+          <input id="lead-budget" type="number" placeholder="350" class="field-input">
+        </div>
+      </div>
+      <div>
+        <label class="field-label">Notes</label>
+        <textarea id="lead-notes" rows="3" placeholder="Preferences, special requirements, conversation notes..."
+          class="field-input resize-none"></textarea>
+      </div>
+      <div class="flex gap-3 pt-1">
+        <button type="button" onclick="closeLeadModal()" class="btn-secondary flex-1">Cancel</button>
+        <button type="submit" class="btn-primary flex-1">Save Lead</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- ═══ CONTRACT MODAL ═══ -->
+<div id="contract-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto modal-enter">
+    <div class="p-5 border-b border-gray-100 flex items-center justify-between sticky top-0 bg-white rounded-t-2xl">
+      <h3 class="font-black text-navy" id="contract-modal-title">New Contract</h3>
+      <button onclick="closeContractModal()" class="text-gray-300 hover:text-gray-600 text-2xl leading-none">&times;</button>
+    </div>
+    <form id="contract-form" class="p-5 space-y-6" onsubmit="saveContract(event)">
+      <input type="hidden" id="contract-id">
+
+      <!-- Tenant -->
+      <div>
+        <p class="section-label">Tenant Details</p>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="field-label">Full Name *</label>
+            <input id="c-name" type="text" required placeholder="Taro Yamada" class="field-input">
+          </div>
+          <div>
+            <label class="field-label">Email *</label>
+            <input id="c-email" type="email" required placeholder="email@example.com" class="field-input">
+          </div>
+          <div>
+            <label class="field-label">Phone</label>
+            <input id="c-phone" type="tel" placeholder="+61 4xx xxx xxx" class="field-input">
+          </div>
+          <div>
+            <label class="field-label">LINE ID</label>
+            <input id="c-line" type="text" placeholder="LINE ID" class="field-input">
+          </div>
+        </div>
+      </div>
+
+      <!-- Property -->
+      <div>
+        <p class="section-label">Property Details</p>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="field-label">Suburb *</label>
+            <select id="c-area" required class="field-input">
+              <option value="">— Select —</option>
+              <option>CBD</option><option>Carlton</option><option>Fitzroy</option>
+              <option>Richmond</option><option>St Kilda</option><option>Chelsea</option>
+              <option>Brunswick</option><option>Boronia</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label">Weekly Rent (AUD) *</label>
+            <input id="c-rent" type="number" required value="350" min="100" class="field-input">
+          </div>
+          <div>
+            <label class="field-label">Move-in Date *</label>
+            <input id="c-movein" type="date" required class="field-input">
+          </div>
+          <div>
+            <label class="field-label">Duration (weeks) *</label>
+            <input id="c-duration" type="number" required value="4" min="4" class="field-input">
+          </div>
+        </div>
+        <div class="mt-3">
+          <label class="field-label">Property Address</label>
+          <input id="c-address" type="text" placeholder="Street address (or leave blank to confirm later)" class="field-input">
+        </div>
+      </div>
+
+      <!-- Optional extras -->
+      <div>
+        <p class="section-label">Add-ons Included</p>
+        <div class="flex gap-4 flex-wrap">
+          <label class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
+            <input id="c-airport" type="checkbox" class="rounded"> Airport pickup
+          </label>
+          <label class="flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
+            <input id="c-setup" type="checkbox" class="rounded"> Life setup support
+          </label>
+        </div>
+      </div>
+
+      <!-- Special terms -->
+      <div>
+        <label class="field-label">Special Conditions / Notes</label>
+        <textarea id="c-notes" rows="3" placeholder="Any special terms or notes for this tenancy..."
+          class="field-input resize-none"></textarea>
+      </div>
+
+      <div class="flex gap-3 pt-1">
+        <button type="button" onclick="closeContractModal()" class="btn-secondary">Cancel</button>
+        <button type="submit" class="btn-secondary flex-1">Save Draft</button>
+        <button type="button" onclick="saveAndPreview()" class="bg-line text-white font-bold py-2.5 px-5 rounded-xl hover:bg-line-dk transition-colors text-sm flex-1">
+          Preview &amp; Send
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- ═══ PREVIEW MODAL ═══ -->
+<div id="preview-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col modal-enter">
+    <div class="p-5 border-b border-gray-100 flex items-center justify-between flex-shrink-0">
+      <h3 class="font-black text-navy">Contract Preview</h3>
+      <button onclick="closePreviewModal()" class="text-gray-300 hover:text-gray-600 text-2xl leading-none">&times;</button>
+    </div>
+    <div id="preview-content"
+      class="overflow-y-auto p-6 text-xs font-mono leading-relaxed text-gray-700 whitespace-pre-wrap bg-gray-50 border-b border-gray-100" style="max-height:40vh">
+    </div>
+    <!-- Signature Pad -->
+    <div class="p-4 border-b border-gray-100 flex-shrink-0">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">✍️ Tenant Signature（入居者署名）</span>
+        <button onclick="clearSignature()" class="text-xs text-red-400 hover:text-red-600 font-medium">Clear</button>
+      </div>
+      <canvas id="signature-canvas"
+        class="w-full rounded-xl border-2 border-dashed border-gray-300 bg-white touch-none"
+        style="height:130px">
+      </canvas>
+      <p class="text-xs text-gray-400 mt-1.5">Draw signature above with mouse or finger／上記にマウスまたは指で署名してください</p>
+    </div>
+    <div class="p-4 flex gap-2 flex-shrink-0 flex-wrap">
+      <button onclick="copyContract()" id="btn-copy" class="btn-secondary flex-1 text-xs">
+        📋 Copy
+      </button>
+      <button onclick="printContract()" class="btn-secondary flex-1 text-xs">
+        🖨️ Print / PDF
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+// ── Shared Tailwind classes ──────────────────────────────────────────────────
+// Applied via insertRule so Tailwind CDN picks them up as component classes
+const sheet = document.createElement('style');
+sheet.textContent = `
+  .field-label  { display:block; font-size:0.7rem; font-weight:600; color:#6b7280; text-transform:uppercase; letter-spacing:.05em; margin-bottom:.25rem; }
+  .field-input  { width:100%; border:1px solid #e5e7eb; border-radius:.75rem; padding:.625rem .75rem; font-size:.875rem; outline:none; transition:box-shadow .15s; }
+  .field-input:focus { box-shadow:0 0 0 2px #0D1B2A; }
+  .section-label { font-size:.65rem; font-weight:800; color:#9ca3af; text-transform:uppercase; letter-spacing:.1em; margin-bottom:.75rem; }
+  .btn-primary  { background:#0D1B2A; color:#fff; font-weight:700; padding:.625rem 1.25rem; border-radius:.75rem; font-size:.875rem; transition:background .15s; border:none; cursor:pointer; }
+  .btn-primary:hover { background:#1B3A5C; }
+  .btn-secondary { background:#fff; color:#4b5563; font-weight:700; padding:.625rem 1.25rem; border-radius:.75rem; font-size:.875rem; border:1px solid #e5e7eb; cursor:pointer; transition:background .15s; }
+  .btn-secondary:hover { background:#f9fafb; }
+  .filter-btn   { padding:.375rem .75rem; border-radius:.5rem; font-size:.75rem; font-weight:700; cursor:pointer; background:#f3f4f6; color:#4b5563; border:none; transition:all .15s; }
+  .filter-btn:hover { background:#e5e7eb; }
+  .filter-btn.active { background:#0D1B2A; color:#fff; }
+`;
+document.head.appendChild(sheet);
+
+
+// ── Auth ─────────────────────────────────────────────────────────────────────
+const PASS_KEY    = 'wm_pass_hash';
+const SESSION_KEY = 'wm_session';
+const DEFAULT     = 'Wahori@2025';
+
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2,'0')).join('');
+}
+
+async function doLogin() {
+  const val = document.getElementById('login-password').value.trim();
+  const err = document.getElementById('login-error');
+  if (!val) return;
+
+  const stored = localStorage.getItem(PASS_KEY) || await sha256(DEFAULT);
+  const input  = await sha256(val);
+
+  if (input === stored) {
+    if (!localStorage.getItem(PASS_KEY)) localStorage.setItem(PASS_KEY, await sha256(DEFAULT));
+    localStorage.setItem(SESSION_KEY, Date.now());
+    showApp();
+  } else {
+    err.textContent = 'Incorrect password.';
+    err.classList.remove('hidden');
+    document.getElementById('login-password').value = '';
+  }
+}
+
+function doLogout() {
+  localStorage.removeItem(SESSION_KEY);
+  document.getElementById('app').classList.add('hidden');
+  document.getElementById('login-screen').classList.remove('hidden');
+  document.getElementById('login-password').value = '';
+}
+
+function checkSession() {
+  const ts = localStorage.getItem(SESSION_KEY);
+  if (ts && Date.now() - parseInt(ts) < 8 * 3600 * 1000) { showApp(); return; }
+  document.getElementById('login-screen').classList.remove('hidden');
+}
+
+function showApp() {
+  document.getElementById('login-screen').classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+  renderDashboard(); renderLeads(); renderContracts();
+}
+
+
+// ── Tabs ─────────────────────────────────────────────────────────────────────
+function showTab(name) {
+  ['dashboard','leads','contracts','settings'].forEach(t => {
+    document.getElementById('tab-content-' + t).classList.toggle('hidden', t !== name);
+    const btn = document.getElementById('tab-' + t);
+    if (t === name) { btn.classList.add('bg-white','text-navy'); btn.classList.remove('text-white/60'); }
+    else            { btn.classList.remove('bg-white','text-navy'); btn.classList.add('text-white/60'); }
+  });
+}
+
+
+// ── Data helpers ─────────────────────────────────────────────────────────────
+const getLeads     = () => JSON.parse(localStorage.getItem('wm_leads')     || '[]');
+const getContracts = () => JSON.parse(localStorage.getItem('wm_contracts') || '[]');
+const saveLeads     = d => localStorage.setItem('wm_leads',     JSON.stringify(d));
+const saveContracts = d => localStorage.setItem('wm_contracts', JSON.stringify(d));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+const fmt = d => new Date(d).toLocaleDateString('en-AU', { day:'numeric', month:'short', year:'numeric' });
+const fmtLong = d => new Date(d).toLocaleDateString('en-AU', { day:'numeric', month:'long', year:'numeric' });
+
+const STATUS_STYLES = {
+  draft:     'bg-gray-100 text-gray-500',
+  sent:      'bg-blue-50 text-blue-500',
+  signed:    'bg-emerald-50 text-emerald-600',
+  active:    'bg-green-50 text-green-600',
+  cancelled: 'bg-red-50 text-red-400',
+};
+const badge = s => `<span class="text-xs font-bold px-2 py-0.5 rounded-full ${STATUS_STYLES[s]||STATUS_STYLES.draft}">${s}</span>`;
+
+
+// ── Dashboard ─────────────────────────────────────────────────────────────────
+function renderDashboard() {
+  const leads = getLeads();
+  const contracts = getContracts();
+  const stats = [
+    { label:'Total Leads',      value: leads.length,                                                           color:'text-navy' },
+    { label:'Contracts Sent',   value: contracts.filter(c=>['sent','signed','active'].includes(c.status)).length, color:'text-blue-500' },
+    { label:'Signed / Active',  value: contracts.filter(c=>['signed','active'].includes(c.status)).length,       color:'text-line' },
+    { label:'Awaiting Response',value: contracts.filter(c=>c.status==='sent').length,                          color:'text-amber-500' },
+  ];
+  document.getElementById('dashboard-stats').innerHTML = stats.map(s => `
+    <div class="bg-white rounded-2xl border border-gray-100 p-5 text-center">
+      <div class="text-3xl font-black ${s.color} mb-1">${s.value}</div>
+      <div class="text-gray-400 text-xs">${s.label}</div>
+    </div>`).join('');
+
+  const recent = [...contracts].sort((a,b)=>b.createdAt-a.createdAt).slice(0,6);
+  document.getElementById('recent-activity').innerHTML = recent.length
+    ? recent.map((c,i) => `
+        <div class="flex items-center justify-between py-3 ${i?'border-t border-gray-50':''}">
+          <div>
+            <div class="font-semibold text-navy text-sm">${c.name}</div>
+            <div class="text-gray-400 text-xs">${c.area} · $${c.rent}/wk · Move-in ${c.moveIn}</div>
+          </div>
+          <div class="flex items-center gap-3">
+            ${badge(c.status)}
+            <button onclick="previewContract('${c.id}')" class="text-xs text-gray-400 hover:text-navy transition-colors">View →</button>
+          </div>
+        </div>`).join('')
+    : '<p class="text-gray-400 text-sm">No contracts yet.</p>';
+}
+
+
+// ── Leads ─────────────────────────────────────────────────────────────────────
+function renderLeads() {
+  const leads = getLeads();
+  const el = document.getElementById('leads-list');
+  if (!leads.length) {
+    el.innerHTML = `<div class="bg-white rounded-2xl border border-gray-100 p-10 text-center text-gray-400 text-sm">
+      No leads yet. Add your first lead to get started.
+    </div>`;
+    return;
+  }
+  el.innerHTML = `<div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">` +
+    leads.map((l,i) => `
+      <div class="flex items-start gap-4 px-5 py-4 ${i?'border-t border-gray-50':''}">
+        <div class="w-9 h-9 rounded-full bg-navy/10 flex items-center justify-center text-navy font-black text-sm flex-shrink-0">
+          ${(l.name||'?')[0].toUpperCase()}
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="font-bold text-navy text-sm">${l.name}${l.nameJp ? ` <span class="text-gray-400 font-normal text-xs">${l.nameJp}</span>` : ''}</div>
+          <div class="flex flex-wrap gap-x-4 gap-y-0.5 mt-0.5">
+            ${l.email   ? `<span class="text-gray-400 text-xs">✉️ ${l.email}</span>` : ''}
+            ${l.phone   ? `<span class="text-gray-400 text-xs">📞 ${l.phone}</span>` : ''}
+            ${l.lineId  ? `<span class="text-gray-400 text-xs">💬 ${l.lineId}</span>` : ''}
+            ${l.area    ? `<span class="text-gray-400 text-xs">📍 ${l.area}</span>` : ''}
+            ${l.arrival ? `<span class="text-gray-400 text-xs">✈️ ${l.arrival}</span>` : ''}
+            ${l.budget  ? `<span class="text-gray-400 text-xs">💰 $${l.budget}/wk</span>` : ''}
+          </div>
+          ${l.notes ? `<div class="text-gray-400 text-xs mt-1 italic">${l.notes}</div>` : ''}
+        </div>
+        <div class="flex gap-2 flex-shrink-0">
+          <button onclick="openContractFromLead('${l.id}')"
+            class="text-xs bg-line/10 text-line font-bold px-3 py-1.5 rounded-lg hover:bg-line/20 transition-colors whitespace-nowrap">
+            + Contract
+          </button>
+          <button onclick="openLeadModal('${l.id}')"
+            class="text-xs bg-gray-100 text-gray-600 font-bold px-3 py-1.5 rounded-lg hover:bg-gray-200 transition-colors">
+            Edit
+          </button>
+          <button onclick="deleteLead('${l.id}')"
+            class="text-xs bg-red-50 text-red-400 font-bold px-2 py-1.5 rounded-lg hover:bg-red-100 transition-colors">
+            ✕
+          </button>
+        </div>
+      </div>`).join('') + `</div>`;
+}
+
+function openLeadModal(id) {
+  const l = id ? getLeads().find(x=>x.id===id) : null;
+  document.getElementById('lead-modal-title').textContent = l ? 'Edit Lead' : 'Add Lead';
+  document.getElementById('lead-id').value      = l?.id      || '';
+  document.getElementById('lead-name').value    = l?.name    || '';
+  document.getElementById('lead-name-jp').value = l?.nameJp  || '';
+  document.getElementById('lead-email').value   = l?.email   || '';
+  document.getElementById('lead-phone').value   = l?.phone   || '';
+  document.getElementById('lead-line').value    = l?.lineId  || '';
+  document.getElementById('lead-arrival').value = l?.arrival || '';
+  document.getElementById('lead-area').value    = l?.area    || '';
+  document.getElementById('lead-budget').value  = l?.budget  || '';
+  document.getElementById('lead-notes').value   = l?.notes   || '';
+  document.getElementById('lead-modal').classList.remove('hidden');
+}
+function closeLeadModal() { document.getElementById('lead-modal').classList.add('hidden'); }
+
+function saveLead(e) {
+  e.preventDefault();
+  const id = document.getElementById('lead-id').value || uid();
+  const leads = getLeads().filter(x=>x.id!==id);
+  leads.unshift({
+    id, createdAt: Date.now(),
+    name:    document.getElementById('lead-name').value,
+    nameJp:  document.getElementById('lead-name-jp').value,
+    email:   document.getElementById('lead-email').value,
+    phone:   document.getElementById('lead-phone').value,
+    lineId:  document.getElementById('lead-line').value,
+    arrival: document.getElementById('lead-arrival').value,
+    area:    document.getElementById('lead-area').value,
+    budget:  document.getElementById('lead-budget').value,
+    notes:   document.getElementById('lead-notes').value,
+  });
+  saveLeads(leads);
+  closeLeadModal();
+  renderLeads(); renderDashboard();
+}
+
+function deleteLead(id) {
+  if (!confirm('Delete this lead?')) return;
+  saveLeads(getLeads().filter(x=>x.id!==id));
+  renderLeads(); renderDashboard();
+}
+
+function openContractFromLead(leadId) {
+  const l = getLeads().find(x=>x.id===leadId);
+  openContractModal();
+  if (l) {
+    document.getElementById('c-name').value   = l.name   || '';
+    document.getElementById('c-email').value  = l.email  || '';
+    document.getElementById('c-phone').value  = l.phone  || '';
+    document.getElementById('c-line').value   = l.lineId || '';
+    document.getElementById('c-area').value   = l.area   || '';
+    document.getElementById('c-movein').value = l.arrival|| '';
+  }
+  showTab('contracts');
+}
+
+
+// ── Contracts ─────────────────────────────────────────────────────────────────
+let activeFilter = 'all';
+
+function filterContracts(f) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.id === 'filter-' + f);
+  });
+  renderContracts();
+}
+
+function renderContracts() {
+  let contracts = getContracts();
+  if (activeFilter !== 'all') contracts = contracts.filter(c=>c.status===activeFilter);
+  contracts.sort((a,b)=>b.createdAt-a.createdAt);
+
+  const el = document.getElementById('contracts-list');
+  if (!contracts.length) {
+    el.innerHTML = `<div class="bg-white rounded-2xl border border-gray-100 p-10 text-center text-gray-400 text-sm">
+      No contracts${activeFilter!=='all'?' with status "'+activeFilter+'"':''} yet.
+    </div>`;
+    return;
+  }
+  el.innerHTML = `<div class="bg-white rounded-2xl border border-gray-100 overflow-hidden">` +
+    contracts.map((c,i) => `
+      <div class="px-5 py-4 ${i?'border-t border-gray-50':''}">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="font-bold text-navy text-sm">${c.name}</span>
+              ${badge(c.status)}
+            </div>
+            <div class="flex flex-wrap gap-x-4 gap-y-0.5 text-gray-400 text-xs">
+              ${c.email   ? `<span>✉️ ${c.email}</span>` : ''}
+              <span>📍 ${c.area}</span>
+              <span>💰 $${c.rent}/wk</span>
+              <span>📅 ${c.moveIn}</span>
+              <span>⏱ ${c.duration} wks</span>
+            </div>
+            ${c.notes ? `<div class="text-gray-400 text-xs mt-1 italic">${c.notes}</div>` : ''}
+          </div>
+          <div class="flex items-center gap-2 flex-shrink-0 flex-wrap justify-end">
+            <button onclick="previewContract('${c.id}')"
+              class="text-xs bg-gray-100 text-gray-600 font-bold px-3 py-1.5 rounded-lg hover:bg-gray-200 transition-colors whitespace-nowrap">
+              Preview
+            </button>
+            <select onchange="setContractStatus('${c.id}',this.value)"
+              class="text-xs border border-gray-200 text-gray-600 font-medium px-2 py-1.5 rounded-lg focus:outline-none cursor-pointer bg-white">
+              ${['draft','sent','signed','active','cancelled'].map(s=>
+                `<option value="${s}"${c.status===s?' selected':''}>${s[0].toUpperCase()+s.slice(1)}</option>`
+              ).join('')}
+            </select>
+            <button onclick="deleteContract('${c.id}')"
+              class="text-xs bg-red-50 text-red-400 font-bold px-2 py-1.5 rounded-lg hover:bg-red-100 transition-colors">
+              ✕
+            </button>
+          </div>
+        </div>
+      </div>`).join('') + `</div>`;
+}
+
+function setContractStatus(id, status) {
+  const all = getContracts();
+  const c = all.find(x=>x.id===id);
+  if (c) { c.status = status; saveContracts(all); renderDashboard(); }
+}
+
+function openContractModal(id) {
+  const c = id ? getContracts().find(x=>x.id===id) : null;
+  document.getElementById('contract-modal-title').textContent = c ? 'Edit Contract' : 'New Contract';
+  document.getElementById('contract-id').value = c?.id       || '';
+  document.getElementById('c-name').value       = c?.name    || '';
+  document.getElementById('c-email').value      = c?.email   || '';
+  document.getElementById('c-phone').value      = c?.phone   || '';
+  document.getElementById('c-line').value       = c?.lineId  || '';
+  document.getElementById('c-area').value       = c?.area    || '';
+  document.getElementById('c-rent').value       = c?.rent    || 350;
+  document.getElementById('c-movein').value     = c?.moveIn  || '';
+  document.getElementById('c-duration').value   = c?.duration|| 4;
+  document.getElementById('c-address').value    = c?.address || '';
+  document.getElementById('c-notes').value      = c?.notes   || '';
+  document.getElementById('c-airport').checked  = c?.airport || false;
+  document.getElementById('c-setup').checked    = c?.setup   || false;
+  document.getElementById('contract-modal').classList.remove('hidden');
+}
+function closeContractModal() { document.getElementById('contract-modal').classList.add('hidden'); }
+
+function readContractForm(id, status) {
+  return {
+    id, status, createdAt: Date.now(),
+    name:     document.getElementById('c-name').value,
+    email:    document.getElementById('c-email').value,
+    phone:    document.getElementById('c-phone').value,
+    lineId:   document.getElementById('c-line').value,
+    area:     document.getElementById('c-area').value,
+    rent:     document.getElementById('c-rent').value,
+    moveIn:   document.getElementById('c-movein').value,
+    duration: document.getElementById('c-duration').value,
+    address:  document.getElementById('c-address').value,
+    notes:    document.getElementById('c-notes').value,
+    airport:  document.getElementById('c-airport').checked,
+    setup:    document.getElementById('c-setup').checked,
+  };
+}
+
+function saveContract(e) {
+  e.preventDefault();
+  const id = document.getElementById('contract-id').value || uid();
+  const all = getContracts().filter(x=>x.id!==id);
+  all.unshift(readContractForm(id, 'draft'));
+  saveContracts(all); closeContractModal();
+  renderContracts(); renderDashboard();
+}
+
+function deleteContract(id) {
+  if (!confirm('Delete this contract?')) return;
+  saveContracts(getContracts().filter(x=>x.id!==id));
+  renderContracts(); renderDashboard();
+}
+
+function saveAndPreview() {
+  const form = document.getElementById('contract-form');
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  const id = document.getElementById('contract-id').value || uid();
+  const all = getContracts().filter(x=>x.id!==id);
+  const c = readContractForm(id, 'draft');
+  all.unshift(c); saveContracts(all);
+  closeContractModal(); renderContracts(); renderDashboard();
+  previewContract(id);
+}
+
+
+// ── Contract template ─────────────────────────────────────────────────────────
+function buildContractText(c) {
+  const moveIn  = new Date(c.moveIn);
+  const moveOut = new Date(moveIn);
+  moveOut.setDate(moveOut.getDate() + parseInt(c.duration) * 7);
+  const deposit = parseInt(c.rent) * 2;
+  const addons  = [c.airport && '• Airport pickup service', c.setup && '• Life setup support (SIM, Myki, bank account)'].filter(Boolean);
+
+  const addonsJP = [c.airport && '• 空港送迎サービス', c.setup && '• 生活サポート（SIM・Myki・銀行口座開設）'].filter(Boolean);
+
+  return `ROOM RENTAL AGREEMENT
+═══════════════════════════════════════════════════════
+  Wahori Melbourne — Safe Housing for WHV Makers
+  wahori-melbourne.com
+═══════════════════════════════════════════════════════
+
+Contract Date:  ${fmtLong(new Date())}
+Reference:      ${c.id.toUpperCase()}
+
+───────────────────────────────────────────────────────
+PARTIES
+───────────────────────────────────────────────────────
+Provider:   Wahori Melbourne
+            wahori-melbourne.com
+
+Tenant:     ${c.name}
+Email:      ${c.email || '—'}
+Phone:      ${c.phone || '—'}
+LINE ID:    ${c.lineId || '—'}
+
+───────────────────────────────────────────────────────
+PROPERTY
+───────────────────────────────────────────────────────
+Area:       ${c.area}, Melbourne VIC, Australia
+Address:    ${c.address || 'To be confirmed prior to move-in'}
+
+───────────────────────────────────────────────────────
+TENANCY DETAILS
+───────────────────────────────────────────────────────
+Move-in:    ${fmtLong(moveIn)}
+Move-out:   ${fmtLong(moveOut)}
+Duration:   ${c.duration} weeks
+Weekly Rent:  AUD $${c.rent}
+Bond / Deposit: AUD $${deposit}  (2 weeks — refundable)
+
+───────────────────────────────────────────────────────
+INCLUSIONS
+───────────────────────────────────────────────────────
+✓  Electricity, gas & water
+✓  High-speed internet (Wi-Fi)
+✓  Japanese-language support
+✓  Post move-in support${addons.length ? '\n\nAdd-ons:\n' + addons.join('\n') : ''}
+
+───────────────────────────────────────────────────────
+TERMS & CONDITIONS
+───────────────────────────────────────────────────────
+1. Minimum stay is 4 weeks (1 month).
+
+2. The bond of AUD $${deposit} is payable prior to move-in
+   and is fully refundable at the end of the tenancy,
+   provided the room is left in good condition.
+
+3. At least 2 weeks' written notice is required before
+   vacating the property.
+
+4. No smoking inside the property or shared areas.
+
+5. Tenants are responsible for keeping their room and
+   all shared spaces clean and tidy at all times.
+
+6. Overnight guests require prior approval.
+
+7. Any damage beyond normal wear and tear will be
+   deducted from the bond.
+${c.notes ? `\n8. Special Conditions:\n   ${c.notes}\n` : ''}
+───────────────────────────────────────────────────────
+AGREEMENT  ※ Please sign below（下記に署名してください）
+───────────────────────────────────────────────────────
+By proceeding with this tenancy, the tenant confirms
+they have read, understood and agree to all terms and
+conditions outlined in this agreement.
+
+
+Tenant Signature: ________________________  Date: ______
+
+
+Provider Signature: _______________________  Date: ______
+                    Wahori Melbourne
+
+═══════════════════════════════════════════════════════
+Questions? Contact us via LINE or wahori-melbourne.com
+═══════════════════════════════════════════════════════
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+【日本語訳】※ 法的効力を持つのは上記の英語版です
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+客室賃貸借契約書
+═══════════════════════════════════════════════════════
+  Wahori Melbourne — ワーホリメーカーのための安心住宅
+  wahori-melbourne.com
+═══════════════════════════════════════════════════════
+
+契約日：    ${fmtLong(new Date())}
+契約番号：  ${c.id.toUpperCase()}
+
+───────────────────────────────────────────────────────
+当事者
+───────────────────────────────────────────────────────
+提供者：    Wahori Melbourne
+            wahori-melbourne.com
+
+入居者：    ${c.name}
+メール：    ${c.email || '—'}
+電話：      ${c.phone || '—'}
+LINE ID：   ${c.lineId || '—'}
+
+───────────────────────────────────────────────────────
+物件情報
+───────────────────────────────────────────────────────
+エリア：    ${c.area}、メルボルン VIC、オーストラリア
+住所：      ${c.address || '入居前に確定してお知らせします'}
+
+───────────────────────────────────────────────────────
+入居詳細
+───────────────────────────────────────────────────────
+入居日：    ${fmtLong(moveIn)}
+退居日：    ${fmtLong(moveOut)}
+期間：      ${c.duration} 週間
+週額家賃：  AUD $${c.rent}
+敷金：      AUD $${deposit}（2週間分・返金可能）
+
+───────────────────────────────────────────────────────
+含まれるもの
+───────────────────────────────────────────────────────
+✓  電気・ガス・水道
+✓  高速インターネット（Wi-Fi）
+✓  日本語サポート
+✓  入居後サポート${addonsJP.length ? '\n\nオプション：\n' + addonsJP.join('\n') : ''}
+
+───────────────────────────────────────────────────────
+利用規約
+───────────────────────────────────────────────────────
+1. 最低入居期間は4週間（1ヶ月）です。
+
+2. 敷金 AUD $${deposit} は入居前にお支払いいただきます。
+   退居時に部屋を良好な状態でお返しいただいた場合、
+   全額返金いたします。
+
+3. 退居の2週間前までに書面にてお知らせください。
+
+4. 物件内および共有スペースでの喫煙は禁止です。
+
+5. 自室および共有スペースを常に清潔に保つ責任があります。
+
+6. 宿泊を伴うゲストの招待は事前承認が必要です。
+
+7. 通常の使用範囲を超えた損傷があった場合、
+   修繕費用を敷金より差し引きます。
+${c.notes ? `\n8. 特別条件：\n   ${c.notes}\n` : ''}
+───────────────────────────────────────────────────────
+参考訳（日本語）
+───────────────────────────────────────────────────────
+この入居を進めることにより、入居者は本契約書に記載された
+すべての利用規約を読み、理解し、同意したものとみなします。
+
+※ 署名は英語版の署名欄（上記）にのみ行ってください。
+   この日本語訳への署名は不要です。
+
+═══════════════════════════════════════════════════════
+ご質問は LINE または wahori-melbourne.com までどうぞ
+═══════════════════════════════════════════════════════`;
+}
+
+
+// ── Preview modal ─────────────────────────────────────────────────────────────
+let previewId = null;
+
+let signaturePad = null;
+
+function initSignaturePad() {
+  const canvas = document.getElementById('signature-canvas');
+  canvas.width  = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  if (signaturePad) signaturePad.clear();
+  else signaturePad = new SignaturePad(canvas, { penColor: '#0D1B2A' });
+}
+
+function clearSignature() {
+  if (signaturePad) signaturePad.clear();
+}
+
+function previewContract(id) {
+  const c = getContracts().find(x=>x.id===id);
+  if (!c) return;
+  previewId = id;
+  document.getElementById('preview-content').textContent = buildContractText(c);
+  document.getElementById('preview-modal').classList.remove('hidden');
+  setTimeout(initSignaturePad, 50);
+}
+function closePreviewModal() {
+  document.getElementById('preview-modal').classList.add('hidden');
+  previewId = null;
+}
+
+function copyContract() {
+  navigator.clipboard.writeText(document.getElementById('preview-content').textContent).then(() => {
+    const btn = document.getElementById('btn-copy');
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = '📋 Copy', 2000);
+  });
+}
+
+function printContract() {
+  const text = document.getElementById('preview-content').textContent;
+  const hasSig = signaturePad && !signaturePad.isEmpty();
+  const sigDataUrl = hasSig ? signaturePad.toDataURL() : null;
+
+  const escaped = text
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;');
+
+  // Replace the tenant signature line with the drawn signature image if present
+  const sigLine = 'Tenant Signature: ________________________  Date: ______';
+  const sigLineEscaped = 'Tenant Signature: ________________________  Date: ______';
+  let body;
+  if (hasSig) {
+    const parts = escaped.split(sigLineEscaped);
+    body = parts[0]
+      + `Tenant Signature: <img src="${sigDataUrl}" style="height:48px;vertical-align:middle;margin:0 8px"> Date: ______`
+      + parts.slice(1).join(sigLineEscaped);
+  } else {
+    body = escaped;
+  }
+
+  const win = window.open('','_blank');
+  win.document.write(`<!DOCTYPE html><html><head><title>Contract — Wahori Melbourne</title>
+    <style>
+      body{font-family:monospace;white-space:pre-wrap;padding:40px;font-size:12px;line-height:1.7;color:#111}
+      @page{margin:2cm}
+      @media print{body{padding:0}}
+      img{display:inline-block}
+    </style></head>
+    <body>${body}</body></html>`);
+  win.document.close();
+  setTimeout(() => win.print(), 300);
+  if (previewId) { setContractStatus(previewId, 'sent'); renderContracts(); }
+}
+
+function emailContract() {
+  const c = getContracts().find(x=>x.id===previewId);
+  if (!c) return;
+  const subject = encodeURIComponent('Room Rental Agreement — Wahori Melbourne');
+  const body    = encodeURIComponent(buildContractText(c));
+  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(c.email||'')}&su=${subject}&body=${body}`, '_blank');
+  setContractStatus(previewId, 'sent'); renderContracts(); renderDashboard();
+  const btn = document.getElementById('btn-email');
+  btn.textContent = '✅ Marked as Sent';
+  setTimeout(() => btn.textContent = '✉️ Send via Email', 2500);
+}
+
+
+// ── Settings ──────────────────────────────────────────────────────────────────
+async function changePassword() {
+  const curr    = document.getElementById('curr-pass').value;
+  const newPass = document.getElementById('new-pass').value;
+  const confirm = document.getElementById('confirm-pass').value;
+  const msg     = document.getElementById('pass-msg');
+
+  const stored = localStorage.getItem(PASS_KEY) || await sha256(DEFAULT);
+  if (await sha256(curr) !== stored) {
+    msg.className = 'text-xs rounded-xl px-3 py-2 bg-red-50 text-red-500';
+    msg.textContent = 'Current password is incorrect.';
+    msg.classList.remove('hidden'); return;
+  }
+  if (newPass.length < 8) {
+    msg.className = 'text-xs rounded-xl px-3 py-2 bg-red-50 text-red-500';
+    msg.textContent = 'New password must be at least 8 characters.';
+    msg.classList.remove('hidden'); return;
+  }
+  if (newPass !== confirm) {
+    msg.className = 'text-xs rounded-xl px-3 py-2 bg-red-50 text-red-500';
+    msg.textContent = 'Passwords do not match.';
+    msg.classList.remove('hidden'); return;
+  }
+  localStorage.setItem(PASS_KEY, await sha256(newPass));
+  ['curr-pass','new-pass','confirm-pass'].forEach(id => document.getElementById(id).value='');
+  msg.className = 'text-xs rounded-xl px-3 py-2 bg-green-50 text-green-600';
+  msg.textContent = 'Password updated successfully.';
+  msg.classList.remove('hidden');
+  setTimeout(() => msg.classList.add('hidden'), 3000);
+}
+
+function exportData() {
+  const data = { leads: getLeads(), contracts: getContracts(), exported: new Date().toISOString() };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `wahori-data-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+}
+
+function clearData() {
+  if (!confirm('This will permanently delete all leads and contracts. Are you sure?')) return;
+  localStorage.removeItem('wm_leads'); localStorage.removeItem('wm_contracts');
+  renderDashboard(); renderLeads(); renderContracts();
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.getElementById('filter-all').classList.add('active');
+checkSession();
+</script>
+
+</body>
+</html>
