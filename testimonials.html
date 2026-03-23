@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials | Wahori Melbourne</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: #0D1B2A;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a.logo { color: #fff; font-weight: 900; font-size: 1.1rem; text-decoration: none; }
+    nav a.back {
+      color: #06C755; font-size: 0.85rem; font-weight: 700;
+      text-decoration: none; display: flex; align-items: center; gap: 6px;
+    }
+    nav a.back:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(145deg, #0D1B2A 0%, #1B3A5C 55%, #0D1B2A 100%);
+      padding: 56px 24px 72px;
+      text-align: center;
+      color: #fff;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(6,199,85,0.15);
+      color: #06C755;
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 4px 14px; border-radius: 999px; margin-bottom: 16px;
+    }
+    .hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 900; line-height: 1.2; margin-bottom: 10px; }
+    .hero h1 span { color: #06C755; }
+    .hero p { color: #93c5fd; font-size: 0.95rem; max-width: 440px; margin: 0 auto; line-height: 1.7; }
+
+    /* ── Grid ── */
+    .grid-wrap {
+      max-width: 1000px;
+      margin: -36px auto 60px;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── Card ── */
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+
+    /* photo strip */
+    .card-photos {
+      position: relative;
+      height: 200px;
+      background: #e2e8f0;
+      overflow: hidden;
+    }
+    .card-photos img.main-photo {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .card-photos .no-photo {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; background: linear-gradient(135deg, #0D1B2A, #1B3A5C);
+    }
+    /* thumbnail strip overlaid at bottom */
+    .thumb-strip {
+      position: absolute;
+      bottom: 8px; left: 8px;
+      display: flex; gap: 5px;
+    }
+    .thumb-strip img {
+      width: 40px; height: 40px;
+      object-fit: cover;
+      border-radius: 7px;
+      border: 2px solid #fff;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .thumb-strip img:hover { transform: scale(1.1); }
+
+    /* card body */
+    .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .stars { color: #f59e0b; font-size: 0.85rem; margin-bottom: 10px; letter-spacing: 1px; }
+    .quote {
+      font-size: 0.88rem; color: #475569; line-height: 1.7;
+      flex: 1; margin-bottom: 16px;
+      display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .person { display: flex; align-items: center; gap: 10px; }
+    .avatar {
+      width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+      background: #e2e8f0; flex-shrink: 0; border: 2px solid #f1f5f9;
+    }
+    .avatar-initial {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #0D1B2A; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 0.9rem; flex-shrink: 0;
+    }
+    .person-name { font-weight: 700; font-size: 0.85rem; color: #0D1B2A; }
+    .person-meta { font-size: 0.75rem; color: #94a3b8; }
+
+    /* ── Lightbox ── */
+    #lightbox {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.88);
+      align-items: center; justify-content: center;
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 90vw; max-height: 88vh; border-radius: 12px; }
+    #lightbox button {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none; color: #fff;
+      font-size: 2rem; cursor: pointer; line-height: 1;
+    }
+
+    /* ── Share CTA ── */
+    .share-cta {
+      text-align: center;
+      padding: 48px 16px 64px;
+    }
+    .share-cta p { color: #64748b; font-size: 0.9rem; margin-bottom: 16px; }
+    .share-cta a {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: #06C755; font-weight: 700; font-size: 0.9rem; text-decoration: none;
+    }
+    .share-cta a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center; padding: 24px;
+      color: #94a3b8; font-size: 0.78rem;
+      border-top: 1px solid #f1f5f9;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Wahori Melbourne</a>
+  <a href="index.html" class="back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to site
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="badge">Real stories</div>
+  <h1>Life in Melbourne —<br><span>in their own words</span></h1>
+  <p>From people who made the leap and figured it out. No filters, no scripts.</p>
+</div>
+
+<!-- ── Testimonial cards ── -->
+<!-- To add a new testimonial: copy one <div class="card"> block and update the content -->
+<!-- Place photos in images/testimonials/ and reference them below -->
+<div class="grid-wrap">
+
+  <!-- CARD 1 — replace with real content -->
+  <div class="card">
+    <div class="card-photos">
+      <!-- If they sent a stay photo, use: <img class="main-photo" src="images/testimonials/saki-stay1.jpg" alt=""> -->
+      <!-- Otherwise use the emoji fallback below -->
+      <div class="no-photo">🌿</div>
+      <!-- Thumbnail strip: add more <img> tags for extra stay photos -->
+      <!-- <div class="thumb-strip">
+        <img src="images/testimonials/saki-stay2.jpg" onclick="openLightbox(this.src)">
+      </div> -->
+    </div>
+    <div class="card-body">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"I almost didn't come to Melbourne because I was so scared of finding somewhere to live alone. The room was exactly what I expected — no nasty surprises. The monthly BBQ in my second week was honestly the best thing. I met people who had already been here a few months and they told me everything."</p>
+      <div class="person">
+        <!-- If they sent a profile photo: <img class="avatar" src="images/testimonials/saki.jpg" alt="Saki"> -->
+        <div class="avatar-initial">S</div>
+        <div>
+          <div class="person-name">Saki, 23</div>
+          <div class="person-meta">Osaka → Melbourne · 2 months</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 — replace with real content -->
+  <div class="card">
+    <div class="card-photos">
+      <div class="no-photo">🏙️</div>
+    </div>
+    <div class="card-body">
+      <div class="stars">★★★★★</div>
+      <p class="quote">"I used the airport pickup and by the evening of my arrival day I was already settled in. I didn't have to figure out the SkyBus with two suitcases in the rain. Honestly can't recommend it enough."</p>
+      <div class="person">
+        <div class="avatar-initial">T</div>
+        <div>
+          <div class="person-name">Taro, 25</div>
+          <div class="person-meta">Tokyo → Melbourne · 3 months</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADD MORE CARDS HERE -->
+
+</div>
+
+<!-- ── Lightbox ── -->
+<div id="lightbox">
+  <button onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<!-- ── Share CTA ── -->
+<div class="share-cta">
+  <p>Were you a previous tenant?</p>
+  <a href="submit-story.html">
+    Share your story →
+  </a>
+</div>
+
+<footer>© 2025 Wahori Melbourne · <a href="index.html" style="color:#06C755;text-decoration:none;">wahori-melbourne.com</a></footer>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+</script>
+
+</body>
+</html>
