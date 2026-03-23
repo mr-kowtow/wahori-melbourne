@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Share Your Story | Wahori Melbourne</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: #0D1B2A;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav a.logo {
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+    nav a.back {
+      color: #06C755;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    nav a.back:hover { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(145deg, #0D1B2A 0%, #1B3A5C 55%, #0D1B2A 100%);
+      padding: 56px 24px 64px;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(6,199,85,0.15);
+      color: #06C755;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .hero h1 span { color: #06C755; }
+    .hero p {
+      color: #93c5fd;
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Form card ── */
+    .form-wrap {
+      max-width: 640px;
+      margin: -32px auto 60px;
+      padding: 0 16px;
+    }
+    .form-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px 36px;
+      box-shadow: 0 8px 48px rgba(0,0,0,0.10);
+    }
+    @media (max-width: 480px) {
+      .form-card { padding: 28px 20px; }
+    }
+
+    /* ── Photo upload ── */
+    .photo-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .photo-ring {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px dashed #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      overflow: hidden;
+      transition: border-color 0.2s;
+      background: #f1f5f9;
+      position: relative;
+    }
+    .photo-ring:hover { border-color: #06C755; }
+    .photo-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .photo-ring .placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: #94a3b8;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 8px;
+    }
+    .photo-ring .placeholder svg { width: 28px; height: 28px; }
+    #photo-input { display: none; }
+    .photo-label {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: #64748b;
+    }
+
+    /* ── Fields ── */
+    .field { margin-bottom: 20px; }
+    label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 6px;
+    }
+    label .required { color: #ef4444; margin-left: 2px; }
+    label .optional {
+      font-weight: 400;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      margin-left: 4px;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: #1e293b;
+      background: #f8fafc;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #06C755;
+      box-shadow: 0 0 0 3px rgba(6,199,85,0.12);
+      background: #fff;
+    }
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 420px) {
+      .field-row { grid-template-columns: 1fr; }
+    }
+
+    /* ── Star rating ── */
+    .stars {
+      display: flex;
+      gap: 6px;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+    }
+    .stars input { display: none; }
+    .stars label {
+      font-size: 2rem;
+      color: #cbd5e1;
+      cursor: pointer;
+      margin: 0;
+      transition: color 0.15s;
+      font-weight: 400;
+    }
+    .stars input:checked ~ label,
+    .stars label:hover,
+    .stars label:hover ~ label {
+      color: #f59e0b;
+    }
+
+    /* ── Consent ── */
+    .consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+    }
+    .consent input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #06C755;
+      flex-shrink: 0;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .consent p {
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* ── Submit button ── */
+    .submit-btn {
+      width: 100%;
+      background: #06C755;
+      color: #fff;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 14px;
+      padding: 16px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 24px rgba(6,199,85,0.30);
+    }
+    .submit-btn:hover {
+      background: #05a648;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(6,199,85,0.38);
+    }
+    .submit-btn:disabled {
+      background: #94a3b8;
+      box-shadow: none;
+      transform: none;
+      cursor: not-allowed;
+    }
+
+    /* ── Success state ── */
+    #success {
+      display: none;
+      text-align: center;
+      padding: 48px 24px;
+    }
+    #success .tick {
+      font-size: 4rem;
+      margin-bottom: 16px;
+    }
+    #success h2 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #0D1B2A;
+      margin-bottom: 10px;
+    }
+    #success p {
+      color: #64748b;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    #success a {
+      display: inline-block;
+      margin-top: 24px;
+      color: #06C755;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1.5px solid #f1f5f9;
+      margin: 28px 0;
+    }
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 16px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #94a3b8;
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Wahori Melbourne</a>
+  <a href="index.html" class="back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to site
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Community</div>
+  <h1>Share your <span>Melbourne story</span></h1>
+  <p>You made it work. Your experience could help the next person feel confident enough to take the leap.</p>
+</div>
+
+<div class="form-wrap">
+  <div class="form-card">
+
+    <!-- Success message (hidden by default) -->
+    <div id="success">
+      <div class="tick">🎉</div>
+      <h2>Thanks for sharing!</h2>
+      <p>We'll review your testimonial and add it to the site shortly.<br>We really appreciate you taking the time.</p>
+      <a href="index.html">← Back to Wahori Melbourne</a>
+    </div>
+
+    <!-- Form -->
+    <form id="testimonial-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+
+      <!-- Photo upload -->
+      <div class="photo-section">
+        <div class="photo-ring" id="photo-ring" onclick="document.getElementById('photo-input').click()">
+          <img id="photo-preview" alt="Your photo preview">
+          <div class="placeholder" id="photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+            Add photo
+          </div>
+        </div>
+        <input type="file" id="photo-input" name="photo" accept="image/*">
+        <span class="photo-label">Tap to upload a photo of yourself</span>
+      </div>
+
+      <hr class="divider">
+
+      <!-- About you -->
+      <p class="section-title">About you</p>
+
+      <div class="field-row">
+        <div class="field">
+          <label>First name <span class="required">*</span></label>
+          <input type="text" name="name" placeholder="Yuki" required>
+        </div>
+        <div class="field">
+          <label>Age <span class="optional">(optional)</span></label>
+          <input type="text" name="age" placeholder="24">
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Where from <span class="optional">(optional)</span></label>
+          <input type="text" name="from" placeholder="Tokyo">
+        </div>
+        <div class="field">
+          <label>How long in Melbourne <span class="optional">(optional)</span></label>
+          <input type="text" name="duration" placeholder="3 months">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Email <span class="optional">(optional — we won't publish this)</span></label>
+        <input type="email" name="email" placeholder="you@example.com">
+      </div>
+
+      <hr class="divider">
+
+      <!-- The story -->
+      <p class="section-title">Your experience</p>
+
+      <div class="field">
+        <label>Star rating <span class="required">*</span></label>
+        <div class="stars">
+          <input type="radio" name="rating" id="s5" value="5" required><label for="s5">★</label>
+          <input type="radio" name="rating" id="s4" value="4"><label for="s4">★</label>
+          <input type="radio" name="rating" id="s3" value="3"><label for="s3">★</label>
+          <input type="radio" name="rating" id="s2" value="2"><label for="s2">★</label>
+          <input type="radio" name="rating" id="s1" value="1"><label for="s1">★</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Your story <span class="required">*</span></label>
+        <textarea name="message" placeholder="What were you worried about before moving in? What surprised you? What would you tell someone thinking about coming to Melbourne?" required></textarea>
+      </div>
+
+      <hr class="divider">
+
+      <!-- Consent -->
+      <div class="consent">
+        <input type="checkbox" id="consent" name="consent" required>
+        <p>I agree to my name, photo, and testimonial being published on the Wahori Melbourne website. I confirm this is my own genuine experience.</p>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submit-btn">Send my story</button>
+
+    </form>
+  </div>
+</div>
+
+<footer>© 2025 Wahori Melbourne · <a href="index.html" style="color:#06C755;text-decoration:none;">wahori-melbourne.com</a></footer>
+
+<script>
+  // Photo preview
+  document.getElementById('photo-input').addEventListener('change', function () {
+    const file = this.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = e => {
+      const preview = document.getElementById('photo-preview');
+      preview.src = e.target.result;
+      preview.style.display = 'block';
+      document.getElementById('photo-placeholder').style.display = 'none';
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Form submit — show success state
+  document.getElementById('testimonial-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const data = new FormData(this);
+      const res = await fetch(this.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send my story';
+        alert('Something went wrong. Please try again.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Send my story';
+      alert('Something went wrong. Please check your connection.');
+    }
+  });
+</script>
+
+</body>
+</html>
