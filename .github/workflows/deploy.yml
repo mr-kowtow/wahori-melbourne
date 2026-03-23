@@ -40,6 +40,8 @@ jobs:
         run: |
           mkdir -p dist/admin
           cp index.html dist/
+          cp testimonials.html dist/
+          cp submit-story.html dist/
           cp style.css dist/
           cp CNAME dist/
           cp admin/index.html dist/admin/
