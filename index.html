@@ -181,14 +181,13 @@
         <span data-jp="無料相談" data-en="Free Consult" data-ko="무료 상담" data-zh-tw="免費諮詢">無料相談</span>
       </a>
 
-      <!-- Language toggle button -->
-      <button id="lang-toggle-btn" onclick="toggleLang()" aria-label="Switch language"
-        class="flex items-center rounded-xl border transition-all duration-300 border-white/30 hover:bg-white/10 p-1 gap-0.5">
-        <span id="flag-jp" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200">🇯🇵<span class="hidden sm:inline ml-0.5">JP</span></span>
-        <span id="flag-en" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200">🇦🇺<span class="hidden sm:inline ml-0.5">EN</span></span>
-        <span id="flag-ko" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200">🇰🇷<span class="hidden sm:inline ml-0.5">KO</span></span>
-        <span id="flag-zh" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200">🇹🇼<span class="hidden sm:inline ml-0.5">ZH</span></span>
-      </button>
+      <!-- Language selector -->
+      <div id="lang-toggle-btn" class="flex items-center rounded-xl border transition-all duration-300 border-white/30 p-1 gap-0.5">
+        <button onclick="setLang('jp')" id="flag-jp" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200 cursor-pointer">🇯🇵<span class="hidden sm:inline ml-0.5">JP</span></button>
+        <button onclick="setLang('en')" id="flag-en" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200 cursor-pointer">🇦🇺<span class="hidden sm:inline ml-0.5">EN</span></button>
+        <button onclick="setLang('ko')" id="flag-ko" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200 cursor-pointer">🇰🇷<span class="hidden sm:inline ml-0.5">KO</span></button>
+        <button onclick="setLang('zh-tw')" id="flag-zh" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200 cursor-pointer">🇹🇼<span class="hidden sm:inline ml-0.5">ZH</span></button>
+      </div>
     </div>
   </div>
 
@@ -915,29 +914,21 @@
       navTitle.classList.replace('text-white', 'text-navy');
       navSub.classList.replace('text-white/60', 'text-gray-400');
       langBtn.classList.replace('border-white/30', 'border-gray-200');
-      langBtn.classList.replace('hover:bg-white/10', 'hover:bg-gray-50');
     } else {
       nav.classList.remove('bg-white/95', 'backdrop-blur', 'border-b', 'border-gray-100', 'shadow-sm');
       nav.classList.add('bg-transparent');
       navTitle.classList.replace('text-navy', 'text-white');
       navSub.classList.replace('text-gray-400', 'text-white/60');
       langBtn.classList.replace('border-gray-200', 'border-white/30');
-      langBtn.classList.replace('hover:bg-gray-50', 'hover:bg-white/10');
     }
     updateLangBtnColors();
   }
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
-  // Language toggle — cycles jp → en → ko → zh-tw → jp
-  function toggleLang() {
-    const idx = langOrder.indexOf(currentLang);
-    setLang(langOrder[(idx + 1) % langOrder.length]);
-  }
-
   function updateLangBtnColors() {
-    const activeClass = 'flex items-center px-2 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200';
-    const inactiveClass = 'flex items-center px-2 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ' + (navScrolled ? 'text-gray-500' : 'text-white/60');
+    const activeClass = 'flex items-center px-2 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200 cursor-pointer';
+    const inactiveClass = 'flex items-center px-2 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ' + (navScrolled ? 'text-gray-500 hover:text-gray-800' : 'text-white/60 hover:text-white');
     langOrder.forEach(lang => {
       const el = document.getElementById(flagIds[lang]);
       if (el) {
