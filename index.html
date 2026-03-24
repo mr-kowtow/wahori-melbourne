@@ -995,9 +995,18 @@
     });
   });
 
-  // Restore saved language preference
+  // Restore saved language — fall back to browser locale detection
   const savedLang = localStorage.getItem('lang');
-  if (savedLang && savedLang !== 'jp') setLang(savedLang);
+  if (savedLang) {
+    if (savedLang !== 'jp') setLang(savedLang);
+  } else {
+    const bl = (navigator.language || '').toLowerCase();
+    let detected = 'jp';
+    if (bl.startsWith('ko')) detected = 'ko';
+    else if (bl === 'zh-tw' || bl === 'zh-hant' || bl === 'zh-hk' || bl === 'zh-mo') detected = 'zh-tw';
+    else if (!bl.startsWith('ja')) detected = 'en';
+    if (detected !== 'jp') setLang(detected);
+  }
 </script>
 
 </body>
