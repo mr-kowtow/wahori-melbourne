@@ -901,6 +901,12 @@
   let navScrolled = false;
   let currentLang = 'jp';
 
+  // Language config — declared here so updateLangBtnColors() can use them on first updateNav() call
+  const langOrder = ['jp', 'en', 'ko', 'zh-tw'];
+  const langAttr = { jp: 'data-jp', en: 'data-en', ko: 'data-ko', 'zh-tw': 'data-zh-tw' };
+  const langHtml = { jp: 'ja', en: 'en', ko: 'ko', 'zh-tw': 'zh-TW' };
+  const flagIds = { jp: 'flag-jp', en: 'flag-en', ko: 'flag-ko', 'zh-tw': 'flag-zh' };
+
   function updateNav() {
     navScrolled = window.scrollY > 60;
     if (navScrolled) {
@@ -924,11 +930,6 @@
   updateNav();
 
   // Language toggle — cycles jp → en → ko → zh-tw → jp
-  const langOrder = ['jp', 'en', 'ko', 'zh-tw'];
-  const langAttr = { jp: 'data-jp', en: 'data-en', ko: 'data-ko', 'zh-tw': 'data-zh-tw' };
-  const langHtml = { jp: 'ja', en: 'en', ko: 'ko', 'zh-tw': 'zh-TW' };
-  const flagIds = { jp: 'flag-jp', en: 'flag-en', ko: 'flag-ko', 'zh-tw': 'flag-zh' };
-
   function toggleLang() {
     const idx = langOrder.indexOf(currentLang);
     setLang(langOrder[(idx + 1) % langOrder.length]);
