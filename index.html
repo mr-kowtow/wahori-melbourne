@@ -166,7 +166,7 @@
 <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
   <div class="max-w-5xl mx-auto px-4 py-2 sm:py-3 flex items-center justify-between">
     <div class="flex items-center gap-3">
-      <span class="text-2xl leading-none">🏠</span>
+      <img src="images/logo.png" alt="Wahori Melbourne" style="height:42px;width:auto;">
       <div>
         <div id="nav-title" class="font-black text-sm leading-tight tracking-tight text-white transition-colors duration-300">Wahori Melbourne</div>
         <div id="nav-sub" class="text-xs leading-tight text-white/60 transition-colors duration-300 hidden sm:block" data-jp="日本人ワーホリ向け安心住宅" data-en="Safe Housing for WHV Makers" data-ko="워홀러를 위한 안심 주거" data-zh-tw="打工度假者的安心住宿">日本人ワーホリ向け安心住宅</div>
@@ -1029,14 +1029,14 @@
     if (navScrolled) {
       nav.classList.add('bg-white/95', 'backdrop-blur', 'border-b', 'border-gray-100', 'shadow-sm');
       nav.classList.remove('bg-transparent');
-      navTitle.classList.replace('text-white', 'text-navy');
-      navSub.classList.replace('text-white/60', 'text-gray-400');
+      if (navTitle) navTitle.classList.replace('text-white', 'text-navy');
+      if (navSub) navSub.classList.replace('text-white/60', 'text-gray-400');
       langBtn.classList.replace('border-white/30', 'border-gray-200');
     } else {
       nav.classList.remove('bg-white/95', 'backdrop-blur', 'border-b', 'border-gray-100', 'shadow-sm');
       nav.classList.add('bg-transparent');
-      navTitle.classList.replace('text-navy', 'text-white');
-      navSub.classList.replace('text-gray-400', 'text-white/60');
+      if (navTitle) navTitle.classList.replace('text-navy', 'text-white');
+      if (navSub) navSub.classList.replace('text-gray-400', 'text-white/60');
       langBtn.classList.replace('border-gray-200', 'border-white/30');
     }
     updateLangBtnColors();
