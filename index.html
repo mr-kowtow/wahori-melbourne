@@ -16,10 +16,10 @@
   <title>Wahori Melbourne | ワーホリメルボルン安心住宅</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    body { font-family: 'Noto Sans JP', sans-serif; }
+    body { font-family: 'Noto Sans KR', 'Noto Sans JP', sans-serif; }
 
     .hero-bg {
       background: linear-gradient(145deg, #0D1B2A 0%, #1B3A5C 55%, #0D1B2A 100%);
@@ -126,11 +126,9 @@
     }
 
     /* Language toggle transition */
-    [data-jp], [data-en] {
+    [data-jp], [data-en], [data-ko], [data-zh-tw] {
       transition: opacity 0.2s ease;
     }
-    .lang-en .hide-en { display: none; }
-    .lang-jp .hide-jp { display: none; }
   </style>
   <script type="application/ld+json">
 {
@@ -161,7 +159,7 @@
   <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
     <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
   </svg>
-  LINE相談
+  <span data-jp="LINE相談" data-en="LINE Chat" data-ko="LINE 상담" data-zh-tw="LINE諮詢">LINE相談</span>
 </a>
 
 <!-- ===== STICKY NAV ===== -->
@@ -171,7 +169,7 @@
       <span class="text-2xl leading-none">🏠</span>
       <div>
         <div id="nav-title" class="font-black text-sm leading-tight tracking-tight text-white transition-colors duration-300">Wahori Melbourne</div>
-        <div id="nav-sub" class="text-xs leading-tight text-white/60 transition-colors duration-300 hidden sm:block" data-jp="日本人ワーホリ向け安心住宅" data-en="Safe Housing for WHV Makers">日本人ワーホリ向け安心住宅</div>
+        <div id="nav-sub" class="text-xs leading-tight text-white/60 transition-colors duration-300 hidden sm:block" data-jp="日本人ワーホリ向け安心住宅" data-en="Safe Housing for WHV Makers" data-ko="워홀러를 위한 안심 주거" data-zh-tw="打工度假者的安心住宿">日本人ワーホリ向け安心住宅</div>
       </div>
     </div>
     <div class="flex items-center gap-3">
@@ -180,15 +178,16 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="white" aria-hidden="true">
           <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
         </svg>
-        <span data-jp="無料相談" data-en="Free Consult">無料相談</span>
+        <span data-jp="無料相談" data-en="Free Consult" data-ko="무료 상담" data-zh-tw="免費諮詢">無料相談</span>
       </a>
 
-      <!-- Language toggle button -->
-      <button id="lang-toggle-btn" onclick="toggleLang()" aria-label="Switch language"
-        class="flex items-center rounded-xl border transition-all duration-300 border-white/30 hover:bg-white/10 p-1 gap-0.5">
-        <span id="flag-jp" class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200">🇯🇵 JP</span>
-        <span id="flag-en" class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200">🇦🇺 EN</span>
-      </button>
+      <!-- Language selector -->
+      <div id="lang-toggle-btn" class="flex items-center rounded-xl border transition-all duration-300 border-white/30 p-1 gap-0.5">
+        <button onclick="setLang('jp')" id="flag-jp" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200 cursor-pointer">🇯🇵<span class="hidden sm:inline ml-0.5">JP</span></button>
+        <button onclick="setLang('en')" id="flag-en" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200 cursor-pointer">🇦🇺<span class="hidden sm:inline ml-0.5">EN</span></button>
+        <button onclick="setLang('ko')" id="flag-ko" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200 cursor-pointer">🇰🇷<span class="hidden sm:inline ml-0.5">KO</span></button>
+        <button onclick="setLang('zh-tw')" id="flag-zh" class="flex items-center px-2 py-1.5 rounded-lg text-xs font-bold text-white/60 transition-all duration-200 cursor-pointer">🇹🇼<span class="hidden sm:inline ml-0.5">ZH</span></button>
+      </div>
     </div>
   </div>
 
@@ -216,23 +215,23 @@
     <!-- Location badge -->
     <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-sm mb-4 sm:mb-6 backdrop-blur-sm">
       <span class="w-2 h-2 bg-line rounded-full flex-shrink-0" style="animation: pulse 1.5s infinite;"></span>
-      <span data-jp="📍 Melbourne, Victoria — 専門サービス" data-en="📍 Melbourne, Victoria — Specialist Service">📍 Melbourne, Victoria — 専門サービス</span>
+      <span data-jp="📍 Melbourne, Victoria — 専門サービス" data-en="📍 Melbourne, Victoria — Specialist Service" data-ko="📍 Melbourne, Victoria — 전문 서비스" data-zh-tw="📍 Melbourne, Victoria — 專業服務">📍 Melbourne, Victoria — 専門サービス</span>
     </div>
 
     <!-- Headline -->
     <h1 class="text-3xl sm:text-5xl md:text-6xl font-black leading-tight mb-3 sm:mb-5">
-      <span data-jp="メルボルンで" data-en="Find Your Safe">メルボルンで</span><br>
-      <span class="text-line" data-jp="安心・安全な" data-en="Verified Home">安心・安全な</span><br>
-      <span data-jp="住まいを見つけよう" data-en="in Melbourne">住まいを見つけよう</span>
+      <span data-jp="メルボルンで" data-en="Find Your Safe" data-ko="멜버른에서" data-zh-tw="在墨爾本找到">メルボルンで</span><br>
+      <span class="text-line" data-jp="安心・安全な" data-en="Verified Home" data-ko="안심하고 살 수 있는" data-zh-tw="安心安全的">安心・安全な</span><br>
+      <span data-jp="住まいを見つけよう" data-en="in Melbourne" data-ko="집을 찾으세요" data-zh-tw="住所">住まいを見つけよう</span>
     </h1>
 
     <!-- Sub headline JP / EN -->
-    <p class="text-base sm:text-xl text-blue-100 leading-relaxed mb-2" data-jp="ワーキングホリデービザで渡航する日本人のための<br class='hidden sm:block'>日本語サポート付き・審査済み住宅サービス" data-en="Verified, safe &amp; affordable rooms for Japanese working holiday makers — with full Japanese support.">
-      ワーキングホリデービザで渡航する日本人のための<br class="hidden sm:block">
-      日本語サポート付き・審査済み住宅サービス
+    <p class="text-base sm:text-xl text-blue-100 leading-relaxed mb-2" data-jp="ワーキングホリデービザで渡航する方のための<br class='hidden sm:block'>日本語・英語サポート付き・審査済み住宅サービス" data-en="Verified, safe &amp; affordable rooms for working holiday makers — with full English &amp; Japanese support." data-ko="워킹홀리데이 비자로 멜버른에 오는 분들을 위한<br class='hidden sm:block'>검증된 주거 서비스 (지원 언어: 영어·일본어)" data-zh-tw="為打工度假簽證者提供的<br class='hidden sm:block'>審查住宿服務（支援語言：英語·日語）">
+      ワーキングホリデービザで渡航する方のための<br class="hidden sm:block">
+      日本語・英語サポート付き・審査済み住宅サービス
     </p>
-    <p class="text-sm text-blue-300 mb-5 sm:mb-8" data-jp="Safe &amp; Verified Housing in Melbourne for Japanese Working Holiday Makers" data-en="CBD · Carlton · Fitzroy · Richmond · St Kilda · Chelsea · Brunswick · Boronia">
-      Safe &amp; Verified Housing in Melbourne for Japanese Working Holiday Makers
+    <p class="text-sm text-blue-300 mb-5 sm:mb-8" data-jp="Safe &amp; Verified Housing in Melbourne for Working Holiday Makers" data-en="CBD · Carlton · Fitzroy · Richmond · St Kilda · Chelsea · Brunswick · Boronia" data-ko="CBD · Carlton · Fitzroy · Richmond · St Kilda · Chelsea · Brunswick · Boronia" data-zh-tw="CBD · Carlton · Fitzroy · Richmond · St Kilda · Chelsea · Brunswick · Boronia">
+      Safe &amp; Verified Housing in Melbourne for Working Holiday Makers
     </p>
 
     <!-- CTA buttons -->
@@ -241,19 +240,19 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true">
           <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
         </svg>
-        <span data-jp="無料でLINE相談する" data-en="Free LINE Consultation">無料でLINE相談する</span>
+        <span data-jp="無料でLINE相談する" data-en="Free LINE Consultation" data-ko="무료 LINE 상담" data-zh-tw="免費LINE諮詢">無料でLINE相談する</span>
       </a>
       <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 border border-white/25 hover:border-white/50 text-white font-semibold py-4 px-8 rounded-2xl text-base transition-all">
-        <span data-jp="サービス詳細を見る ↓" data-en="See How It Works ↓">サービス詳細を見る ↓</span>
+        <span data-jp="サービス詳細を見る ↓" data-en="See How It Works ↓" data-ko="서비스 상세 보기 ↓" data-zh-tw="查看服務詳情 ↓">サービス詳細を見る ↓</span>
       </a>
     </div>
 
     <!-- Trust pills -->
     <div class="mt-6 sm:mt-10 flex flex-wrap justify-center gap-3 sm:gap-8 text-blue-200 text-sm">
-      <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="全物件審査済み" data-en="All properties verified">全物件審査済み</span></span>
-      <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="日本語サポート" data-en="Japanese support">日本語サポート</span></span>
-      <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="住宅街エリア厳選" data-en="Residential areas only">住宅街エリア厳選</span></span>
-      <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="Melbourne限定" data-en="Melbourne only">Melbourne限定</span></span>
+      <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="全物件審査済み" data-en="All properties verified" data-ko="모든 물건 검증 완료" data-zh-tw="所有物件已審核">全物件審査済み</span></span>
+      <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="日本語・英語サポート" data-en="English &amp; Japanese support" data-ko="영어·일본어 지원" data-zh-tw="英語·日語支援">日本語・英語サポート</span></span>
+      <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="住宅街エリア厳選" data-en="Residential areas only" data-ko="주거 지역만 엄선" data-zh-tw="嚴選住宅區">住宅街エリア厳選</span></span>
+      <span class="flex items-center gap-2"><span class="text-line font-bold">✓</span> <span data-jp="Melbourne限定" data-en="Melbourne only" data-ko="멜버른 한정" data-zh-tw="僅限墨爾本">Melbourne限定</span></span>
     </div>
 
     <!-- Melbourne suburb tags -->
@@ -275,11 +274,11 @@
 <section class="py-20 px-4 bg-slate-50">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <span class="section-badge bg-red-50 text-red-500" data-jp="こんな不安、ありませんか？" data-en="Sound familiar?">こんな不安、ありませんか？</span>
-      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="海外での部屋探しは<br>リスクがいっぱい" data-en="Finding housing abroad<br>is full of risks">
+      <span class="section-badge bg-red-50 text-red-500" data-jp="こんな不安、ありませんか？" data-en="Sound familiar?" data-ko="이런 걱정 있으신가요?" data-zh-tw="你是否有這些顧慮？">こんな不安、ありませんか？</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="海外での部屋探しは<br>リスクがいっぱい" data-en="Finding housing abroad<br>is full of risks" data-ko="해외에서 방 구하기는<br>위험이 가득합니다" data-zh-tw="在海外找房<br>充滿了風險">
         海外での部屋探しは<br>リスクがいっぱい
       </h2>
-      <p class="text-gray-500 text-base max-w-xl mx-auto" data-jp="多くの日本人ワーホリが渡航前・渡航後に直面する問題です。あなただけではありません。" data-en="These are problems many Japanese working holiday makers face before and after arriving. You're not alone.">
+      <p class="text-gray-500 text-base max-w-xl mx-auto" data-jp="多くの日本人ワーホリが渡航前・渡航後に直面する問題です。あなただけではありません。" data-en="These are problems many working holiday makers face before and after arriving. You're not alone." data-ko="많은 워킹홀리데이 참가자들이 출발 전후에 겪는 문제들입니다. 혼자가 아닙니다." data-zh-tw="這是許多打工度假者在出發前後都會面臨的問題。你並不孤單。">
         多くの日本人ワーホリが渡航前・渡航後に直面する問題です。あなただけではありません。
       </p>
     </div>
@@ -287,32 +286,32 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <div class="bg-white rounded-2xl p-6 border border-red-100 card-hover reveal">
         <div class="text-4xl mb-3">⚠️</div>
-        <h3 class="font-bold text-lg text-navy mb-2" data-jp="詐欺物件のリスク" data-en="Risk of scam listings">詐欺物件のリスク</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="偽物の物件広告や前払い詐欺など、海外では日本では考えられないリスクが潜んでいます。実際に多くの方が被害に遭っています。" data-en="Fake listings and upfront-payment scams are common overseas. Many people have lost money before even arriving in Melbourne.">
+        <h3 class="font-bold text-lg text-navy mb-2" data-jp="詐欺物件のリスク" data-en="Risk of scam listings" data-ko="사기 매물 위험" data-zh-tw="詐騙房源的風險">詐欺物件のリスク</h3>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="偽物の物件広告や前払い詐欺など、海外では日本では考えられないリスクが潜んでいます。実際に多くの方が被害に遭っています。" data-en="Fake listings and upfront-payment scams are common overseas. Many people have lost money before even arriving in Melbourne." data-ko="가짜 매물 광고나 선불 사기 등 해외에서는 상상도 못한 위험이 있습니다. 실제로 많은 분들이 피해를 입었습니다." data-zh-tw="假房源廣告和預付款詐騙在海外屢見不鮮。許多人在抵達墨爾本前就已蒙受損失。">
           偽物の物件広告や前払い詐欺など、海外では日本では考えられないリスクが潜んでいます。実際に多くの方が被害に遭っています。
         </p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 border border-red-100 card-hover reveal">
         <div class="text-4xl mb-3">🏚️</div>
-        <h3 class="font-bold text-lg text-navy mb-2" data-jp="不衛生・危険な環境" data-en="Unsafe or unhygienic conditions">不衛生・危険な環境</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="写真と実物が全く異なる、害虫が多い、セキュリティが不安など劣悪な環境の物件も多数存在します。" data-en="Photos look nothing like reality. Pest infestations, poor security, and sub-standard conditions are more common than you'd think.">
+        <h3 class="font-bold text-lg text-navy mb-2" data-jp="不衛生・危険な環境" data-en="Unsafe or unhygienic conditions" data-ko="비위생적·위험한 환경" data-zh-tw="不衛生·危險的環境">不衛生・危険な環境</h3>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="写真と実物が全く異なる、害虫が多い、セキュリティが不安など劣悪な環境の物件も多数存在します。" data-en="Photos look nothing like reality. Pest infestations, poor security, and sub-standard conditions are more common than you'd think." data-ko="사진과 실물이 전혀 다른 경우, 해충 문제, 보안 불안 등 열악한 환경의 매물도 많습니다." data-zh-tw="照片與實際情況完全不符、蟲害嚴重、保全設施不足等惡劣環境的房源屢見不鮮。">
           写真と実物が全く異なる、害虫が多い、セキュリティが不安など劣悪な環境の物件も多数存在します。
         </p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 border border-red-100 card-hover reveal">
         <div class="text-4xl mb-3">🗣️</div>
-        <h3 class="font-bold text-lg text-navy mb-2" data-jp="英語でのやり取りが大変" data-en="Language barrier with landlords">英語でのやり取りが大変</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="契約書の内容が理解できない、トラブルが起きても交渉できないなど言語の壁が大きな問題になります。" data-en="Not understanding lease terms or being unable to negotiate when problems arise — the language barrier creates serious risks.">
+        <h3 class="font-bold text-lg text-navy mb-2" data-jp="英語でのやり取りが大変" data-en="Language barrier with landlords" data-ko="영어 소통의 어려움" data-zh-tw="語言溝通困難">英語でのやり取りが大変</h3>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="契約書の内容が理解できない、トラブルが起きても交渉できないなど言語の壁が大きな問題になります。" data-en="Not understanding lease terms or being unable to negotiate when problems arise — the language barrier creates serious risks." data-ko="계약서 내용을 이해하지 못하거나 문제가 생겨도 협상하지 못하는 등 언어 장벽이 큰 문제가 됩니다." data-zh-tw="無法理解合約內容，或發生糾紛時無法協商——語言障礙會帶來嚴重風險。">
           契約書の内容が理解できない、トラブルが起きても交渉できないなど言語の壁が大きな問題になります。
         </p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 border border-red-100 card-hover reveal">
         <div class="text-4xl mb-3">😰</div>
-        <h3 class="font-bold text-lg text-navy mb-2" data-jp="入居後のトラブル" data-en="Problems after moving in">入居後のトラブル</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="設備の故障、オーナーとのトラブル、急な退去要請など、入居後も問題は続きます。一人で抱え込まないでください。" data-en="Broken appliances, disputes with landlords, sudden eviction notices — problems don't stop after moving in. Don't face them alone.">
+        <h3 class="font-bold text-lg text-navy mb-2" data-jp="入居後のトラブル" data-en="Problems after moving in" data-ko="입주 후 문제 발생" data-zh-tw="入住後的問題">入居後のトラブル</h3>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="設備の故障、オーナーとのトラブル、急な退去要請など、入居後も問題は続きます。一人で抱え込まないでください。" data-en="Broken appliances, disputes with landlords, sudden eviction notices — problems don't stop after moving in. Don't face them alone." data-ko="가전제품 고장, 집주인과의 분쟁, 갑작스러운 퇴거 요청 등 입주 후에도 문제는 계속됩니다. 혼자 감당하지 마세요." data-zh-tw="設備故障、房東糾紛、突然的退房要求——問題在入住後仍會持續。請不要獨自面對。">
           設備の故障、オーナーとのトラブル、急な退去要請など、入居後も問題は続きます。一人で抱え込まないでください。
         </p>
       </div>
@@ -328,37 +327,37 @@
 
   <div class="max-w-4xl mx-auto relative z-10">
     <div class="text-center mb-12 reveal">
-      <span class="section-badge bg-line/20 text-line" data-jp="私たちの解決策" data-en="Our Solution">私たちの解決策</span>
-      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-4" data-jp="安心・安全な住まいを<br><span class='text-line'>日本語で</span>サポート" data-en="Safe verified housing —<br><span class='text-line'>fully supported</span> in Japanese">
-        安心・安全な住まいを<br><span class="text-line">日本語で</span>サポート
+      <span class="section-badge bg-line/20 text-line" data-jp="私たちの解決策" data-en="Our Solution" data-ko="우리의 해결책" data-zh-tw="我們的解決方案">私たちの解決策</span>
+      <h2 class="text-3xl md:text-4xl font-black mt-4 mb-4" data-jp="安心・安全な住まいを<br><span class='text-line'>日本語・英語で</span>サポート" data-en="Safe verified housing —<br><span class='text-line'>fully supported</span> in English &amp; Japanese" data-ko="안전하게 검증된 주거 —<br><span class='text-line'>영어·일본어로</span> 완전 지원" data-zh-tw="安全審核的住宿 —<br><span class='text-line'>英語·日語</span>全程支援">
+        安心・安全な住まいを<br><span class="text-line">日本語・英語で</span>サポート
       </h2>
-      <p class="text-blue-200 text-base max-w-2xl mx-auto leading-relaxed" data-jp="私たちはメルボルンで実際に物件を確認し、安全性・清潔さ・利便性を審査した物件のみをご紹介します。全てのやり取りは日本語で対応します。" data-en="We personally inspect every property in Melbourne for safety, cleanliness and convenience. Every step — from search to move-in — is handled entirely in Japanese.">
-        私たちはメルボルンで実際に物件を確認し、安全性・清潔さ・利便性を審査した物件のみをご紹介します。全てのやり取りは日本語で対応します。
+      <p class="text-blue-200 text-base max-w-2xl mx-auto leading-relaxed" data-jp="私たちはメルボルンで実際に物件を確認し、安全性・清潔さ・利便性を審査した物件のみをご紹介します。全てのやり取りは日本語・英語で対応します。" data-en="We personally inspect every property in Melbourne for safety, cleanliness and convenience. Every step — from search to move-in — is handled in English and Japanese." data-ko="저희는 멜버른에서 직접 물건을 확인하고, 안전성·청결·편의성을 심사한 물건만 소개합니다. 모든 소통은 영어·일본어로 진행됩니다." data-zh-tw="我們親自在墨爾本確認每一個物件，只介紹通過安全、清潔和便利性審核的物件。所有溝通以英語及日語進行。">
+        私たちはメルボルンで実際に物件を確認し、安全性・清潔さ・利便性を審査した物件のみをご紹介します。全てのやり取りは日本語・英語で対応します。
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
       <div class="bg-white/10 border border-white/10 rounded-2xl p-6 reveal">
         <div class="text-4xl mb-3">🔍</div>
-        <h3 class="font-bold text-lg mb-2" data-jp="全物件を現地確認" data-en="Every property inspected">全物件を現地確認</h3>
-        <p class="text-blue-200 text-sm leading-relaxed" data-jp="紹介する物件は全て現地スタッフが直接訪問し、安全性・清潔さを確認しています。" data-en="Our local Melbourne staff personally visits and checks every property for safety and cleanliness before listing it.">
+        <h3 class="font-bold text-lg mb-2" data-jp="全物件を現地確認" data-en="Every property inspected" data-ko="모든 물건 현지 확인" data-zh-tw="所有物件現場確認">全物件を現地確認</h3>
+        <p class="text-blue-200 text-sm leading-relaxed" data-jp="紹介する物件は全て現地スタッフが直接訪問し、安全性・清潔さを確認しています。" data-en="Our local Melbourne staff personally visits and checks every property for safety and cleanliness before listing it." data-ko="소개하는 모든 물건은 현지 스태프가 직접 방문하여 안전성과 청결도를 확인합니다." data-zh-tw="介紹的所有物件均由現地工作人員親自訪問，確認安全性和清潔度。">
           紹介する物件は全て現地スタッフが直接訪問し、安全性・清潔さを確認しています。
         </p>
       </div>
 
       <div class="bg-white/10 border border-white/10 rounded-2xl p-6 reveal">
         <div class="text-4xl mb-3">🇯🇵</div>
-        <h3 class="font-bold text-lg mb-2" data-jp="完全日本語対応" data-en="Full Japanese support">完全日本語対応</h3>
-        <p class="text-blue-200 text-sm leading-relaxed" data-jp="契約書類の説明から入居後のサポートまで、全て日本語でやり取りできます。" data-en="From lease explanations to post-move-in help, everything is handled in Japanese. No English stress.">
-          契約書類の説明から入居後のサポートまで、全て日本語でやり取りできます。
+        <h3 class="font-bold text-lg mb-2" data-jp="完全日本語・英語対応" data-en="Full English &amp; Japanese support" data-ko="영어·일본어 완전 지원" data-zh-tw="英語·日語全程支援">完全日本語・英語対応</h3>
+        <p class="text-blue-200 text-sm leading-relaxed" data-jp="契約書類の説明から入居後のサポートまで、全て日本語・英語でやり取りできます。" data-en="From lease explanations to post-move-in help, everything is handled in English and Japanese." data-ko="계약서 설명부터 입주 후 지원까지 모두 영어·일본어로 진행됩니다. 그 외 언어는 지원되지 않습니다." data-zh-tw="從合約說明到入住後的支援，一切以英語及日語進行。服務不提供其他語言支援。">
+          契約書類の説明から入居後のサポートまで、全て日本語・英語でやり取りできます。
         </p>
       </div>
 
       <div class="bg-white/10 border border-white/10 rounded-2xl p-6 reveal">
         <div class="text-4xl mb-3">🛡️</div>
-        <h3 class="font-bold text-lg mb-2" data-jp="入居後もサポート" data-en="Support after move-in">入居後もサポート</h3>
-        <p class="text-blue-200 text-sm leading-relaxed" data-jp="何かトラブルがあった際も日本語でご相談いただけます。一人で悩まないでください。" data-en="Any issue after moving in? Message us in Japanese anytime. You'll never be left to deal with problems alone.">
-          何かトラブルがあった際も日本語でご相談いただけます。一人で悩まないでください。
+        <h3 class="font-bold text-lg mb-2" data-jp="入居後もサポート" data-en="Support after move-in" data-ko="입주 후에도 지원" data-zh-tw="入住後持續支援">入居後もサポート</h3>
+        <p class="text-blue-200 text-sm leading-relaxed" data-jp="何かトラブルがあった際も日本語・英語でご相談いただけます。一人で悩まないでください。" data-en="Any issue after moving in? Message us in English or Japanese anytime. You'll never be left alone." data-ko="입주 후 문제가 생겨도 영어·일본어로 언제든지 문의해 주세요. 혼자 해결하려 하지 마세요." data-zh-tw="入住後如有任何問題，隨時可用英語或日語聯絡我們。你不必獨自面對困難。">
+          何かトラブルがあった際も日本語・英語でご相談いただけます。一人で悩まないでください。
         </p>
       </div>
     </div>
@@ -370,9 +369,9 @@
 <section class="py-20 px-4 bg-white">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <span class="section-badge bg-green-50 text-line" data-jp="サービスの特徴" data-en="Why Choose Us">サービスの特徴</span>
-      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="選ばれる理由" data-en="What sets us apart">選ばれる理由</h2>
-      <p class="text-gray-500 text-base" data-jp="他にはないサポート体制でメルボルン生活をスムーズにスタートできます" data-en="Our unmatched support system helps you start your Melbourne life with confidence">他にはないサポート体制でメルボルン生活をスムーズにスタートできます</p>
+      <span class="section-badge bg-green-50 text-line" data-jp="サービスの特徴" data-en="Why Choose Us" data-ko="서비스 특징" data-zh-tw="服務特色">サービスの特徴</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="選ばれる理由" data-en="What sets us apart" data-ko="선택받는 이유" data-zh-tw="我們的優勢">選ばれる理由</h2>
+      <p class="text-gray-500 text-base" data-jp="他にはないサポート体制でメルボルン生活をスムーズにスタートできます" data-en="Our unmatched support system helps you start your Melbourne life with confidence" data-ko="우리만의 지원 체계로 멜버른 생활을 순조롭게 시작할 수 있습니다" data-zh-tw="我們獨特的支援體系讓您順利開始墨爾本生活">他にはないサポート体制でメルボルン生活をスムーズにスタートできます</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -380,64 +379,64 @@
       <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 card-hover reveal">
         <div class="text-2xl flex-shrink-0">✅</div>
         <div>
-          <h4 class="font-bold text-navy mb-1" data-jp="審査済み物件のみ紹介" data-en="Verified properties only">審査済み物件のみ紹介</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="独自の審査基準をクリアした安全な物件のみをご紹介します。" data-en="Only properties that pass our rigorous safety and quality checks make it onto our list.">独自の審査基準をクリアした安全な物件のみをご紹介します。</p>
+          <h4 class="font-bold text-navy mb-1" data-jp="審査済み物件のみ紹介" data-en="Verified properties only" data-ko="검증된 물건만 소개" data-zh-tw="僅介紹審核物件">審査済み物件のみ紹介</h4>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="独自の審査基準をクリアした安全な物件のみをご紹介します。" data-en="Only properties that pass our rigorous safety and quality checks make it onto our list." data-ko="자체 심사 기준을 통과한 안전한 물건만 소개합니다." data-zh-tw="只介紹通過自有審核標準的安全物件。">独自の審査基準をクリアした安全な物件のみをご紹介します。</p>
         </div>
       </div>
 
       <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 card-hover reveal">
         <div class="text-2xl flex-shrink-0">💬</div>
         <div>
-          <h4 class="font-bold text-navy mb-1" data-jp="日本語LINEサポート" data-en="Japanese LINE support">日本語LINEサポート</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="LINEで気軽に日本語でご質問いただけます。素早く丁寧に対応します。" data-en="Ask us anything on LINE in Japanese. We respond quickly and personally.">LINEで気軽に日本語でご質問いただけます。素早く丁寧に対応します。</p>
+          <h4 class="font-bold text-navy mb-1" data-jp="日本語・英語LINEサポート" data-en="English &amp; Japanese LINE support" data-ko="영어·일본어 LINE 지원" data-zh-tw="英語·日語 LINE 支援">日本語・英語LINEサポート</h4>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="LINEで気軽に日本語・英語でご質問いただけます。素早く丁寧に対応します。" data-en="Ask us anything on LINE in English or Japanese. We respond quickly and personally." data-ko="LINE으로 영어 또는 일본어로 편하게 질문하세요. 빠르고 친절하게 답변드립니다." data-zh-tw="隨時透過 LINE 以英語或日語提問。我們會迅速且親切地回應。">LINEで気軽に日本語・英語でご質問いただけます。素早く丁寧に対応します。</p>
         </div>
       </div>
 
       <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 card-hover reveal">
         <div class="text-2xl flex-shrink-0">📋</div>
         <div>
-          <h4 class="font-bold text-navy mb-1" data-jp="契約書類の日本語説明" data-en="Lease explained in Japanese">契約書類の日本語説明</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="英語の契約書も日本語でわかりやすく説明するので安心して署名できます。" data-en="We walk you through every English lease document in Japanese so you can sign with total confidence.">英語の契約書も日本語でわかりやすく説明するので安心して署名できます。</p>
+          <h4 class="font-bold text-navy mb-1" data-jp="契約書類を日本語・英語で説明" data-en="Lease explained in English &amp; Japanese" data-ko="계약서를 영어·일본어로 설명" data-zh-tw="以英語·日語說明合約">契約書類を日本語・英語で説明</h4>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="英語の契約書も日本語・英語でわかりやすく説明するので安心して署名できます。" data-en="We walk you through every lease document in English and Japanese so you can sign with total confidence." data-ko="영어 계약서도 영어·일본어로 알기 쉽게 설명해 드리므로 안심하고 서명할 수 있습니다." data-zh-tw="英文合約我們也會用英語及日語詳細說明，讓您放心簽署。">英語の契約書も日本語・英語でわかりやすく説明するので安心して署名できます。</p>
         </div>
       </div>
 
       <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 card-hover reveal">
         <div class="text-2xl flex-shrink-0">⚡</div>
         <div>
-          <h4 class="font-bold text-navy mb-1" data-jp="物件の条件を事前に確認" data-en="Conditions checked upfront">物件の条件を事前に確認</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="光熱費やインターネットの条件は物件ごとに異なります。ご紹介前に詳細をご説明します。" data-en="Bills and internet arrangements vary by property. We confirm all details with you before making any introduction.">光熱費やインターネットの条件は物件ごとに異なります。ご紹介前に詳細をご説明します。</p>
+          <h4 class="font-bold text-navy mb-1" data-jp="物件の条件を事前に確認" data-en="Conditions checked upfront" data-ko="물건 조건 사전 확인" data-zh-tw="事前確認物件條件">物件の条件を事前に確認</h4>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="光熱費やインターネットの条件は物件ごとに異なります。ご紹介前に詳細をご説明します。" data-en="Bills and internet arrangements vary by property. We confirm all details with you before making any introduction." data-ko="광열비와 인터넷 조건은 물건마다 다릅니다. 소개 전에 세부 사항을 설명해 드립니다." data-zh-tw="水電費和網路條件因物件而異。我們會在介紹前詳細說明。">光熱費やインターネットの条件は物件ごとに異なります。ご紹介前に詳細をご説明します。</p>
         </div>
       </div>
 
       <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 card-hover reveal">
         <div class="text-2xl flex-shrink-0">📍</div>
         <div>
-          <h4 class="font-bold text-navy mb-1" data-jp="Melbourne中心部・人気エリアの物件" data-en="Central Melbourne locations">Melbourne中心部・人気エリアの物件</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="CBD・Carlton・Fitzroy・Richmond・St Kilda・South Yarra・Brunswickなど、トラムや電車でどこにでもアクセスしやすいエリアに絞って物件をご紹介します。" data-en="CBD, Carlton, Fitzroy, Richmond, St Kilda, South Yarra, Brunswick — all tram and train accessible, no car needed.">CBD・Carlton・Fitzroy・Richmond・St Kilda・South Yarra・Brunswickなど、トラムや電車でどこにでもアクセスしやすいエリアに絞って物件をご紹介します。</p>
+          <h4 class="font-bold text-navy mb-1" data-jp="Melbourne中心部・人気エリアの物件" data-en="Central Melbourne locations" data-ko="멜버른 중심부·인기 지역 물건" data-zh-tw="墨爾本中心及熱門地區物件">Melbourne中心部・人気エリアの物件</h4>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="CBD・Carlton・Fitzroy・Richmond・St Kilda・South Yarra・Brunswickなど、トラムや電車でどこにでもアクセスしやすいエリアに絞って物件をご紹介します。" data-en="CBD, Carlton, Fitzroy, Richmond, St Kilda, South Yarra, Brunswick — all tram and train accessible, no car needed." data-ko="CBD, Carlton, Fitzroy, Richmond, St Kilda, South Yarra, Brunswick 등 트램과 전철로 편리한 지역의 물건만 소개합니다." data-zh-tw="CBD、Carlton、Fitzroy、Richmond、St Kilda、South Yarra、Brunswick 等，均可搭乘電車或火車，無需開車。">CBD・Carlton・Fitzroy・Richmond・St Kilda・South Yarra・Brunswickなど、トラムや電車でどこにでもアクセスしやすいエリアに絞って物件をご紹介します。</p>
         </div>
       </div>
 
       <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 card-hover reveal">
         <div class="text-2xl flex-shrink-0">🔒</div>
         <div>
-          <h4 class="font-bold text-navy mb-1" data-jp="セキュリティ確認済み" data-en="Security verified">セキュリティ確認済み</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="オートロックや防犯設備など、セキュリティの安全性も現地確認しています。" data-en="Auto-locks, secure entry and safety features are all checked in person by our team.">オートロックや防犯設備など、セキュリティの安全性も現地確認しています。</p>
+          <h4 class="font-bold text-navy mb-1" data-jp="セキュリティ確認済み" data-en="Security verified" data-ko="보안 확인 완료" data-zh-tw="已確認保全設施">セキュリティ確認済み</h4>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="オートロックや防犯設備など、セキュリティの安全性も現地確認しています。" data-en="Auto-locks, secure entry and safety features are all checked in person by our team." data-ko="자동 잠금장치, 방범 설비 등 보안 안전성도 현지에서 직접 확인합니다." data-zh-tw="自動門鎖和防盜設備等保全安全性也由現地確認。">オートロックや防犯設備など、セキュリティの安全性も現地確認しています。</p>
         </div>
       </div>
 
       <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 card-hover reveal">
         <div class="text-2xl flex-shrink-0">🤝</div>
         <div>
-          <h4 class="font-bold text-navy mb-1" data-jp="入居後のアフターサポート" data-en="After move-in support">入居後のアフターサポート</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="設備の故障やルームメイトとのトラブルなど、入居後の困りごとにも対応します。" data-en="Broken appliances, roommate issues, landlord disputes — we're here to help even after you've moved in.">設備の故障やルームメイトとのトラブルなど、入居後の困りごとにも対応します。</p>
+          <h4 class="font-bold text-navy mb-1" data-jp="入居後のアフターサポート" data-en="After move-in support" data-ko="입주 후 사후 지원" data-zh-tw="入住後的後續支援">入居後のアフターサポート</h4>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="設備の故障やルームメイトとのトラブルなど、入居後の困りごとにも対応します。" data-en="Broken appliances, roommate issues, landlord disputes — we're here to help even after you've moved in." data-ko="가전제품 고장, 룸메이트 문제, 집주인 분쟁 등 입주 후 어려운 일도 도와드립니다." data-zh-tw="設備故障、室友問題、房東糾紛等入住後的困難，我們都會提供協助。">設備の故障やルームメイトとのトラブルなど、入居後の困りごとにも対応します。</p>
         </div>
       </div>
 
       <div class="flex items-start gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 card-hover reveal">
         <div class="text-2xl flex-shrink-0">🏡</div>
         <div>
-          <h4 class="font-bold text-navy mb-1" data-jp="清潔な環境保証" data-en="Clean environment guaranteed">清潔な環境保証</h4>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="定期的な清掃が行き届いた清潔な物件のみをご紹介しています。" data-en="Only well-maintained, regularly cleaned properties make our list. Your comfort is guaranteed.">定期的な清掃が行き届いた清潔な物件のみをご紹介しています。</p>
+          <h4 class="font-bold text-navy mb-1" data-jp="清潔な環境保証" data-en="Clean environment guaranteed" data-ko="청결한 환경 보장" data-zh-tw="清潔環境保證">清潔な環境保証</h4>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="定期的な清掃が行き届いた清潔な物件のみをご紹介しています。" data-en="Only well-maintained, regularly cleaned properties make our list. Your comfort is guaranteed." data-ko="정기적으로 청소가 잘 된 청결한 물건만 소개합니다." data-zh-tw="只介紹定期清潔、維護良好的物件。您的舒適有保障。">定期的な清掃が行き届いた清潔な物件のみをご紹介しています。</p>
         </div>
       </div>
 
@@ -450,9 +449,9 @@
 <section class="py-20 px-4 bg-slate-50">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <span class="section-badge bg-navy/10 text-navy" data-jp="対応エリア" data-en="Coverage Areas">対応エリア</span>
-      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="Melbourne全域をカバー" data-en="Across Melbourne">Melbourne全域をカバー</h2>
-      <p class="text-gray-500 text-base max-w-xl mx-auto" data-jp="トラム・電車・バスで便利なエリアを中心に、あなたの生活スタイルに合った物件をご提案します" data-en="We focus on areas well-connected by tram, train and bus — so you can get anywhere without a car.">トラム・電車・バスで便利なエリアを中心に、あなたの生活スタイルに合った物件をご提案します</p>
+      <span class="section-badge bg-navy/10 text-navy" data-jp="対応エリア" data-en="Coverage Areas" data-ko="서비스 지역" data-zh-tw="服務區域">対応エリア</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="Melbourne全域をカバー" data-en="Across Melbourne" data-ko="멜버른 전역 커버" data-zh-tw="覆蓋墨爾本全區">Melbourne全域をカバー</h2>
+      <p class="text-gray-500 text-base max-w-xl mx-auto" data-jp="トラム・電車・バスで便利なエリアを中心に、あなたの生活スタイルに合った物件をご提案します" data-en="We focus on areas well-connected by tram, train and bus — so you can get anywhere without a car." data-ko="트램·전철·버스로 편리한 지역을 중심으로 생활 방식에 맞는 물건을 제안합니다" data-zh-tw="以電車、火車和巴士便利的地區為主，為您推薦符合生活方式的物件">トラム・電車・バスで便利なエリアを中心に、あなたの生活スタイルに合った物件をご提案します</p>
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
@@ -460,49 +459,49 @@
       <div class="bg-white rounded-2xl p-5 border border-slate-100 card-hover reveal text-center">
         <div class="text-3xl mb-2">🏙️</div>
         <div class="font-bold text-navy text-sm mb-1">Melbourne CBD</div>
-        <div class="text-xs text-gray-400 leading-snug" data-jp="Free Tram Zone内<br>どこへも徒歩・トラムで" data-en="Free Tram Zone<br>Walk or tram anywhere">Free Tram Zone内<br>どこへも徒歩・トラムで</div>
+        <div class="text-xs text-gray-400 leading-snug" data-jp="Free Tram Zone内<br>どこへも徒歩・トラムで" data-en="Free Tram Zone<br>Walk or tram anywhere" data-ko="무료 트램존 내<br>도보·트램으로 어디든" data-zh-tw="免費電車區內<br>步行或搭電車到處走">Free Tram Zone内<br>どこへも徒歩・トラムで</div>
       </div>
 
       <div class="bg-white rounded-2xl p-5 border border-slate-100 card-hover reveal text-center">
         <div class="text-3xl mb-2">🍕</div>
         <div class="font-bold text-navy text-sm mb-1">Carlton</div>
-        <div class="text-xs text-gray-400 leading-snug" data-jp="Lygon St沿い<br>大学・カフェ多数" data-en="Lygon St strip<br>Uni &amp; cafe hub">Lygon St沿い<br>大学・カフェ多数</div>
+        <div class="text-xs text-gray-400 leading-snug" data-jp="Lygon St沿い<br>大学・カフェ多数" data-en="Lygon St strip<br>Uni &amp; cafe hub" data-ko="Lygon St 주변<br>대학·카페 밀집" data-zh-tw="Lygon St 沿線<br>大學·咖啡廳聚集地">Lygon St沿い<br>大学・カフェ多数</div>
       </div>
 
       <div class="bg-white rounded-2xl p-5 border border-slate-100 card-hover reveal text-center">
         <div class="text-3xl mb-2">🎨</div>
         <div class="font-bold text-navy text-sm mb-1">Fitzroy</div>
-        <div class="text-xs text-gray-400 leading-snug" data-jp="おしゃれなカフェ街<br>CBDトラム10分" data-en="Trendy cafe precinct<br>10 min tram to CBD">おしゃれなカフェ街<br>CBDトラム10分</div>
+        <div class="text-xs text-gray-400 leading-snug" data-jp="おしゃれなカフェ街<br>CBDトラム10分" data-en="Trendy cafe precinct<br>10 min tram to CBD" data-ko="세련된 카페 거리<br>CBD까지 트램 10분" data-zh-tw="時尚咖啡街區<br>搭電車10分鐘到CBD">おしゃれなカフェ街<br>CBDトラム10分</div>
       </div>
 
       <div class="bg-white rounded-2xl p-5 border border-slate-100 card-hover reveal text-center">
         <div class="text-3xl mb-2">🏟️</div>
         <div class="font-bold text-navy text-sm mb-1">Richmond</div>
-        <div class="text-xs text-gray-400 leading-snug" data-jp="MCG・スタジアム徒歩圏<br>Swan Stのカフェが充実" data-en="Walk to MCG &amp; AAMI Park<br>Great cafes on Swan St">MCG・スタジアム徒歩圏<br>Swan Stのカフェが充実</div>
+        <div class="text-xs text-gray-400 leading-snug" data-jp="MCG・スタジアム徒歩圏<br>Swan Stのカフェが充実" data-en="Walk to MCG &amp; AAMI Park<br>Great cafes on Swan St" data-ko="MCG·경기장 도보권<br>Swan St 카페 충실" data-zh-tw="步行可達MCG·體育場<br>Swan St 咖啡廳齊全">MCG・スタジアム徒歩圏<br>Swan Stのカフェが充実</div>
       </div>
 
       <div class="bg-white rounded-2xl p-5 border border-slate-100 card-hover reveal text-center">
         <div class="text-3xl mb-2">🌊</div>
         <div class="font-bold text-navy text-sm mb-1">St Kilda</div>
-        <div class="text-xs text-gray-400 leading-snug" data-jp="ビーチまで徒歩圏<br>活気あるエリア" data-en="Walk to the beach<br>Vibrant beachside area">ビーチまで徒歩圏<br>活気あるエリア</div>
+        <div class="text-xs text-gray-400 leading-snug" data-jp="ビーチまで徒歩圏<br>活気あるエリア" data-en="Walk to the beach<br>Vibrant beachside area" data-ko="해변까지 도보권<br>활기찬 지역" data-zh-tw="步行可達海灘<br>充滿活力的區域">ビーチまで徒歩圏<br>活気あるエリア</div>
       </div>
 
       <div class="bg-white rounded-2xl p-5 border border-slate-100 card-hover reveal text-center">
         <div class="text-3xl mb-2">🏖️</div>
         <div class="font-bold text-navy text-sm mb-1">Chelsea</div>
-        <div class="text-xs text-gray-400 leading-snug" data-jp="フランクストン線沿い<br>海辺の静かな住宅街" data-en="Frankston line · Beachside<br>Quiet coastal suburb">フランクストン線沿い<br>海辺の静かな住宅街</div>
+        <div class="text-xs text-gray-400 leading-snug" data-jp="フランクストン線沿い<br>海辺の静かな住宅街" data-en="Frankston line · Beachside<br>Quiet coastal suburb" data-ko="프랭크스톤 선 연선<br>해변 조용한 주택가" data-zh-tw="Frankston 線沿線<br>海濱寧靜住宅區">フランクストン線沿い<br>海辺の静かな住宅街</div>
       </div>
 
       <div class="bg-white rounded-2xl p-5 border border-slate-100 card-hover reveal text-center">
         <div class="text-3xl mb-2">🎸</div>
         <div class="font-bold text-navy text-sm mb-1">Brunswick</div>
-        <div class="text-xs text-gray-400 leading-snug" data-jp="個性的な街<br>電車・トラムで便利" data-en="Eclectic &amp; creative vibe<br>Great tram &amp; train links">個性的な街<br>電車・トラムで便利</div>
+        <div class="text-xs text-gray-400 leading-snug" data-jp="個性的な街<br>電車・トラムで便利" data-en="Eclectic &amp; creative vibe<br>Great tram &amp; train links" data-ko="개성 넘치는 거리<br>전철·트램으로 편리" data-zh-tw="個性街區<br>電車·火車交通便利">個性的な街<br>電車・トラムで便利</div>
       </div>
 
       <div class="bg-white rounded-2xl p-5 border border-slate-100 card-hover reveal text-center">
         <div class="text-3xl mb-2">🌳</div>
         <div class="font-bold text-navy text-sm mb-1">Boronia</div>
-        <div class="text-xs text-gray-400 leading-snug" data-jp="ノックス市・静かな住宅街<br>ショッピングセンター至近" data-en="Quiet Knox suburb<br>Close to Knox City shopping">ノックス市・静かな住宅街<br>ショッピングセンター至近</div>
+        <div class="text-xs text-gray-400 leading-snug" data-jp="ノックス市・静かな住宅街<br>ショッピングセンター至近" data-en="Quiet Knox suburb<br>Close to Knox City shopping" data-ko="녹스 시·조용한 주택가<br>쇼핑센터 근접" data-zh-tw="Knox 市寧靜住宅區<br>購物中心近在咫尺">ノックス市・静かな住宅街<br>ショッピングセンター至近</div>
       </div>
 
     </div>
@@ -510,8 +509,8 @@
     <div class="bg-white border border-line/20 rounded-2xl p-5 flex items-start gap-4 reveal">
       <div class="text-2xl flex-shrink-0">🚃</div>
       <div>
-        <div class="font-bold text-navy mb-1" data-jp="全エリア、トラムまたは電車でCBDへアクセス可能" data-en="Every area has tram or train access to the city">全エリア、トラムまたは電車でCBDへアクセス可能</div>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="ご紹介する全ての物件は、トラムまたは電車でメルボルンCBDへアクセスできるエリアに限定しています。車がなくても、通勤・外出・買い物に困りません。" data-en="Every property we list is in an area with direct tram or train access to Melbourne CBD. No car needed — getting to work, going out, or doing your shopping is always easy.">ご紹介する全ての物件は、トラムまたは電車でメルボルンCBDへアクセスできるエリアに限定しています。車がなくても、通勤・外出・買い物に困りません。</p>
+        <div class="font-bold text-navy mb-1" data-jp="全エリア、トラムまたは電車でCBDへアクセス可能" data-en="Every area has tram or train access to the city" data-ko="모든 지역, 트램 또는 전철로 CBD 접근 가능" data-zh-tw="所有區域均可搭電車或火車前往CBD">全エリア、トラムまたは電車でCBDへアクセス可能</div>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="ご紹介する全ての物件は、トラムまたは電車でメルボルンCBDへアクセスできるエリアに限定しています。車がなくても、通勤・外出・買い物に困りません。" data-en="Every property we list is in an area with direct tram or train access to Melbourne CBD. No car needed — getting to work, going out, or doing your shopping is always easy." data-ko="소개하는 모든 물건은 트램 또는 전철로 멜버른 CBD에 접근할 수 있는 지역으로 한정됩니다. 차가 없어도 통근·외출·쇼핑에 불편함이 없습니다." data-zh-tw="我們介紹的所有物件均位於可搭電車或火車直達墨爾本CBD的地區。無需開車，通勤、外出、購物均無障礙。">ご紹介する全ての物件は、トラムまたは電車でメルボルンCBDへアクセスできるエリアに限定しています。車がなくても、通勤・外出・買い物に困りません。</p>
       </div>
     </div>
   </div>
@@ -522,9 +521,9 @@
 <section class="py-20 px-4 bg-slate-50">
   <div class="max-w-3xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <span class="section-badge bg-navy/10 text-navy" data-jp="料金プラン" data-en="Pricing">料金プラン</span>
-      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="シンプルな料金体系" data-en="Simple, transparent pricing">シンプルな料金体系</h2>
-      <p class="text-gray-500 text-base" data-jp="追加費用なし。全部込みの明瞭会計です" data-en="No hidden fees. Everything is included.">追加費用なし。全部込みの明瞭会計です</p>
+      <span class="section-badge bg-navy/10 text-navy" data-jp="料金プラン" data-en="Pricing" data-ko="요금 플랜" data-zh-tw="收費方案">料金プラン</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="シンプルな料金体系" data-en="Simple, transparent pricing" data-ko="심플한 요금 체계" data-zh-tw="簡單透明的收費">シンプルな料金体系</h2>
+      <p class="text-gray-500 text-base" data-jp="追加費用なし。全部込みの明瞭会計です" data-en="No hidden fees. Everything is included." data-ko="추가 비용 없음. 모두 포함된 명확한 요금입니다" data-zh-tw="無隱藏費用。一切明確清楚。">追加費用なし。全部込みの明瞭会計です</p>
     </div>
 
     <!-- Main pricing card -->
@@ -533,19 +532,19 @@
 
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 relative z-10">
         <div>
-          <div class="section-badge bg-line/20 text-line mb-4" data-jp="スタンダードプラン" data-en="Standard Plan">スタンダードプラン</div>
+          <div class="section-badge bg-line/20 text-line mb-4" data-jp="スタンダードプラン" data-en="Standard Plan" data-ko="스탠다드 플랜" data-zh-tw="標準方案">スタンダードプラン</div>
           <div class="flex items-end gap-2 mb-3">
             <span class="text-5xl font-black">$200</span>
-            <span class="text-blue-300 text-lg mb-1" data-jp=" 一回限りの紹介料" data-en=" one-time service fee"> 一回限りの紹介料</span>
+            <span class="text-blue-300 text-lg mb-1" data-jp=" 一回限りの紹介料" data-en=" one-time service fee" data-ko=" 1회 소개료" data-zh-tw=" 一次性服務費"> 一回限りの紹介料</span>
           </div>
-          <p class="text-blue-200 text-sm" data-jp="＋ 家賃は直接オーナーへ。追加費用なし。" data-en="+ rent paid directly to your landlord. No markup, no surprises.">＋ 家賃は直接オーナーへ。追加費用なし。</p>
+          <p class="text-blue-200 text-sm" data-jp="＋ 家賃は直接オーナーへ。追加費用なし。" data-en="+ rent paid directly to your landlord. No markup, no surprises." data-ko="+ 임대료는 직접 오너에게. 추가 비용 없음." data-zh-tw="+ 房租直接付給房東。無額外費用，無意外。">＋ 家賃は直接オーナーへ。追加費用なし。</p>
         </div>
         <div class="flex-shrink-0">
           <a href="https://lin.ee/6YGhjwPv" class="line-btn justify-center">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
               <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
             </svg>
-            <span data-jp="問い合わせる" data-en="Get in touch">問い合わせる</span>
+            <span data-jp="問い合わせる" data-en="Get in touch" data-ko="문의하기" data-zh-tw="立即諮詢">問い合わせる</span>
           </a>
         </div>
       </div>
@@ -553,24 +552,35 @@
       <div class="border-t border-white/10 mt-8 pt-6 grid grid-cols-2 sm:grid-cols-2 gap-4 relative z-10">
         <div class="text-center">
           <div class="text-line text-xl font-bold mb-1">✓</div>
-          <div class="text-blue-200 text-xs" data-jp="日本語サポート" data-en="Japanese support">日本語サポート</div>
+          <div class="text-blue-200 text-xs" data-jp="日本語・英語サポート" data-en="English &amp; Japanese support" data-ko="영어·일본어 지원" data-zh-tw="英語·日語支援">日本語・英語サポート</div>
         </div>
         <div class="text-center">
           <div class="text-line text-xl font-bold mb-1">✓</div>
-          <div class="text-blue-200 text-xs" data-jp="入居後サポート" data-en="After move-in support">入居後サポート</div>
+          <div class="text-blue-200 text-xs" data-jp="入居後サポート" data-en="After move-in support" data-ko="입주 후 지원" data-zh-tw="入住後支援">入居後サポート</div>
         </div>
       </div>
     </div>
 
-    <p class="text-center text-gray-400 text-sm reveal" data-jp="※ サービス料$200のみ。仲介手数料・礼金は不要です。家賃はオーナーへ直接お支払いください。" data-en="※ $200 service fee only. No agency or finder's fees on top. Rent is paid directly to your landlord.">
+    <p class="text-center text-gray-400 text-sm reveal" data-jp="※ サービス料$200のみ。仲介手数料・礼金は不要です。家賃はオーナーへ直接お支払いください。" data-en="※ $200 service fee only. No agency or finder's fees on top. Rent is paid directly to your landlord." data-ko="※ 서비스 요금 $200만. 중개 수수료·보증금 불필요. 임대료는 직접 오너에게 지불하세요." data-zh-tw="※ 僅收取$200服務費。無需仲介費或禮金。房租直接支付給房東。">
       ※ サービス料$200のみ。仲介手数料・礼金は不要です。家賃はオーナーへ直接お支払いください。
     </p>
-    <p class="text-center text-gray-400 text-xs mt-2 reveal" data-jp="※ 最低入居期間は1ヶ月です。" data-en="※ Minimum stay of 1 month required.">
+    <p class="text-center text-gray-400 text-xs mt-2 reveal" data-jp="※ 最低入居期間は1ヶ月です。" data-en="※ Minimum stay of 1 month required." data-ko="※ 최소 입주 기간은 1개월입니다." data-zh-tw="※ 最短入住期間為1個月。">
       ※ 最低入居期間は1ヶ月です。
     </p>
-    <p class="text-center text-gray-400 text-xs mt-1 reveal" data-jp="※ 入居にあたり1ヶ月契約書をお送りします。" data-en="※ A 1-month housing contract will be sent prior to move-in.">
+    <p class="text-center text-gray-400 text-xs mt-1 reveal" data-jp="※ 入居にあたり1ヶ月契約書をお送りします。" data-en="※ A 1-month housing contract will be sent prior to move-in." data-ko="※ 입주 시 1개월 계약서를 발송합니다." data-zh-tw="※ 入住前將寄送1個月合約書。">
       ※ 入居にあたり1ヶ月契約書をお送りします。
     </p>
+
+    <!-- Rent range indicator -->
+    <div class="mt-8 bg-blue-50 border border-blue-100 rounded-2xl p-5 flex items-start gap-4 reveal">
+      <div class="text-2xl flex-shrink-0">🏠</div>
+      <div>
+        <div class="font-bold text-navy mb-1" data-jp="家賃の目安：$250〜$350／週" data-en="Typical rent range: $250–$350 / week" data-ko="임대료 기준: $250〜$350 / 주" data-zh-tw="房租參考：$250〜$350／週">家賃の目安：$250〜$350／週</div>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="家賃はエリアや物件によって異なります。上記はメルボルン内の一般的なシェアルームの目安です。詳細はLINEにてご案内します。" data-en="Rent varies by area and property. The above is a typical range for shared rooms across Melbourne. We'll confirm the exact figure for each property over LINE." data-ko="임대료는 지역과 물건에 따라 다릅니다. 위 금액은 멜버른 내 일반적인 쉐어룸의 기준입니다. 자세한 내용은 LINE으로 안내해 드립니다." data-zh-tw="房租因地區和物件而異。以上為墨爾本一般分租房間的參考範圍。詳細金額將透過LINE確認。">
+          家賃はエリアや物件によって異なります。上記はメルボルン内の一般的なシェアルームの目安です。詳細はLINEにてご案内します。
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -579,9 +589,9 @@
 <section class="py-20 px-4 bg-white">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <span class="section-badge bg-amber-50 text-amber-600" data-jp="オプション" data-en="Add-ons">オプション</span>
-      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="便利なオプションサービス" data-en="Optional extras">便利なオプションサービス</h2>
-      <p class="text-gray-500 text-base" data-jp="渡航からの生活スタートをさらに楽にするオプションをご用意しています" data-en="Make your arrival and first days in Melbourne even smoother with our optional services">渡航からの生活スタートをさらに楽にするオプションをご用意しています</p>
+      <span class="section-badge bg-amber-50 text-amber-600" data-jp="オプション" data-en="Add-ons" data-ko="옵션" data-zh-tw="附加服務">オプション</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="便利なオプションサービス" data-en="Optional extras" data-ko="편리한 옵션 서비스" data-zh-tw="便利的附加服務">便利なオプションサービス</h2>
+      <p class="text-gray-500 text-base" data-jp="渡航からの生活スタートをさらに楽にするオプションをご用意しています" data-en="Make your arrival and first days in Melbourne even smoother with our optional services" data-ko="도착부터 생활 시작을 더욱 편하게 하는 옵션을 준비했습니다" data-zh-tw="我們提供讓您抵達後的生活更輕鬆的附加服務">渡航からの生活スタートをさらに楽にするオプションをご用意しています</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -591,30 +601,30 @@
           <div class="text-4xl">✈️</div>
           <div class="bg-amber-50 text-amber-600 font-bold text-sm px-3 py-1 rounded-full">$100</div>
         </div>
-        <h3 class="font-bold text-xl text-navy mb-2" data-jp="空港送迎サービス" data-en="Airport pickup">空港送迎サービス</h3>
-        <p class="text-gray-500 text-sm leading-relaxed mb-4" data-jp="Tullamarine空港（MEL）から物件まで直接お迎えします。重い荷物を抱えてSkybus＋電車を乗り継ぐ必要はありません。初めての渡航でも安心。" data-en="We'll meet you at Tullamarine Airport (MEL) and drive you straight to your new room. No lugging bags on the SkyBus or trains.">
+        <h3 class="font-bold text-xl text-navy mb-2" data-jp="空港送迎サービス" data-en="Airport pickup" data-ko="공항 픽업 서비스" data-zh-tw="機場接送服務">空港送迎サービス</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4" data-jp="Tullamarine空港（MEL）から物件まで直接お迎えします。重い荷物を抱えてSkybus＋電車を乗り継ぐ必要はありません。初めての渡航でも安心。" data-en="We'll meet you at Tullamarine Airport (MEL) and drive you straight to your new room. No lugging bags on the SkyBus or trains." data-ko="Tullamarine 공항(MEL)에서 숙소까지 직접 모셔드립니다. 무거운 짐을 들고 SkyBus와 전철을 갈아탈 필요가 없습니다." data-zh-tw="我們將在Tullamarine機場（MEL）接您直達住所。無需拖著重行李轉乘SkyBus和火車。">
           Tullamarine空港（MEL）から物件まで直接お迎えします。重い荷物を抱えてSkybus＋電車を乗り継ぐ必要はありません。初めての渡航でも安心。
         </p>
         <ul class="space-y-1 text-sm text-gray-500">
-          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="荷物の積み込みサポート" data-en="Help with your luggage">荷物の積み込みサポート</span></li>
-          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="時間通りのお迎え保証" data-en="On-time pickup guaranteed">時間通りのお迎え保証</span></li>
+          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="荷物の積み込みサポート" data-en="Help with your luggage" data-ko="짐 싣기 도움" data-zh-tw="協助搬運行李">荷物の積み込みサポート</span></li>
+          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="時間通りのお迎え保証" data-en="On-time pickup guaranteed" data-ko="시간 엄수 픽업 보장" data-zh-tw="準時接機保證">時間通りのお迎え保証</span></li>
         </ul>
       </div>
 
       <div class="border border-amber-100 rounded-2xl p-6 card-hover reveal">
         <div class="flex items-start justify-between mb-4">
           <div class="text-4xl">🛒</div>
-          <div class="bg-amber-50 text-amber-600 font-bold text-sm px-3 py-1 rounded-full" data-jp="要相談" data-en="POA">要相談</div>
+          <div class="bg-amber-50 text-amber-600 font-bold text-sm px-3 py-1 rounded-full" data-jp="要相談" data-en="POA" data-ko="문의 요망" data-zh-tw="請洽詢">要相談</div>
         </div>
-        <h3 class="font-bold text-xl text-navy mb-2" data-jp="初期セットアップサポート" data-en="Life setup support">初期セットアップサポート</h3>
-        <p class="text-gray-500 text-sm leading-relaxed mb-4" data-jp="SIMカードの購入から銀行口座開設、スーパーへの案内まで、生活のスタートをまるっとサポートします。" data-en="From getting an Aussie SIM to opening a bank account and finding the nearest supermarket — we help you get set up from day one.">
+        <h3 class="font-bold text-xl text-navy mb-2" data-jp="初期セットアップサポート" data-en="Life setup support" data-ko="초기 셋업 지원" data-zh-tw="初期安頓支援">初期セットアップサポート</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4" data-jp="SIMカードの購入から銀行口座開設、スーパーへの案内まで、生活のスタートをまるっとサポートします。" data-en="From getting an Aussie SIM to opening a bank account and finding the nearest supermarket — we help you get set up from day one." data-ko="SIM 카드 구입부터 은행 계좌 개설, 슈퍼마켓 안내까지 생활 시작을 통째로 지원합니다." data-zh-tw="從購買SIM卡到開設銀行帳戶、超市指引，全方位支援您的生活起步。">
           SIMカードの購入から銀行口座開設、スーパーへの案内まで、生活のスタートをまるっとサポートします。
         </p>
         <ul class="space-y-1 text-sm text-gray-500">
-          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="オーストラリアSIM手配サポート" data-en="Australian SIM card setup">オーストラリアSIM手配サポート</span></li>
-          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="Mykiカード（交通ICカード）の取得案内" data-en="Myki card (transport card) guidance">Mykiカード（交通ICカード）の取得案内</span></li>
-          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="銀行口座開設（ANZ・Commonwealth等）サポート" data-en="Bank account setup (ANZ, Commonwealth, etc.)">銀行口座開設（ANZ・Commonwealth等）サポート</span></li>
-          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="近くのColes・Woolworthsや日本食スーパーをご案内" data-en="Guide to nearby Coles, Woolworths &amp; Japanese grocery stores">近くのColes・Woolworthsや日本食スーパーをご案内</span></li>
+          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="オーストラリアSIM手配サポート" data-en="Australian SIM card setup" data-ko="호주 SIM 카드 수배 지원" data-zh-tw="協助辦理澳洲SIM卡">オーストラリアSIM手配サポート</span></li>
+          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="Mykiカード（交通ICカード）の取得案内" data-en="Myki card (transport card) guidance" data-ko="Myki 카드(교통 IC 카드) 취득 안내" data-zh-tw="Myki卡（交通IC卡）取得指引">Mykiカード（交通ICカード）の取得案内</span></li>
+          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="銀行口座開設（ANZ・Commonwealth等）サポート" data-en="Bank account setup (ANZ, Commonwealth, etc.)" data-ko="은행 계좌 개설(ANZ·Commonwealth 등) 지원" data-zh-tw="銀行開戶（ANZ、Commonwealth等）協助">銀行口座開設（ANZ・Commonwealth等）サポート</span></li>
+          <li class="flex items-center gap-2"><span class="text-line">✓</span> <span data-jp="近くのColes・Woolworthsや日本食スーパーをご案内" data-en="Guide to nearby Coles, Woolworths &amp; Japanese grocery stores" data-ko="근처 Coles·Woolworths와 아시안 식품점 안내" data-zh-tw="附近Coles、Woolworths及亞洲超市指引">近くのColes・Woolworthsや日本食スーパーをご案内</span></li>
         </ul>
       </div>
 
@@ -627,9 +637,9 @@
 <section id="how-it-works" class="py-20 px-4 bg-slate-50">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-14 reveal">
-      <span class="section-badge bg-navy/10 text-navy" data-jp="ご利用の流れ" data-en="How It Works">ご利用の流れ</span>
-      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="5ステップで入居完了" data-en="Move in within 5 simple steps">5ステップで入居完了</h2>
-      <p class="text-gray-500 text-base" data-jp="複雑な手続きは全て代行します。あなたはLINEで連絡するだけ。" data-en="We handle all the complicated paperwork. All you need to do is message us on LINE.">複雑な手続きは全て代行します。あなたはLINEで連絡するだけ。</p>
+      <span class="section-badge bg-navy/10 text-navy" data-jp="ご利用の流れ" data-en="How It Works" data-ko="이용 방법" data-zh-tw="使用流程">ご利用の流れ</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="5ステップで入居完了" data-en="Move in within 5 simple steps" data-ko="5단계로 입주 완료" data-zh-tw="5步驟完成入住">5ステップで入居完了</h2>
+      <p class="text-gray-500 text-base" data-jp="複雑な手続きは全て代行します。あなたはLINEで連絡するだけ。" data-en="We handle all the complicated paperwork. All you need to do is message us on LINE." data-ko="복잡한 절차는 모두 대행합니다. LINE으로 연락하기만 하면 됩니다." data-zh-tw="所有複雜手續由我們代辦。您只需透過LINE聯絡我們。">複雑な手続きは全て代行します。あなたはLINEで連絡するだけ。</p>
     </div>
 
     <div class="space-y-4">
@@ -637,40 +647,40 @@
       <div class="flex gap-5 items-start bg-white rounded-2xl p-6 border border-slate-100 reveal">
         <div class="step-number flex-shrink-0">1</div>
         <div>
-          <h3 class="font-bold text-navy text-lg mb-1" data-jp="LINEでお問い合わせ" data-en="Message us on LINE">LINEでお問い合わせ</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="まずはLINEでお気軽にご連絡ください。渡航予定日・希望エリア・予算などを教えていただくだけでOKです。" data-en="Send us a message on LINE anytime. Just let us know your arrival date, preferred area and budget — that's all we need to get started.">まずはLINEでお気軽にご連絡ください。渡航予定日・希望エリア・予算などを教えていただくだけでOKです。</p>
+          <h3 class="font-bold text-navy text-lg mb-1" data-jp="LINEでお問い合わせ" data-en="Message us on LINE" data-ko="LINE으로 문의" data-zh-tw="透過LINE聯絡我們">LINEでお問い合わせ</h3>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="まずはLINEでお気軽にご連絡ください。渡航予定日・希望エリア・予算などを教えていただくだけでOKです。" data-en="Send us a message on LINE anytime. Just let us know your arrival date, preferred area and budget — that's all we need to get started." data-ko="먼저 LINE으로 편하게 연락해 주세요. 도착 예정일·희망 지역·예산만 알려주시면 됩니다." data-zh-tw="先透過LINE輕鬆聯絡我們。告訴我們您的抵達日期、希望地區和預算即可。">まずはLINEでお気軽にご連絡ください。渡航予定日・希望エリア・予算などを教えていただくだけでOKです。</p>
         </div>
       </div>
 
       <div class="flex gap-5 items-start bg-white rounded-2xl p-6 border border-slate-100 reveal">
         <div class="step-number flex-shrink-0">2</div>
         <div>
-          <h3 class="font-bold text-navy text-lg mb-1" data-jp="ご希望をヒアリング" data-en="We understand your needs">ご希望をヒアリング</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="スタッフが日本語でご希望の条件を丁寧にお聞きします。わからないことは何でも聞いてください。" data-en="Our staff will carefully listen to your requirements in Japanese. No question is too small — ask us anything.">スタッフが日本語でご希望の条件を丁寧にお聞きします。わからないことは何でも聞いてください。</p>
+          <h3 class="font-bold text-navy text-lg mb-1" data-jp="ご希望をヒアリング" data-en="We understand your needs" data-ko="희망 사항 파악" data-zh-tw="了解您的需求">ご希望をヒアリング</h3>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="スタッフが日本語・英語でご希望の条件を丁寧にお聞きします。わからないことは何でも聞いてください。" data-en="Our staff will carefully listen to your requirements in English or Japanese. No question is too small — ask us anything." data-ko="스태프가 영어·일본어로 희망 조건을 꼼꼼히 듣겠습니다. 모르는 것은 무엇이든 물어보세요." data-zh-tw="工作人員將以英語或日語仔細聆聽您的要求。任何問題都歡迎提問。">スタッフが日本語・英語でご希望の条件を丁寧にお聞きします。わからないことは何でも聞いてください。</p>
         </div>
       </div>
 
       <div class="flex gap-5 items-start bg-white rounded-2xl p-6 border border-slate-100 reveal">
         <div class="step-number flex-shrink-0">3</div>
         <div>
-          <h3 class="font-bold text-navy text-lg mb-1" data-jp="物件をご提案" data-en="We suggest verified properties">物件をご提案</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="ご希望に合った審査済みの物件をご提案します。写真や詳細情報も日本語でお送りします。" data-en="We match you with verified properties that suit your needs, sending photos and full details all in Japanese.">ご希望に合った審査済みの物件をご提案します。写真や詳細情報も日本語でお送りします。</p>
+          <h3 class="font-bold text-navy text-lg mb-1" data-jp="物件をご提案" data-en="We suggest verified properties" data-ko="물건 제안" data-zh-tw="推薦審核物件">物件をご提案</h3>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="ご希望に合った審査済みの物件をご提案します。写真や詳細情報も日本語・英語でお送りします。" data-en="We match you with verified properties that suit your needs, sending photos and full details in English or Japanese." data-ko="희망에 맞는 검증된 물건을 제안합니다. 사진과 상세 정보도 영어·일본어로 보내드립니다." data-zh-tw="我們為您推薦符合需求的審核物件，並以英語或日語提供照片和詳細資訊。">ご希望に合った審査済みの物件をご提案します。写真や詳細情報も日本語・英語でお送りします。</p>
         </div>
       </div>
 
       <div class="flex gap-5 items-start bg-white rounded-2xl p-6 border border-slate-100 reveal">
         <div class="step-number flex-shrink-0">4</div>
         <div>
-          <h3 class="font-bold text-navy text-lg mb-1" data-jp="内覧・契約" data-en="Inspection &amp; signing">内覧・契約</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="気に入った物件はご内覧いただけます。契約書類も日本語でご説明しますので安心して手続きできます。" data-en="Inspect the property in person if you wish. We'll walk you through all lease documents in Japanese so you can sign with confidence.">気に入った物件はご内覧いただけます。契約書類も日本語でご説明しますので安心して手続きできます。</p>
+          <h3 class="font-bold text-navy text-lg mb-1" data-jp="内覧・契約" data-en="Inspection &amp; signing" data-ko="내람·계약" data-zh-tw="看房·簽約">内覧・契約</h3>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="気に入った物件はご内覧いただけます。契約書類も日本語・英語でご説明しますので安心して手続きできます。" data-en="Inspect the property in person if you wish. We'll walk you through all lease documents in English or Japanese so you can sign with confidence." data-ko="마음에 드는 물건은 내람할 수 있습니다. 계약 서류도 영어·일본어로 설명해 드리므로 안심하고 절차를 진행할 수 있습니다." data-zh-tw="您可以親自看房。合約文件也會以英語或日語說明，讓您放心辦理手續。">気に入った物件はご内覧いただけます。契約書類も日本語・英語でご説明しますので安心して手続きできます。</p>
         </div>
       </div>
 
       <div class="flex gap-5 items-start bg-white rounded-2xl p-6 border border-slate-100 reveal" style="border-color: #06C755;">
         <div class="step-number flex-shrink-0">5</div>
         <div>
-          <h3 class="font-bold text-navy text-lg mb-1" data-jp="入居スタート🎉" data-en="Move in &amp; enjoy Melbourne 🎉">入居スタート🎉</h3>
-          <p class="text-gray-500 text-sm leading-relaxed" data-jp="いよいよメルボルン生活のスタートです。入居後もスタッフが日本語でサポートしますのでご安心ください。" data-en="Your Melbourne life begins! Our staff continue to support you in Japanese after move-in — you're never on your own.">いよいよメルボルン生活のスタートです。入居後もスタッフが日本語でサポートしますのでご安心ください。</p>
+          <h3 class="font-bold text-navy text-lg mb-1" data-jp="入居スタート🎉" data-en="Move in &amp; enjoy Melbourne 🎉" data-ko="입주 시작 🎉" data-zh-tw="開始入住 🎉">入居スタート🎉</h3>
+          <p class="text-gray-500 text-sm leading-relaxed" data-jp="いよいよメルボルン生活のスタートです。入居後もスタッフが日本語・英語でサポートしますのでご安心ください。" data-en="Your Melbourne life begins! Our staff continue to support you in English or Japanese after move-in — you're never on your own." data-ko="드디어 멜버른 생활의 시작입니다. 입주 후에도 스태프가 영어·일본어로 지원하니 안심하세요." data-zh-tw="墨爾本生活正式開始！入住後工作人員仍以英語或日語繼續支援您，請放心。">いよいよメルボルン生活のスタートです。入居後もスタッフが日本語・英語でサポートしますのでご安心ください。</p>
         </div>
       </div>
 
@@ -683,27 +693,27 @@
 <section class="py-20 px-4 bg-white">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <span class="section-badge bg-green-50 text-line" data-jp="信頼と実績" data-en="Track Record">信頼と実績</span>
-      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="多くの日本人ワーホリに選ばれています" data-en="Trusted by Japanese working holiday makers">多くの日本人ワーホリに選ばれています</h2>
+      <span class="section-badge bg-green-50 text-line" data-jp="信頼と実績" data-en="Track Record" data-ko="신뢰와 실적" data-zh-tw="信賴與實績">信頼と実績</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="多くのワーホリメーカーに選ばれています" data-en="Trusted by working holiday makers" data-ko="많은 워킹홀리데이 참가자에게 선택받고 있습니다" data-zh-tw="深受打工度假者信賴">多くのワーホリメーカーに選ばれています</h2>
     </div>
 
     <!-- Stats -->
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
       <div class="text-center py-6 px-4 bg-slate-50 rounded-2xl reveal">
         <div class="text-3xl sm:text-4xl font-black text-navy leading-none mb-1">✓</div>
-        <div class="text-gray-500 text-xs sm:text-sm" data-jp="全物件審査済み" data-en="All properties verified">全物件審査済み</div>
+        <div class="text-gray-500 text-xs sm:text-sm" data-jp="全物件審査済み" data-en="All properties verified" data-ko="모든 물건 검증 완료" data-zh-tw="所有物件已審核">全物件審査済み</div>
       </div>
       <div class="text-center py-6 px-4 bg-slate-50 rounded-2xl reveal">
         <div class="text-3xl sm:text-4xl font-black text-line leading-none mb-1">✓</div>
-        <div class="text-gray-500 text-xs sm:text-sm" data-jp="入居後も安心サポート" data-en="Support after move-in">入居後も安心サポート</div>
+        <div class="text-gray-500 text-xs sm:text-sm" data-jp="入居後も安心サポート" data-en="Support after move-in" data-ko="입주 후에도 안심 지원" data-zh-tw="入住後安心支援">入居後も安心サポート</div>
       </div>
       <div class="text-center py-6 px-4 bg-slate-50 rounded-2xl reveal">
         <div class="text-3xl sm:text-4xl font-black text-navy leading-none mb-1">0</div>
-        <div class="text-gray-500 text-xs sm:text-sm" data-jp="詐欺被害件数" data-en="Scam incidents">詐欺被害件数</div>
+        <div class="text-gray-500 text-xs sm:text-sm" data-jp="詐欺被害件数" data-en="Scam incidents" data-ko="사기 피해 건수" data-zh-tw="詐騙受害案例">詐欺被害件数</div>
       </div>
       <div class="text-center py-6 px-4 bg-slate-50 rounded-2xl reveal">
         <div class="text-3xl sm:text-4xl font-black text-navy leading-none mb-1">24h</div>
-        <div class="text-gray-500 text-xs sm:text-sm" data-jp="LINE返信目安" data-en="LINE reply time">LINE返信目安</div>
+        <div class="text-gray-500 text-xs sm:text-sm" data-jp="LINE返信目安" data-en="LINE reply time" data-ko="LINE 답장 기준" data-zh-tw="LINE回覆時間">LINE返信目安</div>
       </div>
     </div>
 
@@ -711,28 +721,28 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
       <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 reveal">
         <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="「海外での部屋探しが不安でしたが、全て日本語で対応してもらえたので本当に助かりました。安心して渡航できました。」" data-en="&quot;I was so nervous about finding a room overseas, but having everything explained in Japanese made such a huge difference. I arrived feeling genuinely prepared.&quot;">
-          「海外での部屋探しが不安でしたが、全て日本語で対応してもらえたので本当に助かりました。安心して渡航できました。」
+        <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="「海外での部屋探しが不安でしたが、全てサポートしてもらえたので本当に助かりました。安心して渡航できました。」" data-en="&quot;I was so nervous about finding a room overseas, but having everything explained and handled for me made such a huge difference. I arrived feeling genuinely prepared.&quot;" data-ko="&quot;해외에서 방 구하는 것이 불안했지만, 모든 것을 도와주셔서 정말 도움이 됐습니다. 안심하고 도착할 수 있었습니다.&quot;" data-zh-tw="「在海外找房讓我很不安，但所有事情都幫我處理好了，真的很有幫助。我到達時感到非常有準備。」">
+          「海外での部屋探しが不安でしたが、全てサポートしてもらえたので本当に助かりました。安心して渡航できました。」
         </p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold text-sm">A</div>
           <div>
-            <div class="font-bold text-navy text-sm" data-jp="Aさん（20代・女性）" data-en="A-san (female, 20s)">Aさん（20代・女性）</div>
-            <div class="text-gray-400 text-xs" data-jp="大阪出身 → メルボルン" data-en="Osaka → Melbourne">大阪出身 → メルボルン</div>
+            <div class="font-bold text-navy text-sm" data-jp="Aさん（20代・女性）" data-en="A-san (female, 20s)" data-ko="A씨 (20대·여성)" data-zh-tw="A小姐（20多歲·女性）">Aさん（20代・女性）</div>
+            <div class="text-gray-400 text-xs" data-jp="大阪出身 → メルボルン" data-en="Osaka → Melbourne" data-ko="오사카 출신 → 멜버른" data-zh-tw="大阪 → 墨爾本">大阪出身 → メルボルン</div>
           </div>
         </div>
       </div>
 
       <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 reveal">
         <div class="flex items-center gap-1 text-amber-400 mb-3 text-sm">★★★★★</div>
-        <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="「空港送迎から部屋の案内まで全部お願いして、着いた日からすぐに生活をスタートできました。本当におすすめです。」" data-en="&quot;I used the airport pickup and room setup service — by the evening of my arrival day I was already settled in. Honestly can't recommend it enough.&quot;">
+        <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="「空港送迎から部屋の案内まで全部お願いして、着いた日からすぐに生活をスタートできました。本当におすすめです。」" data-en="&quot;I used the airport pickup and room setup service — by the evening of my arrival day I was already settled in. Honestly can't recommend it enough.&quot;" data-ko="&quot;공항 픽업부터 방 안내까지 모두 맡기고, 도착한 날부터 바로 생활을 시작할 수 있었습니다. 정말 추천합니다.&quot;" data-zh-tw="「從機場接送到房間介紹全部拜託了，抵達當天就能馬上開始生活。真的非常推薦。」">
           「空港送迎から部屋の案内まで全部お願いして、着いた日からすぐに生活をスタートできました。本当におすすめです。」
         </p>
         <div class="flex items-center gap-3">
           <div class="w-10 h-10 bg-navy/10 rounded-full flex items-center justify-center text-navy font-bold text-sm">T</div>
           <div>
-            <div class="font-bold text-navy text-sm" data-jp="Tさん（20代・男性）" data-en="T-san (male, 20s)">Tさん（20代・男性）</div>
-            <div class="text-gray-400 text-xs" data-jp="東京出身 → メルボルン" data-en="Tokyo → Melbourne">東京出身 → メルボルン</div>
+            <div class="font-bold text-navy text-sm" data-jp="Tさん（20代・男性）" data-en="T-san (male, 20s)" data-ko="T씨 (20대·남성)" data-zh-tw="T先生（20多歲·男性）">Tさん（20代・男性）</div>
+            <div class="text-gray-400 text-xs" data-jp="東京出身 → メルボルン" data-en="Tokyo → Melbourne" data-ko="도쿄 출신 → 멜버른" data-zh-tw="東京 → 墨爾本">東京出身 → メルボルン</div>
           </div>
         </div>
       </div>
@@ -754,33 +764,69 @@
 </section>
 
 
+<!-- ===== FOUNDER ===== -->
+<section class="py-20 px-4 bg-slate-50">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <span class="section-badge bg-navy/10 text-navy" data-jp="創業者" data-en="Founder" data-ko="창업자" data-zh-tw="創辦人">創業者</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="Wahori Melbourneの始まり" data-en="The person behind Wahori Melbourne" data-ko="Wahori Melbourne의 시작" data-zh-tw="Wahori Melbourne 的起源">Wahori Melbourneの始まり</h2>
+    </div>
+
+    <div class="bg-white rounded-3xl p-8 sm:p-12 reveal shadow-sm border border-slate-100">
+      <div class="flex flex-col sm:flex-row gap-8 items-start">
+        <!-- Avatar -->
+        <div class="flex-shrink-0 mx-auto sm:mx-0 text-center">
+          <img src="images/rosh.jpg" alt="Rosh" class="w-24 h-24 rounded-full object-cover object-top border-4 border-white shadow-md mx-auto">
+          <div class="font-black text-navy text-lg mt-3">Rosh</div>
+          <div class="text-gray-400 text-xs mt-0.5" data-jp="創業者・ホスト歴3〜4年" data-en="Founder · 3–4 years hosting" data-ko="창업자 · 호스트 경력 3~4년" data-zh-tw="創辦人 · 接待經驗3至4年">創業者・ホスト歴3〜4年</div>
+        </div>
+
+        <div class="flex-1">
+          <blockquote class="text-navy text-base sm:text-lg font-bold leading-relaxed mb-5 border-l-4 border-line pl-4 italic" data-jp="「ワーホリで来た人たちが家を探す苦労を何度も目の当たりにしてきました。そこから、このサービスは始まりました。」" data-en="&quot;I kept watching people arrive in Melbourne excited about their working holiday — then spend their first weeks stressed about finding somewhere safe to live. That's why I built this.&quot;" data-ko="&quot;워킹홀리데이로 온 사람들이 집 찾는 어려움을 수없이 지켜봐 왔습니다. 그래서 이 서비스를 만들었습니다.&quot;" data-zh-tw="「我一再看到懷抱夢想來到墨爾本的人，頭幾週卻為找安全住所而焦慮。這就是我創辦這項服務的原因。」">
+            「ワーホリで来た人たちが家を探す苦労を何度も目の当たりにしてきました。そこから、このサービスは始まりました。」
+          </blockquote>
+
+          <p class="text-gray-600 text-sm leading-relaxed mb-4" data-jp="Roshは、メルボルンで3〜4年間にわたりワーキングホリデービザで渡航する人々のホストを続けてきました。詐欺物件に引っかかった人、劣悪な環境を我慢している人、英語の契約書を理解できずに困っている人——そういった声を何度も聞くうちに、「もっとちゃんと助けられる仕組みが必要だ」と確信し、Wahori Melbourneを立ち上げました。" data-en="Rosh spent 3–4 years hosting working holiday makers in Melbourne. He has heard every story — people who got scammed, people living in conditions they were too afraid to complain about, people who signed leases they didn't understand. Those conversations are what built Wahori Melbourne." data-ko="Rosh는 멜버른에서 3~4년간 워킹홀리데이 비자로 오는 사람들의 호스트를 해왔습니다. 사기를 당한 사람, 열악한 환경을 감수하는 사람, 영어 계약서를 이해 못해 곤란해하는 사람들의 이야기를 수없이 들어왔습니다. 그 경험이 Wahori Melbourne을 만들게 했습니다." data-zh-tw="Rosh 在墨爾本花了3至4年接待打工度假者。他聽過無數故事——被詐騙的人、默默忍受惡劣環境的人、因看不懂英文合約而簽下不利條件的人。這些對話促成了 Wahori Melbourne 的誕生。">
+            Roshは、メルボルンで3〜4年間にわたりワーキングホリデービザで渡航する人々のホストを続けてきました。詐欺物件に引っかかった人、劣悪な環境を我慢している人、英語の契約書を理解できずに困っている人——そういった声を何度も聞くうちに、「もっとちゃんと助けられる仕組みが必要だ」と確信し、Wahori Melbourneを立ち上げました。
+          </p>
+
+          <p class="text-gray-600 text-sm leading-relaxed" data-jp="紹介する物件はすべて、Rosh自身が実際に訪れ、「大切な人を安心して送り出せる場所かどうか」を基準に選んでいます。" data-en="Every property he recommends is one he has personally visited and asked himself: &quot;Would I feel comfortable sending someone I care about here?&quot;" data-ko="소개하는 모든 물건은 Rosh 자신이 직접 방문하여, '소중한 사람을 안심하고 보낼 수 있는 곳인가'를 기준으로 선별한 것입니다." data-zh-tw="他推薦的每一個物件，都是他親自到訪後自問「這裡我願意放心介紹給重要的人嗎？」才列入名單的。">
+            紹介する物件はすべて、Rosh自身が実際に訪れ、「大切な人を安心して送り出せる場所かどうか」を基準に選んでいます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <!-- ===== COMMUNITY MEETUPS ===== -->
 <section class="py-20 px-4 bg-slate-50">
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12 reveal">
-      <span class="section-badge bg-orange-50 text-orange-500" data-jp="コミュニティ" data-en="Community">コミュニティ</span>
-      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="毎月開催！ワーホリ交流イベント" data-en="Monthly meetups for working holiday makers">毎月開催！ワーホリ交流イベント</h2>
-      <p class="text-gray-500 text-base max-w-xl mx-auto" data-jp="知り合いゼロでメルボルンに来ても大丈夫。少人数（5〜10名）でアットホームな交流イベントを毎月開催しています。" data-en="Arriving without knowing anyone? We keep it small — just 5 to 10 people — so it's easy to actually connect.">知り合いゼロでメルボルンに来ても大丈夫。少人数（5〜10名）でアットホームな交流イベントを毎月開催しています。</p>
+      <span class="section-badge bg-orange-50 text-orange-500" data-jp="コミュニティ" data-en="Community" data-ko="커뮤니티" data-zh-tw="社群">コミュニティ</span>
+      <h2 class="text-3xl md:text-4xl font-black text-navy mt-4 mb-3" data-jp="毎月開催！ワーホリ交流イベント" data-en="Monthly meetups for working holiday makers" data-ko="매월 개최! 워홀 교류 이벤트" data-zh-tw="每月舉辦！打工度假交流活動">毎月開催！ワーホリ交流イベント</h2>
+      <p class="text-gray-500 text-base max-w-xl mx-auto" data-jp="知り合いゼロでメルボルンに来ても大丈夫。少人数（5〜10名）でアットホームな交流イベントを毎月開催しています。" data-en="Arriving without knowing anyone? We keep it small — just 5 to 10 people — so it's easy to actually connect." data-ko="아는 사람 없이 멜버른에 와도 괜찮습니다. 소인원(5~10명)으로 아늑한 교류 이벤트를 매월 개최합니다." data-zh-tw="即使一個人也不認識就來墨爾本也沒關係。每月舉辦少人數（5〜10人）的溫馨交流活動。">知り合いゼロでメルボルンに来ても大丈夫。少人数（5〜10名）でアットホームな交流イベントを毎月開催しています。</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
 
       <div class="bg-white rounded-2xl p-6 border border-slate-100 card-hover reveal text-center">
         <div class="text-4xl mb-4">🍖</div>
-        <h3 class="font-bold text-lg text-navy mb-2" data-jp="BBQ" data-en="BBQ">BBQ</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="少人数でのアットホームなBBQ。5〜10名なので初対面でも自然と打ち解けられます。" data-en="A small group BBQ — just 5 to 10 people, so you'll actually get to know everyone there.">少人数でのアットホームなBBQ。5〜10名なので初対面でも自然と打ち解けられます。</p>
+        <h3 class="font-bold text-lg text-navy mb-2" data-jp="BBQ" data-en="BBQ" data-ko="바베큐" data-zh-tw="烤肉">BBQ</h3>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="少人数でのアットホームなBBQ。5〜10名なので初対面でも自然と打ち解けられます。" data-en="A small group BBQ — just 5 to 10 people, so you'll actually get to know everyone there." data-ko="소인원의 아늑한 BBQ. 5~10명이라 처음 만나도 자연스럽게 친해질 수 있습니다." data-zh-tw="少人數的溫馨烤肉。5~10人規模，初次見面也能自然地打成一片。">少人数でのアットホームなBBQ。5〜10名なので初対面でも自然と打ち解けられます。</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 border border-slate-100 card-hover reveal text-center">
         <div class="text-4xl mb-4">🧺</div>
-        <h3 class="font-bold text-lg text-navy mb-2" data-jp="ピクニック" data-en="Picnic">ピクニック</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="天気のいい日はピクニックでリフレッシュ。メルボルンの公園を一緒に楽しみましょう。" data-en="On sunny days we hit Melbourne's parks for a relaxed picnic get-together.">天気のいい日はピクニックでリフレッシュ。メルボルンの公園を一緒に楽しみましょう。</p>
+        <h3 class="font-bold text-lg text-navy mb-2" data-jp="ピクニック" data-en="Picnic" data-ko="피크닉" data-zh-tw="野餐">ピクニック</h3>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="天気のいい日はピクニックでリフレッシュ。メルボルンの公園を一緒に楽しみましょう。" data-en="On sunny days we hit Melbourne's parks for a relaxed picnic get-together." data-ko="날씨 좋은 날은 피크닉으로 재충전. 멜버른의 공원을 함께 즐겨요." data-zh-tw="天氣好的日子一起去野餐放鬆。共同享受墨爾本的公園。">天気のいい日はピクニックでリフレッシュ。メルボルンの公園を一緒に楽しみましょう。</p>
       </div>
 
       <div class="bg-white rounded-2xl p-6 border border-slate-100 card-hover reveal text-center">
         <div class="text-4xl mb-4">🤝</div>
-        <h3 class="font-bold text-lg text-navy mb-2" data-jp="情報交換会" data-en="Info meetup">情報交換会</h3>
-        <p class="text-gray-500 text-sm leading-relaxed" data-jp="仕事探し、生活のコツ、おすすめスポットなど先輩ワーホリから直接聞けます。" data-en="Swap tips on jobs, daily life, and hidden gems — straight from people who've been here a while.">仕事探し、生活のコツ、おすすめスポットなど先輩ワーホリから直接聞けます。</p>
+        <h3 class="font-bold text-lg text-navy mb-2" data-jp="情報交換会" data-en="Info meetup" data-ko="정보 교환회" data-zh-tw="資訊交流會">情報交換会</h3>
+        <p class="text-gray-500 text-sm leading-relaxed" data-jp="仕事探し、生活のコツ、おすすめスポットなど先輩ワーホリから直接聞けます。" data-en="Swap tips on jobs, daily life, and hidden gems — straight from people who've been here a while." data-ko="취업 정보, 생활 요령, 추천 명소 등을 선배 워홀러에게 직접 들을 수 있습니다." data-zh-tw="可以直接向前輩打工度假者聽取求職、生活技巧、推薦景點等資訊。">仕事探し、生活のコツ、おすすめスポットなど先輩ワーホリから直接聞けます。</p>
       </div>
 
     </div>
@@ -788,14 +834,14 @@
     <div class="bg-orange-50 border border-orange-100 rounded-2xl p-6 sm:p-8 reveal flex flex-col sm:flex-row items-center gap-6">
       <div class="text-5xl">📅</div>
       <div class="flex-1 text-center sm:text-left">
-        <h3 class="font-bold text-lg text-navy mb-1" data-jp="次回イベントの詳細はLINEで案内します" data-en="Get the next event details on LINE">次回イベントの詳細はLINEで案内します</h3>
-        <p class="text-gray-500 text-sm" data-jp="参加無料・少人数制（5〜10名）。LINEに登録するだけで毎月のイベント情報をお届けします。" data-en="Free to attend. Kept small — 5 to 10 people max. Join our LINE and we'll send you the details each month.">参加無料・少人数制（5〜10名）。LINEに登録するだけで毎月のイベント情報をお届けします。</p>
+        <h3 class="font-bold text-lg text-navy mb-1" data-jp="次回イベントの詳細はLINEで案内します" data-en="Get the next event details on LINE" data-ko="다음 이벤트 상세 정보는 LINE으로 안내합니다" data-zh-tw="下次活動詳情將透過LINE通知">次回イベントの詳細はLINEで案内します</h3>
+        <p class="text-gray-500 text-sm" data-jp="参加無料・少人数制（5〜10名）。LINEに登録するだけで毎月のイベント情報をお届けします。" data-en="Free to attend. Kept small — 5 to 10 people max. Join our LINE and we'll send you the details each month." data-ko="참가 무료·소인원제(5~10명). LINE에 등록하기만 하면 매월 이벤트 정보를 보내드립니다." data-zh-tw="免費參加·少人數制（5〜10人）。只需加入LINE，每月活動資訊自動送達。">参加無料・少人数制（5〜10名）。LINEに登録するだけで毎月のイベント情報をお届けします。</p>
       </div>
       <a href="https://lin.ee/6YGhjwPv" class="line-btn flex-shrink-0">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
           <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.630 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.07 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
         </svg>
-        <span data-jp="LINEで登録する" data-en="Join on LINE">LINEで登録する</span>
+        <span data-jp="LINEで登録する" data-en="Join on LINE" data-ko="LINE으로 등록하기" data-zh-tw="加入LINE">LINEで登録する</span>
       </a>
     </div>
 
@@ -810,10 +856,10 @@
 
   <div class="max-w-2xl mx-auto text-center relative z-10 reveal">
     <div class="text-5xl mb-6">💬</div>
-    <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight" data-jp="まずは気軽に<br><span class='text-line'>LINEで相談</span>してください" data-en="Ready to get started?<br><span class='text-line'>Message us on LINE</span>">
+    <h2 class="text-3xl md:text-4xl font-black mb-4 leading-tight" data-jp="まずは気軽に<br><span class='text-line'>LINEで相談</span>してください" data-en="Ready to get started?<br><span class='text-line'>Message us on LINE</span>" data-ko="먼저 편하게<br><span class='text-line'>LINE으로 상담</span>해보세요" data-zh-tw="先輕鬆地<br><span class='text-line'>在LINE上諮詢</span>吧">
       まずは気軽に<br><span class="text-line">LINEで相談</span>してください
     </h2>
-    <p class="text-blue-200 text-base leading-relaxed mb-10" data-jp="渡航前でも渡航後でもいつでもご相談ください。住まいのことなら何でもお答えします。もちろん相談は無料です。" data-en="Whether you're still in Japan or already in Melbourne, reach out anytime. We'll answer all your housing questions — and the consultation is completely free.">
+    <p class="text-blue-200 text-base leading-relaxed mb-10" data-jp="渡航前でも渡航後でもいつでもご相談ください。住まいのことなら何でもお答えします。もちろん相談は無料です。" data-en="Whether you're still planning or already in Melbourne, reach out anytime. We'll answer all your housing questions — and the consultation is completely free." data-ko="출발 전이든 후든 언제든지 상담해 주세요. 주거에 관한 것이라면 무엇이든 답변드립니다. 물론 상담은 무료입니다." data-zh-tw="無論出發前或到達後，隨時都可以諮詢。有關住宿的任何問題我們都會回答。當然，諮詢完全免費。">
       渡航前でも渡航後でもいつでもご相談ください。住まいのことなら何でもお答えします。もちろん相談は無料です。
     </p>
 
@@ -821,7 +867,7 @@
     <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
       <div>
         <a href="https://lin.ee/6YGhjwPv"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/en.png" alt="Add friend" height="36" border="0"></a>
-        <p class="text-blue-300 text-xs mt-3" data-jp="LINEのIDを追加するか、QRコードを読み取ってください" data-en="Add our LINE ID or scan the QR code below">LINEのIDを追加するか、QRコードを読み取ってください</p>
+        <p class="text-blue-300 text-xs mt-3" data-jp="LINEのIDを追加するか、QRコードを読み取ってください" data-en="Add our LINE ID or scan the QR code below" data-ko="LINE ID를 추가하거나 QR 코드를 스캔해 주세요" data-zh-tw="請加入我們的LINE ID或掃描下方QR碼">LINEのIDを追加するか、QRコードを読み取ってください</p>
       </div>
 
       <!-- QR Code -->
@@ -829,15 +875,15 @@
         <div class="rounded-xl overflow-hidden border-2 border-line p-1 bg-white">
           <img src="https://qr-official.line.me/gs/M_341mkhrf_GW.png?oat_content=qr" alt="LINE QR Code" width="140" height="140">
         </div>
-        <span class="text-blue-300 text-xs" data-jp="LINEのQRコード" data-en="LINE QR Code">LINEのQRコード</span>
+        <span class="text-blue-300 text-xs" data-jp="LINEのQRコード" data-en="LINE QR Code" data-ko="LINE QR 코드" data-zh-tw="LINE QR碼">LINEのQRコード</span>
       </div>
     </div>
 
     <!-- Reassurances -->
     <div class="mt-10 flex flex-wrap justify-center gap-5 text-blue-300 text-sm">
-      <span class="flex items-center gap-2">🔒 <span data-jp="個人情報は厳重に管理" data-en="Your info is kept private">個人情報は厳重に管理</span></span>
-      <span class="flex items-center gap-2">✅ <span data-jp="相談・見積もりは無料" data-en="Free consultation &amp; quote">相談・見積もりは無料</span></span>
-      <span class="flex items-center gap-2">⚡ <span data-jp="通常24時間以内に返信" data-en="Reply within 24 hours">通常24時間以内に返信</span></span>
+      <span class="flex items-center gap-2">🔒 <span data-jp="個人情報は厳重に管理" data-en="Your info is kept private" data-ko="개인정보는 엄격히 관리" data-zh-tw="個人資料嚴格保管">個人情報は厳重に管理</span></span>
+      <span class="flex items-center gap-2">✅ <span data-jp="相談・見積もりは無料" data-en="Free consultation &amp; quote" data-ko="상담·견적은 무료" data-zh-tw="諮詢·報價免費">相談・見積もりは無料</span></span>
+      <span class="flex items-center gap-2">⚡ <span data-jp="通常24時間以内に返信" data-en="Reply within 24 hours" data-ko="보통 24시간 이내 답변" data-zh-tw="通常24小時內回覆">通常24時間以内に返信</span></span>
     </div>
   </div>
 </section>
@@ -847,7 +893,7 @@
 <footer class="bg-gray-900 text-gray-500 py-10 px-4 text-center text-sm">
   <div class="max-w-4xl mx-auto">
     <div class="font-bold text-white text-base mb-1">Wahori Melbourne</div>
-    <div class="mb-4 text-gray-400" data-jp="メルボルン日本人向け安心住宅サービス" data-en="Safe Housing for Japanese Working Holiday Makers in Melbourne">メルボルン日本人向け安心住宅サービス</div>
+    <div class="mb-4 text-gray-400" data-jp="メルボルン日本人向け安心住宅サービス" data-en="Safe Housing for Working Holiday Makers in Melbourne" data-ko="멜버른 워킹홀리데이를 위한 안심 주거 서비스" data-zh-tw="墨爾本打工度假者的安心住宿服務">メルボルン日本人向け安心住宅サービス</div>
     <div class="text-gray-600 text-xs">
       © 2025 Wahori Melbourne. All rights reserved.<br>
       Melbourne, Victoria, Australia
@@ -865,6 +911,12 @@
   let navScrolled = false;
   let currentLang = 'jp';
 
+  // Language config — declared here so updateLangBtnColors() can use them on first updateNav() call
+  const langOrder = ['jp', 'en', 'ko', 'zh-tw'];
+  const langAttr = { jp: 'data-jp', en: 'data-en', ko: 'data-ko', 'zh-tw': 'data-zh-tw' };
+  const langHtml = { jp: 'ja', en: 'en', ko: 'ko', 'zh-tw': 'zh-TW' };
+  const flagIds = { jp: 'flag-jp', en: 'flag-en', ko: 'flag-ko', 'zh-tw': 'flag-zh' };
+
   function updateNav() {
     navScrolled = window.scrollY > 60;
     if (navScrolled) {
@@ -873,51 +925,42 @@
       navTitle.classList.replace('text-white', 'text-navy');
       navSub.classList.replace('text-white/60', 'text-gray-400');
       langBtn.classList.replace('border-white/30', 'border-gray-200');
-      langBtn.classList.replace('hover:bg-white/10', 'hover:bg-gray-50');
     } else {
       nav.classList.remove('bg-white/95', 'backdrop-blur', 'border-b', 'border-gray-100', 'shadow-sm');
       nav.classList.add('bg-transparent');
       navTitle.classList.replace('text-navy', 'text-white');
       navSub.classList.replace('text-gray-400', 'text-white/60');
       langBtn.classList.replace('border-gray-200', 'border-white/30');
-      langBtn.classList.replace('hover:bg-gray-50', 'hover:bg-white/10');
     }
     updateLangBtnColors();
   }
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
-  // Language toggle
-  function toggleLang() {
-    setLang(currentLang === 'jp' ? 'en' : 'jp');
-  }
-
   function updateLangBtnColors() {
-    const flagJP = document.getElementById('flag-jp');
-    const flagEN = document.getElementById('flag-en');
-    const activeClass = 'flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200';
-    const inactiveClass = 'flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 ' + (navScrolled ? 'text-gray-500' : 'text-white/60');
-    if (currentLang === 'jp') {
-      flagJP.className = activeClass;
-      flagEN.className = inactiveClass;
-    } else {
-      flagEN.className = activeClass;
-      flagJP.className = inactiveClass;
-    }
+    const activeClass = 'flex items-center px-2 py-1.5 rounded-lg text-xs font-bold bg-line text-white transition-all duration-200 cursor-pointer';
+    const inactiveClass = 'flex items-center px-2 py-1.5 rounded-lg text-xs font-bold transition-all duration-200 cursor-pointer ' + (navScrolled ? 'text-gray-500 hover:text-gray-800' : 'text-white/60 hover:text-white');
+    langOrder.forEach(lang => {
+      const el = document.getElementById(flagIds[lang]);
+      if (el) {
+        const label = el.querySelector('span');
+        el.className = lang === currentLang ? activeClass : inactiveClass;
+        if (label) label.className = 'hidden sm:inline ml-0.5';
+      }
+    });
   }
 
   function setLang(lang) {
     currentLang = lang;
-    const isEN = lang === 'en';
+    const attr = langAttr[lang] || 'data-jp';
 
     [...document.querySelectorAll('[data-jp]')].reverse().forEach(el => {
-      const jp = el.getAttribute('data-jp');
-      const en = el.getAttribute('data-en');
-      if (jp && en) el.innerHTML = isEN ? en : jp;
+      const text = el.getAttribute(attr) || el.getAttribute('data-en') || el.getAttribute('data-jp');
+      if (text) el.innerHTML = text;
     });
 
     updateLangBtnColors();
-    document.documentElement.lang = isEN ? 'en' : 'ja';
+    document.documentElement.lang = langHtml[lang] || 'ja';
     localStorage.setItem('lang', lang);
   }
 
@@ -954,9 +997,18 @@
     });
   });
 
-  // Restore saved language preference
+  // Restore saved language — fall back to browser locale detection
   const savedLang = localStorage.getItem('lang');
-  if (savedLang && savedLang !== 'jp') setLang(savedLang);
+  if (savedLang) {
+    if (savedLang !== 'jp') setLang(savedLang);
+  } else {
+    const bl = (navigator.language || '').toLowerCase();
+    let detected = 'jp';
+    if (bl.startsWith('ko')) detected = 'ko';
+    else if (bl === 'zh-tw' || bl === 'zh-hant' || bl === 'zh-hk' || bl === 'zh-mo') detected = 'zh-tw';
+    else if (!bl.startsWith('ja')) detected = 'en';
+    if (detected !== 'jp') setLang(detected);
+  }
 </script>
 
 </body>

@@ -38,13 +38,14 @@ jobs:
 
       - name: Prepare deployment artifact
         run: |
-          mkdir -p dist/admin
+          mkdir -p dist/admin dist/images
           cp index.html dist/
           cp testimonials.html dist/
           cp submit-story.html dist/
           cp style.css dist/
           cp CNAME dist/
           cp admin/index.html dist/admin/
+          cp images/* dist/images/ 2>/dev/null || true
           touch dist/.nojekyll
 
       - name: Setup GitHub Pages
