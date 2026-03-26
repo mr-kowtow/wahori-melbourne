@@ -2,11 +2,16 @@
   "name": "wahori-melbourne",
   "version": "1.0.0",
   "description": "Wahori Melbourne — bilingual housing landing page",
+  "type": "module",
   "scripts": {
     "build": "tailwindcss -i ./input.css -o ./style.css --minify",
-    "dev": "tailwindcss -i ./input.css -o ./style.css --watch"
+    "dev": "tailwindcss -i ./input.css -o ./style.css --watch",
+    "team": "node agents/team.js"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.2.83"
   }
 }
