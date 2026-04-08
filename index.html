@@ -3,17 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Safe, verified housing in Melbourne for Japanese working holiday makers — with full Japanese support from search to move-in.">
+
+  <!-- Primary language & canonical -->
+  <link rel="canonical" href="https://wahori-melbourne.com">
+
+  <!-- hreflang: tell Google which language audiences this page serves -->
+  <link rel="alternate" hreflang="ja" href="https://wahori-melbourne.com">
+  <link rel="alternate" hreflang="ko" href="https://wahori-melbourne.com">
+  <link rel="alternate" hreflang="zh-TW" href="https://wahori-melbourne.com">
+  <link rel="alternate" hreflang="x-default" href="https://wahori-melbourne.com">
+
+  <!-- SEO: Japanese -->
+  <meta name="description" content="メルボルンのワーホリ・留学生向け安心シェアハウス。日本語サポート完備、トラム圏内の好立地、審査済み物件のみ掲載。">
+  <meta name="keywords" content="メルボルン シェアハウス, ワーホリ 住宅, メルボルン 日本人, ワーキングホリデー 住む場所, メルボルン 格安 住居, ワーホリ メルボルン おすすめ">
+
+  <!-- SEO: Korean (injected into page lang via JS, Google still indexes this) -->
+  <meta name="description:ko" content="멜버른 워킹홀리데이·유학생을 위한 안심 쉐어하우스. 한국어 지원, 트램 근거리, 검증된 매물만 제공.">
+  <meta name="keywords:ko" content="멜버른 쉐어하우스, 워킹홀리데이 숙소, 멜버른 한인, 워홀 집 구하기, 멜버른 저렴한 숙소, 워홀 멜버른 추천">
+
+  <!-- SEO: Traditional Chinese / Taiwan -->
+  <meta name="description:zh-TW" content="墨爾本打工度假・留學生安心分租套房。繁體中文支援、電車沿線、僅提供審核通過房源。">
+  <meta name="keywords:zh-TW" content="墨爾本 分租, 打工度假 住宿, 墨爾本 台灣人, 澳洲打工度假 住房, 墨爾本 便宜住宿, 打工度假 墨爾本 推薦">
+
+  <!-- Open Graph (defaults to Japanese as primary audience) -->
   <meta property="og:title" content="Wahori Melbourne | ワーホリメルボルン安心住宅">
-  <meta property="og:description" content="Safe, verified housing in Melbourne for Japanese working holiday makers — with full Japanese support.">
+  <meta property="og:description" content="メルボルンのワーホリ向け審査済みシェアハウス。日本語・韓国語・繁体字中国語対応。">
   <meta property="og:image" content="https://wahori-melbourne.com/og-image.jpg">
   <meta property="og:url" content="https://wahori-melbourne.com">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="ko_KR">
+  <meta property="og:locale:alternate" content="zh_TW">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Wahori Melbourne | ワーホリメルボルン安心住宅">
-  <meta name="twitter:description" content="Safe, verified housing in Melbourne for Japanese working holiday makers.">
+  <meta name="twitter:description" content="メルボルンのワーホリ向け安心シェアハウス。日本語・韓国語・繁体字中国語対応。">
+
   <link rel="icon" href="images/logo.png" type="image/png">
-  <title>Wahori Melbourne | ワーホリメルボルン安心住宅</title>
+  <title>Wahori Melbourne | メルボルン ワーホリ シェアハウス | 워홀 멜버른 쉐어하우스 | 墨爾本打工度假分租</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
@@ -149,6 +176,34 @@
     "availableLanguage": "Japanese"
   }
 }
+  </script>
+
+  <!-- Structured data: helps Google surface the service in JP/KR/TW search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Wahori Melbourne",
+    "url": "https://wahori-melbourne.com",
+    "logo": "https://wahori-melbourne.com/images/logo.png",
+    "image": "https://wahori-melbourne.com/og-image.jpg",
+    "description": "メルボルンのワーホリ・留学生向け安心シェアハウス紹介サービス。日本語・韓国語・繁体字中国語対応。",
+    "areaServed": {
+      "@type": "City",
+      "name": "Melbourne",
+      "addressCountry": "AU"
+    },
+    "availableLanguage": ["ja", "ko", "zh-TW"],
+    "priceRange": "$200–$550",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": ["ja", "ko", "zh-TW"]
+    },
+    "sameAs": [
+      "https://lin.ee/wahori-melbourne"
+    ]
+  }
   </script>
 </head>
 
